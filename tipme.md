@@ -3,7 +3,7 @@ layout: page
 title: Thank you! 🙏
 subtitle: Tip me a cup of tea 🫖🧘
 ---
-<div background-color="rgba(169, 169, 169, 0.8)" style="text-align: center">
+<div style="text-align: center">
 <form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="business" value="NKYCZ67AW43YJ" />
 <input type="hidden" name="no_recurring" value="0" />
