@@ -3,21 +3,19 @@ layout: page
 title: Dr. Florian Geigl
 subtitle: Hey 👋👋👋 :)
 ---
-
-🌍 Based in [Klagifornia/Austria](https://google.com/search?q=klagenfurt)
-
-🏃📚 Loves sports and reading
-
-🛩️ Private Pilot @ [LOXZ](http://loxz.at)
-
-👨‍🎓 PhD in Computer Science
-
-💼 Senior Product Manager @ [Dynatrace](dynatrace.com)
-
-## Find me online
-* [LinkedIn](https://www.linkedin.com/in/floriangeigl/)
-* [X](https://x.com/floriangeigl)
-* [Github](https://github.com/floriangeigl)
-* [Mail](mailto:florian.geigl+githubpage@gmail.com)
-* [Strava](https://www.strava.com/athletes/61310121)
+<div>
+    <p style="text-align: center">🌍 Based in <a href="https://google.com/search?q=klagenfurt">Klagifornia/Austria</a></p>
+    <p style="text-align: center">🏃📚 Loves sports and reading</p>
+    <p style="text-align: center">🛩️ Private Pilot @ <a href="http://loxz.at">LOXZ</a></p>
+    <p style="text-align: center">👨‍🎓 PhD in Computer Science</p>
+    <p style="text-align: center">💼 Senior Product Manager @ <a href="dynatrace.com">Dynatrace</a></p>
+    <h2 id="find-me-online" style="text-align: center">Find me online </h2>
+    <ul style="text-align: center">
+    <li><a href="https://www.linkedin.com/in/floriangeigl/">LinkedIn</a></li>
+    <li><a href="https://x.com/floriangeigl">X</a></li>
+    <li><a href="https://github.com/floriangeigl">Github</a></li>
+    <li><a href="mailto:florian.geigl+githubpage@gmail.com">Mail</a></li>
+    <li><a href="https://www.strava.com/athletes/61310121">Strava</a></li>
+    </ul>
+</div>
    
