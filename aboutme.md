@@ -1,16 +1,19 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+# subtitle: Why you'd want to go on a date with me
 ---
+# Dr. Florian Geigl
+🌍 Based in [Klagifornia/Austria](https://google.com/search?q=klagenfurt)
+🏃📚 Loves sports and reading
+🛩️ Private Pilot @ [LOXZ](http://loxz.at)
+👨‍🎓 PhD in Computer Science
+💼 Senior Product Manager @ [Dynatrace](dynatrace.com)
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+## Find me online
+[LinkedIn](https://www.linkedin.com/in/floriangeigl/)
+[X](https://x.com/floriangeigl)
+[Github](https://github.com/floriangeigl)
+[Mail](mailto:florian.geigl+githubpage@gmail.com)
+[Strava](https://www.strava.com/athletes/61310121)
+   
