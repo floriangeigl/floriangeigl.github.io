@@ -1,9 +1,8 @@
 ---
 layout: page
-title: Thank you!
-subtitle: Tip me a cup of tea!
+title: Thank you! 🙏
+subtitle: Tip me a cup of tea 🫖🧘
 ---
-<aside>
 <div class="aside" style="text-align: center">
 <form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="business" value="NKYCZ67AW43YJ" />
@@ -14,4 +13,3 @@ subtitle: Tip me a cup of tea!
 <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" />
 </form>
 </div>
-</aside>
