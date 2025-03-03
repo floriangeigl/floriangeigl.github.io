@@ -20,7 +20,7 @@ author: Dr. Florian Geigl
 ###############################################
 
 navbar-links:
-  ℹ️About Me: "aboutme"
+  ℹ️About Me: "https://geigl.online/"
   🙏Tip Me: "tipme"
   🌟Projects:
   - 🧘Meditation & Breathwork Garmin App: "https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b"
