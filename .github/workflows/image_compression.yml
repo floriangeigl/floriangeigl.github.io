@@ -36,5 +36,6 @@ jobs:
           title: Compressed Images
           branch: auto-compress-images
           branch-suffix: timestamp
+          delete-branch: true
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
