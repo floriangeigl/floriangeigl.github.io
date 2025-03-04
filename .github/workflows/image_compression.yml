@@ -27,6 +27,8 @@ jobs:
           jpegProgressive: true
           pngQuality: '100'
           webpQuality: '100'
+      - name: debug
+        run: git status && git diff && git branch
       - name: Create New Pull Request If Needed
         if: steps.calibre.outputs.markdown != ''
         uses: peter-evans/create-pull-request@v7
