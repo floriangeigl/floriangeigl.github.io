@@ -17,6 +17,10 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+      - name: cleanup auto-compress-images branch
+        run: |
+          git push -d origin auto-compress-images || echo "no remote branch to cleanup"
+          git branch -d auto-compress-images || echo "no local branch to cleanup"
       - name: Compress Images
         id: calibre
         uses: calibreapp/image-actions@main
@@ -29,13 +33,12 @@ jobs:
           webpQuality: '100'
       - name: debug
         run: git status && git diff && git branch
-      - name: Create New Pull Request If Needed
-        if: steps.calibre.outputs.markdown != ''
-        uses: peter-evans/create-pull-request@v7
+      - name: git add
+        run: git add .
+      - name: Commit & Push changes
+        uses: actions-js/push@master
         with:
-          title: Compressed Images
-          branch: auto-compress-images
-          branch-suffix: timestamp
-          delete-branch: true
-          commit-message: Compressed Images
-          body: ${{ steps.calibre.outputs.markdown }}
+          message: auto-compress-images
+          branch: release-translation
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
