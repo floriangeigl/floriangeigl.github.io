@@ -32,6 +32,12 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           title: Compressed Images
+          branch: auto-compress-images
           branch-suffix: timestamp
           commit-message: Compressed Images
+          add-paths: |
+            *.jpg
+            *.jpeg
+            *.png
+            *.webp
           body: ${{ steps.calibre.outputs.markdown }}
