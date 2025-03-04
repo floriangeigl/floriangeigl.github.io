@@ -1,6 +1,6 @@
 ---
 layout: page
-title: In the air ✈️
+title: 🛩️ In the air ✈️
 subtitle: Some Impressions
 ---
 ![pilot-woerthersee.jpg](img/pilot-woerthersee.jpg)
