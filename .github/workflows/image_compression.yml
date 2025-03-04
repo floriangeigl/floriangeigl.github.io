@@ -1,9 +1,9 @@
-# Compress images on demand (workflow_dispatch), and at 11pm every Sunday (schedule).
-# Open a Pull Request if any images can be compressed.
-name: Compress Images
+name: Compress Images on Push to main branch
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - '**.jpg'
       - '**.jpeg'
@@ -21,16 +21,12 @@ jobs:
         uses: calibreapp/image-actions@main
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          compressOnly: false
-          jpegQuality: '100'
-          jpegProgressive: true
-          pngQuality: '100'
-          webpQuality: '100'
+          compressOnly: true
       - name: Create New Pull Request If Needed
         if: steps.calibre.outputs.markdown != ''
         uses: peter-evans/create-pull-request@v4
         with:
-          title: Compressed Images Nightly
+          title: Compressed Images
           branch-suffix: timestamp
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
