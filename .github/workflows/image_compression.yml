@@ -33,12 +33,13 @@ jobs:
           webpQuality: '100'
       - name: debug
         run: git status && git diff && git branch
-      - name: git add
-        run: git add .
-      - name: Commit & Push changes
-        uses: actions-js/push@master
+      - name: Create New Pull Request If Needed
+        if: steps.calibre.outputs.markdown != ''
+        uses: peter-evans/create-pull-request@v7
         with:
-          message: auto-compress-images
-          branch: release-translation
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          title: Compressed Images
+          branch: auto-compress-images
+          branch-suffix: timestamp
+          delete-branch: true
+          commit-message: Compressed Images
+          body: ${{ steps.calibre.outputs.markdown }}
