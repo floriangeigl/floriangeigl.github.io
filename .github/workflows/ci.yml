@@ -11,11 +11,6 @@ jobs:
           ruby-version: '3.3'
       - name: Install dependencies
         run: bundle install && bundle exec appraisal install
-      - name: wget
-        uses: wei/wget@v1
-          with:
-            args: -O meditate_app_user_guide.md https://raw.githubusercontent.com/floriangeigl/Meditate/refs/heads/main/UserGuide.md
-
       - name: Setup Pages
         id: configure-pages
         uses: actions/configure-pages@v5
