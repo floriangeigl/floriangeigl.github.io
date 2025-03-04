@@ -22,6 +22,10 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           compressOnly: true
+          jpegQuality: '100'
+          jpegProgressive: true
+          pngQuality: '100'
+          webpQuality: '100'
       - name: Create New Pull Request If Needed
         if: steps.calibre.outputs.markdown != ''
         uses: peter-evans/create-pull-request@v4
