@@ -8,3 +8,5 @@ subtitle: Some Impressions
 ![paddle](img/paddle_01.jpg) 
 
 ![paddle with duck](img/paddle_duck.jpg)
+
+![paddle with duck](img/lake_mountains.jpg)
