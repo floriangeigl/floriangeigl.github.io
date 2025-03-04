@@ -35,9 +35,4 @@ jobs:
           branch: auto-compress-images
           branch-suffix: timestamp
           commit-message: Compressed Images
-          add-paths: |
-            *.jpg
-            *.jpeg
-            *.png
-            *.webp
           body: ${{ steps.calibre.outputs.markdown }}
