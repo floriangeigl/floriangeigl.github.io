@@ -4,7 +4,7 @@ title: Thank you! 🙏
 subtitle: Tip me a cup of tea 🫖🧘
 ---
 <div class="main-explain-area jumbotron centered" style="text-align: center">
-    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="floriangeix" data-color="#FFDD00" data-emoji="🍵"  data-font="Cookie" data-text="Buy me a tea" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script><br />
+    <a href="https://www.buymeacoffee.com/floriangeix" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a><br />
     <form action="https://www.paypal.com/donate" method="post" target="_top">
     <input type="hidden" name="business" value="NKYCZ67AW43YJ" />
     <input type="hidden" name="no_recurring" value="0" />
@@ -14,4 +14,5 @@ subtitle: Tip me a cup of tea 🫖🧘
     <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" />
     </form><br />
 </div>
+
 ![buy me tea](bmc_qr.png)
