@@ -4,7 +4,9 @@ title: Thank you! 🙏
 subtitle: Tip me a cup of tea 🫖🧘
 ---
 <div class="main-explain-area jumbotron centered" style="text-align: center">
-    <a href="https://www.buymeacoffee.com/floriangeix" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a><br />
+    <a href="https://www.buymeacoffee.com/floriangeix" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+</div>
+<div class="main-explain-area jumbotron centered" style="text-align: center">
     <form action="https://www.paypal.com/donate" method="post" target="_top">
     <input type="hidden" name="business" value="NKYCZ67AW43YJ" />
     <input type="hidden" name="no_recurring" value="0" />
@@ -14,5 +16,6 @@ subtitle: Tip me a cup of tea 🫖🧘
     <img alt="" border="0" src="https://www.paypal.com/en_AT/i/scr/pixel.gif" width="1" height="1" />
     </form><br />
 </div>
-
-![buy me tea](bmc_qr.png)
+<div class="main-explain-area jumbotron centered" style="text-align: center">
+    <img style="width: 100%" src="{{ 'bmc_qr.png' | relative_url }}" alt="Not found" />
+</div>
