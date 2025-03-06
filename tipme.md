@@ -18,6 +18,7 @@ subtitle: Tip me a cup of tea 🫖🧘
     <h3>Buymeacoffe.com</h3>
     <a href="https://www.buymeacoffee.com/floriangeix" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
     <br />
+    <br />
     <img style="width: 25%" src="{{ 'bmc_qr.png' | relative_url }}" alt="Not found" />
 </div>
 
