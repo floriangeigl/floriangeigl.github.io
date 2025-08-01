@@ -3,14 +3,16 @@ layout: page
 title: Thank you! 🙏
 subtitle: Tip me a cup of tea 🫖🧘
 ---
-<div>
-    <?php
-    if (isset($_GET['meditate-min'])) {
-        echo $_GET['meditate-min'];
-    } else {
-        // Fallback behaviour goes here
-    }
-    ?>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const meditate_minutes = urlParams.get('meditate-minutes');
+    document.getElementById("meditate").innerHTML = meditate_minutes;
+</script>
+
+<div id=meditate>
+
 </div>
 
 <div class="main-explain-area jumbotron centered" style="text-align: center">
