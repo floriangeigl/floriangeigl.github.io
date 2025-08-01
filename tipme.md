@@ -3,13 +3,6 @@ layout: page
 title: Thank you! 🙏
 subtitle: Tip me a cup of tea 🫖🧘
 ---
-<?php
-    if (isset($_GET['meditate-min'])) {
-        echo $_GET['meditate-min'];
-    } else {
-        // Fallback behaviour goes here
-    }
-?>
 <div class="main-explain-area jumbotron centered" style="text-align: center">
     <h3>Paypal</h3>
     <form action="https://www.paypal.com/donate" method="post" target="_top">
