@@ -31,5 +31,17 @@ subtitle: Tip me a cup of tea 🫖🧘
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const meditate_minutes = urlParams.get('meditate-minutes');
-    document.getElementById("meditate").innerHTML = meditate_minutes;
+    if (meditate_minutes != null) {
+        var meditate_block = `
+        <div class="main-explain-area jumbotron centered" style="text-align: center">
+            <b> You spent ${meditate_minutes} mindful minutes last month - what a beautiful offering to your own well-being.
+                If my little app helped you breathe easier, feel lighter, or find stillness in the storm… 
+                perhaps you’d consider a small gesture in return.
+                Just a simple thank-you, offered in the spirit of <i>dana</i> the joy of giving.
+            </b>
+        </div>
+
+        `
+        document.getElementById("meditate") = meditate_block;
+    }
 </script>
