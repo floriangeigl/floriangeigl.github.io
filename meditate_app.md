@@ -29,4 +29,4 @@ Measuring stress levels, heart rate variability (HRV), and heart rate during med
 * Heart Rate Variability (HRV): A higher HRV is linked to better autonomic nervous system balance, meaning improved resilience to stress. Slow, deep breathing and mindfulness practices can enhance HRV, reflecting better relaxation and recovery.
 * Heart Rate: Meditation typically lowers heart rate over time, while breathwork may cause temporary fluctuations depending on the technique used. Tracking heart rate can reveal patterns in how the body responds to different practices!
 
-[Data Privacy Policy](/meditate_app_data_privacy)
+This app uses Google Analytics to collect anonymous usage statistics. No personally identifiable information is collected or stored. For more information read [Data Privacy Policy](/meditate_app_data_privacy).
