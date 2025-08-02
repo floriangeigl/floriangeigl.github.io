@@ -18,6 +18,10 @@ When you visit geigl.online, I may collect certain information automatically, in
 
 I use Google Analytics to help me understand how users interact with our website. Google may collect additional technical data as described in their [Privacy Policy](https://policies.google.com/privacy).
 
+I use Cloudflare as a content delivery network (CDN) and security provider to ensure the fast and secure delivery of my website. When you access my website, your request is routed through Cloudflare's servers, which may temporarily log your IP address and other technical information for security and performance purposes. Cloudflare acts as a data processor on my behalf and does not use this data for any other purpose. For more information, please see [Cloudflare's Privacy Policy](https://www.cloudflare.com/privacypolicy/).
+
+I use public content delivery networks (CDNs), such as jsDelivr or CDNJS, to load static resources like jQuery and Bootstrap. These CDNs may temporarily log technical information such as your IP address to serve content efficiently. This information is not used for tracking or analytics purposes.
+
 **2. How I Use Your Information**
 
 I collect and use this information to:
