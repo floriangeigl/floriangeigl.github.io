@@ -15,6 +15,7 @@ When you use my Meditation app, I may collect certain information automatically,
 * [Garmin's unique identifier](https://developer.garmin.com/connect-iq/api-docs/Toybox/System/DeviceSettings.html#uniqueIdentifier-var) that is unique per app and device
 * Basic session metrics such as duration
 * Usage patterns within the app
+* If you are a developer, feel free to look at the relevant source code [here](https://github.com/floriangeigl/Meditate/tree/main/Meditate/source/com)
 
 I use Google Analytics to help me understand how users interact with my app. Google may collect additional technical data as described in their [Privacy Policy](https://policies.google.com/privacy).
 
