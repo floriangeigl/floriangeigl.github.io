@@ -52,9 +52,9 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "florian.geigl+githubpage@gmail.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  github: floriangeigl
-  twitter: floriangeigl
+#  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+#  github: floriangeigl
+#  twitter: floriangeigl
 #  patreon: DeanAttali
 #  youtube: "@daattali"
 #  whatsapp: 15551212
@@ -85,7 +85,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: Dr. Florian Geigl
+# rss-description: Dr. Florian Geigl
 
 ###########################
 # --- General options --- #
