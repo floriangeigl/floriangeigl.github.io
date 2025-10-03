@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🛩️ In the air ✈️
+title: 🛩️ In the Air ✈️
 subtitle: Some Impressions
 ---
 
