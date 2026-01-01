@@ -1,7 +1,11 @@
 {% if include.css.sri %}
-  <link href="{{ include.css.href }}" rel="stylesheet" integrity="{{ include.css.sri }}" crossorigin="anonymous">
+  <link rel="preload" href="{{ include.css.href }}" as="style" onload="this.onload=null;this.rel='stylesheet'"  integrity="{{ include.css.sri }}" crossorigin="anonymous">
+  <noscript><link rel="stylesheet" href="{{ include.css.href }}" integrity="{{ include.css.sri }}" crossorigin="anonymous"></noscript>
 {% elsif include.css.href %}
-  <link rel="stylesheet" href="{{ include.css.href }}">
+  <link rel="preload" href="{{ include.css.href }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ include.css.href }}"></noscript>
 {% else %}
-  <link rel="stylesheet" href="{{ include.css }}">
+  <link rel="preload" href="{{ include.css }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ include.css }}"></noscript>
 {% endif %}
+
