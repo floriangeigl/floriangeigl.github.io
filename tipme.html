@@ -204,6 +204,7 @@ title: Thank you! 🙏
             };
 
             const theme = baseThemes[prevMonthIndex] || baseThemes[0];
+            let vibe = theme.vibe;
             let hook = theme.hook;
             let ask = theme.ask;
             let quoteText = theme.quoteText;
@@ -211,13 +212,14 @@ title: Thank you! 🙏
 
             // If Lunar New Year happened in the previous month, adjust the single hook/ask/quote.
             if (isLunarNewYearInMonth(prevYear, prevMonthIndex)) {
-                hook = "Lunar New Year: a gentle turning of the page - no pressure, just presence.";
+                vibe = "A gentle turning of the page";
+                hook = "Lunar New Year can be a fresh start - and you can take it slowly.";
                 ask = "If Lunar New Year brought a lot of feelings (or a lot of people), and these pauses helped, and you’d like to send some love back, you can.";
                 quoteText = "Sabbe sattā bhavantu sukhitattā. (May all beings be well and happy.)";
                 quoteSource = "Traditional mettā phrase";
             }
 
-            return { ...theme, hook, ask, quoteText, quoteSource };
+            return { ...theme, vibe, hook, ask, quoteText, quoteSource };
         }
 
         const prev = getPreviousMonthContext();
@@ -229,23 +231,19 @@ title: Thank you! 🙏
         const meditate_block = `
         <div class="main-explain-area jumbotron centered" style="text-align: center">
             <p>
-                <b>Thank you for using my Garmin meditation app</b><br />
-                <small>
-                    This page shows your last month summary and gives you an optional way to support the project.
-                    You can find the app <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2" target="_blank" rel="noopener">here</a>.
-                </small>
-            </p>
-            <p>
                 <em>“${theme.quoteText}”</em><br />
                 <small>- ${theme.quoteSource}</small>
             </p>
             <p>
-                <b>${theme.vibe}</b><br />
-                ${theme.hook}
+                <b>Thanks for using the <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2" target="_blank" rel="noopener">Garmin Meditation & Breathwork</a> app</b>
             </p>
             <p>
                 <b>You gave yourself ${displayedDuration} of calm in ${prev.monthName} ${prev.year} 🧘‍♂️</b><br />
                 ${compliment}
+            </p>
+            <p>
+                <b>${theme.vibe}</b><br />
+                ${theme.hook}
             </p>
             <p>
                 ${theme.ask}
