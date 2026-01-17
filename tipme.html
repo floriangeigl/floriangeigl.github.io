@@ -32,6 +32,11 @@ title: Thank you! 🙏
     const urlParams = new URLSearchParams(queryString);
     const meditate_minutes = urlParams.get('meditate-minutes');
     if (meditate_minutes != null) {
+        const headerEl = document.querySelector('header.header-section');
+        if (headerEl) {
+            headerEl.style.display = 'none';
+        }
+
         const minutes = Number(meditate_minutes);
 
         const monthNames = [
@@ -213,6 +218,7 @@ title: Thank you! 🙏
                 ${theme.ask}
             </p>
             <p>
+                <img src="{{ '/assets/img/meditate-app-favicon.png' | relative_url }}" alt="App icon" style="width: 48px; height: 48px; margin: 10px auto 6px; display: block;" />
                 <a href="#paypal" style="text-decoration: none;">
                     <b>Buy the developer a cup of tea. 🍵</b>
                 </a>
