@@ -26,6 +26,25 @@ title: Thank you! 🙏
     <img style="width: 25%" src="{{ 'bmc_qr.png' | relative_url }}" alt="Not found" />
 </div>
 
+<style>
+    /* Match the navbar avatar sizing (50px default, 100px on large screens) */
+    .tipme-dynamic-logo {
+        width: 3.125rem;
+        height: 3.125rem;
+        margin: 10px auto 6px;
+        display: block;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    @media (min-width: 1200px) {
+        .tipme-dynamic-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+        }
+    }
+</style>
+
 
 <script>
     const queryString = window.location.search;
@@ -35,6 +54,13 @@ title: Thank you! 🙏
         const headerEl = document.querySelector('header.header-section');
         if (headerEl) {
             headerEl.style.display = 'none';
+        }
+
+        const navEl = document.querySelector('.navbar');
+        const mainEl = document.querySelector('main');
+        if (navEl && mainEl) {
+            const navHeight = Math.ceil(navEl.getBoundingClientRect().height);
+            mainEl.style.marginTop = `${navHeight}px`;
         }
 
         const minutes = Number(meditate_minutes);
@@ -218,7 +244,7 @@ title: Thank you! 🙏
                 ${theme.ask}
             </p>
             <p>
-                <img src="{{ '/assets/img/website-logo.png' | relative_url }}" alt="Website logo" style="width: 48px; height: 48px; margin: 10px auto 6px; display: block;" />
+                <img src="{{ '/assets/img/website-logo.png' | relative_url }}" alt="Website logo" class="tipme-dynamic-logo" />
                 <a href="#paypal" style="text-decoration: none;">
                     <b>Buy the developer a cup of tea. 🍵</b>
                 </a>
