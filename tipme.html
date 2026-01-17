@@ -92,7 +92,7 @@ title: Thank you! 🙏
         function minutesCompliment(mins) {
             if (!Number.isFinite(mins) || mins <= 0) return "I’m really glad you’re here. You don’t have to earn rest.";
             if (mins < 10) return "Even a few breaths matter. I’m proud of you for showing up gently.";
-            if (mins < 30) return "A little time for you is still real care — you deserve that.";
+            if (mins < 30) return "A little time for you is still real care - you deserve that.";
             if (mins < 120) return "That’s a tender amount of time you gave yourself. Thank you for being kind to you.";
             if (mins < 300) return "That’s a lot of calm you offered your mind and body. I hope you felt held by it.";
             return "That’s a beautiful month of returning to yourself. Truly: well done, softly.";
@@ -119,7 +119,7 @@ title: Thank you! 🙏
             const baseThemes = {
                 0: {
                     vibe: "A gentle reset",
-                    hook: "New year or not — you don’t have to fix yourself to deserve care.",
+                    hook: "New year or not - you don’t have to fix yourself to deserve care.",
                     ask: "If those January breaths helped you feel a little more held, and you’d like to send some love back, you can.",
                     quoteText: "May all beings be safe, well, and at ease.",
                     quoteSource: "Buddhist loving-kindness (mettā) blessing",
@@ -135,12 +135,12 @@ title: Thank you! 🙏
                     vibe: "A soft shift of seasons",
                     hook: "When everything starts changing, your breath can be something steady.",
                     ask: "If March felt like a transition and this practice helped you stay grounded, and you’d like to send some love back, you can.",
-                    quoteText: "You don’t have to chase peace — you can return to it, right where you are.",
+                    quoteText: "You don’t have to chase peace - you can return to it, right where you are.",
                     quoteSource: "Buddhist practice (inspired)",
                 },
                 3: {
                     vibe: "More light, more ease",
-                    hook: "There’s nothing to prove here — just a moment to breathe and be.",
+                    hook: "There’s nothing to prove here - just a moment to breathe and be.",
                     ask: "If your April breaths brought a little ease, and you’d like to send some love back, you can.",
                     quoteText: "Peace comes from within; don’t look for it outside.",
                     quoteSource: "Buddhist saying (traditional)",
@@ -154,14 +154,14 @@ title: Thank you! 🙏
                 },
                 5: {
                     vibe: "A lighter rhythm",
-                    hook: "Sun’s up, shoulders down — you can let yourself exhale.",
+                    hook: "Sun’s up, shoulders down - you can let yourself exhale.",
                     ask: "If June was busy and these pauses helped you come back to yourself, and you’d like to send some love back, you can.",
                     quoteText: "Breathing in, I calm my body. Breathing out, I smile.",
                     quoteSource: "Thich Nhat Hanh (often taught as a gāthā)",
                 },
                 6: {
                     vibe: "Cooling down inside",
-                    hook: "Heat outside, soft inside — one calm breath at a time.",
+                    hook: "Heat outside, soft inside - one calm breath at a time.",
                     ask: "If July was a whirlwind and this practice helped you find a cool, calm corner inside, and you’d like to send some love back, you can.",
                     quoteText: "You, too, are worthy of your own kindness.",
                     quoteSource: "Buddhist practice (self-compassion inspired)",
@@ -189,7 +189,7 @@ title: Thank you! 🙏
                 },
                 10: {
                     vibe: "Soft gratitude",
-                    hook: "Thank you for taking care of yourself — you deserve your own kindness.",
+                    hook: "Thank you for taking care of yourself - you deserve your own kindness.",
                     ask: "If these November moments helped you feel supported, and you’d like to send some love back, you can.",
                     quoteText: "Let go, and be free.",
                     quoteSource: "Buddhist teaching (inspired)",
@@ -211,7 +211,7 @@ title: Thank you! 🙏
 
             // If Lunar New Year happened in the previous month, adjust the single hook/ask/quote.
             if (isLunarNewYearInMonth(prevYear, prevMonthIndex)) {
-                hook = "Lunar New Year: a gentle turning of the page — no pressure, just presence.";
+                hook = "Lunar New Year: a gentle turning of the page - no pressure, just presence.";
                 ask = "If Lunar New Year brought a lot of feelings (or a lot of people), and these pauses helped, and you’d like to send some love back, you can.";
                 quoteText = "Sabbe sattā bhavantu sukhitattā. (May all beings be well and happy.)";
                 quoteSource = "Traditional mettā phrase";
@@ -230,7 +230,7 @@ title: Thank you! 🙏
         <div class="main-explain-area jumbotron centered" style="text-align: center">
             <p>
                 <em>“${theme.quoteText}”</em><br />
-                <small>— ${theme.quoteSource}</small>
+                <small>- ${theme.quoteSource}</small>
             </p>
             <p>
                 <b>${theme.vibe}</b><br />
@@ -254,7 +254,7 @@ title: Thank you! 🙏
                 </small>
             </p>
             <p>
-                Sending you a virtual hug — and a big thank you. <br />
+                Sending you a virtual hug - and a big thank you. <br />
                 <small>
                     PS: ♥️ can also look like
                     writing a <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2">positive review for the app</a> or
