@@ -4,7 +4,7 @@ title: Thank you! 🙏
 # subtitle: Tip me a cup of tea 🫖🧘
 ---
 
-<div id=meditate>
+<div id="meditate">
 </div>
 
 <div class="main-explain-area jumbotron centered" style="text-align: center">
@@ -32,33 +32,208 @@ title: Thank you! 🙏
     const urlParams = new URLSearchParams(queryString);
     const meditate_minutes = urlParams.get('meditate-minutes');
     if (meditate_minutes != null) {
-        var meditate_block = `
+        const minutes = Number(meditate_minutes);
+
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        function getPreviousMonthContext(now = new Date()) {
+            const prev = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+            return {
+                monthIndex: prev.getMonth(),
+                monthName: monthNames[prev.getMonth()],
+                year: prev.getFullYear(),
+            };
+        }
+
+        function formatDurationFromMinutes(mins) {
+            if (!Number.isFinite(mins) || mins < 0) return null;
+            const totalMinutes = Math.floor(mins);
+            const hours = Math.floor(totalMinutes / 60);
+            const minutesLeft = totalMinutes % 60;
+            if (hours <= 0) return `${minutesLeft} minute${minutesLeft === 1 ? '' : 's'}`;
+            if (minutesLeft === 0) return `${hours} hour${hours === 1 ? '' : 's'}`;
+            return `${hours} hour${hours === 1 ? '' : 's'} ${minutesLeft} minute${minutesLeft === 1 ? '' : 's'}`;
+        }
+
+        function minutesCompliment(mins) {
+            if (!Number.isFinite(mins) || mins <= 0) return "I’m really glad you’re here. You don’t have to earn rest.";
+            if (mins < 10) return "Even a few breaths matter. I’m proud of you for showing up gently.";
+            if (mins < 30) return "A little time for you is still real care — you deserve that.";
+            if (mins < 120) return "That’s a tender amount of time you gave yourself. Thank you for being kind to you.";
+            if (mins < 300) return "That’s a lot of calm you offered your mind and body. I hope you felt held by it.";
+            return "That’s a beautiful month of returning to yourself. Truly: well done, softly.";
+        }
+
+        // Lunar New Year varies each year; keep a small lookup table.
+        // Dates are in local time; we only use the month/day.
+        const lunarNewYearDates = {
+            2024: new Date(2024, 1, 10),
+            2025: new Date(2025, 0, 29),
+            2026: new Date(2026, 1, 17),
+            2027: new Date(2027, 1, 6),
+            2028: new Date(2028, 0, 26),
+            2029: new Date(2029, 1, 13),
+            2030: new Date(2030, 1, 3),
+        };
+
+        function isLunarNewYearInMonth(year, monthIndex) {
+            const d = lunarNewYearDates[year];
+            return d && d.getFullYear() === year && d.getMonth() === monthIndex;
+        }
+
+        function getMonthlyTheme(prevMonthIndex, prevYear) {
+            const baseThemes = {
+                0: {
+                    vibe: "A gentle reset",
+                    hook: "New year or not — you don’t have to fix yourself to deserve care.",
+                    ask: "If those January breaths helped you feel a little more held, and you’d like to send some love back, you can.",
+                    quoteText: "May all beings be safe, well, and at ease.",
+                    quoteSource: "Buddhist loving-kindness (mettā) blessing",
+                },
+                1: {
+                    vibe: "Warmth in the quiet season",
+                    hook: "Even a small pause can feel like a little hug from the inside.",
+                    ask: "If your February pauses helped you feel a bit steadier, and you’d like to send some love back, you can.",
+                    quoteText: "Hatred doesn’t end hatred; only love ends it.",
+                    quoteSource: "Dhammapada (paraphrase)",
+                },
+                2: {
+                    vibe: "A soft shift of seasons",
+                    hook: "When everything starts changing, your breath can be something steady.",
+                    ask: "If March felt like a transition and this practice helped you stay grounded, and you’d like to send some love back, you can.",
+                    quoteText: "You don’t have to chase peace — you can return to it, right where you are.",
+                    quoteSource: "Buddhist practice (inspired)",
+                },
+                3: {
+                    vibe: "More light, more ease",
+                    hook: "There’s nothing to prove here — just a moment to breathe and be.",
+                    ask: "If your April breaths brought a little ease, and you’d like to send some love back, you can.",
+                    quoteText: "Peace comes from within; don’t look for it outside.",
+                    quoteSource: "Buddhist saying (traditional)",
+                },
+                4: {
+                    vibe: "Room to breathe",
+                    hook: "You’re allowed to rest, even when life is blooming all around you.",
+                    ask: "If May got lively and this practice helped you stay soft in the middle of it, and you’d like to send some love back, you can.",
+                    quoteText: "Just as a mother protects her only child, let your heart be boundless toward all.",
+                    quoteSource: "Karaṇīya Mettā Sutta (paraphrase)",
+                },
+                5: {
+                    vibe: "A lighter rhythm",
+                    hook: "Sun’s up, shoulders down — you can let yourself exhale.",
+                    ask: "If June was busy and these pauses helped you come back to yourself, and you’d like to send some love back, you can.",
+                    quoteText: "Breathing in, I calm my body. Breathing out, I smile.",
+                    quoteSource: "Thich Nhat Hanh (often taught as a gāthā)",
+                },
+                6: {
+                    vibe: "Cooling down inside",
+                    hook: "Heat outside, soft inside — one calm breath at a time.",
+                    ask: "If July was a whirlwind and this practice helped you find a cool, calm corner inside, and you’d like to send some love back, you can.",
+                    quoteText: "You, too, are worthy of your own kindness.",
+                    quoteSource: "Buddhist practice (self-compassion inspired)",
+                },
+                7: {
+                    vibe: "A gentle mid-year pause",
+                    hook: "A calm minute between adventures is still a real kind of care.",
+                    ask: "If August gave you a moment to reset and this practice helped, and you’d like to send some love back, you can.",
+                    quoteText: "Drop by drop, the water jar is filled.",
+                    quoteSource: "Dhammapada (paraphrase)",
+                },
+                8: {
+                    vibe: "Finding your footing",
+                    hook: "You can meet the day without abandoning yourself.",
+                    ask: "If September got structured and this practice helped you stay gentle with yourself, and you’d like to send some love back, you can.",
+                    quoteText: "In this moment, you can begin again.",
+                    quoteSource: "Buddhist practice (inspired)",
+                },
+                9: {
+                    vibe: "Cozy presence",
+                    hook: "When days get shorter, your breath can feel like a warm light.",
+                    ask: "If October felt intense and these pauses helped you feel more grounded, and you’d like to send some love back, you can.",
+                    quoteText: "With a gentle heart, even a difficult day can soften.",
+                    quoteSource: "Buddhist practice (inspired)",
+                },
+                10: {
+                    vibe: "Soft gratitude",
+                    hook: "Thank you for taking care of yourself — you deserve your own kindness.",
+                    ask: "If these November moments helped you feel supported, and you’d like to send some love back, you can.",
+                    quoteText: "Let go, and be free.",
+                    quoteSource: "Buddhist teaching (inspired)",
+                },
+                11: {
+                    vibe: "A year-end exhale",
+                    hook: "One calm minute in the holiday whirlwind can be a real act of love.",
+                    ask: "If December felt intense and this practice helped you find a softer place inside, and you’d like to send some love back, you can.",
+                    quoteText: "Radiate kindness in all directions, without limit.",
+                    quoteSource: "Buddhist loving-kindness (mettā) teaching (paraphrase)",
+                },
+            };
+
+            const theme = baseThemes[prevMonthIndex] || baseThemes[0];
+            let hook = theme.hook;
+            let ask = theme.ask;
+            let quoteText = theme.quoteText;
+            let quoteSource = theme.quoteSource;
+
+            // If Lunar New Year happened in the previous month, adjust the single hook/ask/quote.
+            if (isLunarNewYearInMonth(prevYear, prevMonthIndex)) {
+                hook = "Lunar New Year: a gentle turning of the page — no pressure, just presence.";
+                ask = "If Lunar New Year brought a lot of feelings (or a lot of people), and these pauses helped, and you’d like to send some love back, you can.";
+                quoteText = "Sabbe sattā bhavantu sukhitattā. (May all beings be well and happy.)";
+                quoteSource = "Traditional mettā phrase";
+            }
+
+            return { ...theme, hook, ask, quoteText, quoteSource };
+        }
+
+        const prev = getPreviousMonthContext();
+        const theme = getMonthlyTheme(prev.monthIndex, prev.year);
+        const compliment = minutesCompliment(minutes);
+        const durationText = formatDurationFromMinutes(minutes);
+        const displayedDuration = durationText || `${meditate_minutes} minutes`;
+
+        const meditate_block = `
         <div class="main-explain-area jumbotron centered" style="text-align: center">
             <p>
-                <b> You meditated for ${meditate_minutes} minutes last month 🧘‍♂️</b><br />
-                That’s basically monk-level commitment!
+                <b>You gave yourself ${displayedDuration} of calm in ${prev.monthName} ${prev.year} 🧘‍♂️</b><br />
+                ${compliment}
             </p>
             <p>
-                If my app helped you zen out, stress less, breathe through a weird family dinner, or smile for no reason - 
-                maybe toss a little ♥️ back my way? <br />
+                <b>${theme.vibe}</b><br />
+                ${theme.hook}
+            </p>
+            <p>
+                ${theme.ask}
+            </p>
+            <p>
+                <em>“${theme.quoteText}”</em><br />
+                <small>— ${theme.quoteSource}</small>
             </p>
             <p>
                 <b>Buy the developer a cup of tea. 🍵<br />
                 <small>
-                    (I promise to sip it mindfully)</b><br />
+                    (I promise to sip it mindfully)
                 </small>
+                </b>
             </p>
             <p>
-                Big thanks from your calm-on-your-watch friend! <br />
+                Sending you a virtual hug — and a big thank you. <br />
                 <small>
-                    PS: ♥️ can also look like  
-                    writing a <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2">positive review for the app</a> or 
+                    PS: ♥️ can also look like
+                    writing a <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2">positive review for the app</a> or
                     sending a brief "Thank you" to my <a href="mailto:florian.geigl+thankyou@gmail.com?subject=Thank you">mailbox</a>.
                 </small>
             </p>
         </div>
 
-        `
-        document.getElementById("meditate").outerHTML = meditate_block;
+        `;
+
+        const meditateEl = document.getElementById("meditate");
+        if (meditateEl) {
+            meditateEl.outerHTML = meditate_block;
+        }
     }
 </script>
