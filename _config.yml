@@ -21,11 +21,11 @@ author: Dr. Florian Geigl
 
 navbar-links:
   ℹ️ About Me:
-  - 🛩️ In the Air: "pilot/pilot"
+  - 🛩️ In the Air: "/pilot/pilot/"
   - ℹ️ About Me: "/"
-  🙏 Tip Me: "tipme"
+  🙏 Tip Me: "/tipme/"
   🌟 Projects:
-  - 🧘 Meditation & Breathwork Garmin App: "meditate_app"
+  - 🧘 Meditation & Breathwork Garmin App: "/meditate_app/"
 
 ################
 # --- Logo --- #
