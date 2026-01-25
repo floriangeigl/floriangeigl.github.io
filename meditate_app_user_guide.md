@@ -3,7 +3,11 @@ layout: page
 title: Meditation & Breathwork
 subtitle: User Guide
 ---
+<a id="meditation-breathwork"></a>
+
 # Meditation & Breathwork
+
+<a id="garmin-app-user-guide"></a>
 
 ## Garmin App User Guide
 
@@ -12,11 +16,32 @@ This guide is meant to support you — not overwhelm you.
 You don’t need to understand everything to begin.  
 Start with the **Beginner Guide**, and come back to the **Advanced Guide** whenever you’re curious.
 
+### Contents
+
+- [Beginner Guide](#beginner-guide)
+  - [What This App Is About](#what-this-app-is-about)
+  - [Starting Your First Session](#starting-your-first-session)
+  - [A Simple Way to Meditate](#a-simple-way-to-meditate)
+  - [Choosing a Session](#choosing-a-session)
+  - [Breathwork Sessions](#breathwork-sessions)
+  - [Understanding Your Session Data](#understanding-your-session-data)
+- [Advanced Guide](#advanced-guide)
+  - [Session Customization](#session-customization)
+  - [Custom Breathwork Patterns](#custom-breathwork-patterns)
+  - [Advanced HRV Metrics](#advanced-hrv-metrics)
+  - [Global Settings (Defaults for All Sessions)](#global-settings-defaults-for-all-sessions)
+  - [FAQs & Troubleshooting](#faqs-troubleshooting)
+- [Privacy](#privacy)
+
 ---
+
+<a id="beginner-guide"></a>
 
 # Beginner Guide
 
 _(Everything you need to get started)_
+
+<a id="what-this-app-is-about"></a>
 
 ## What This App Is About
 
@@ -32,6 +57,8 @@ It allows you to:
 The goal is **awareness, not performance**.
 
 ---
+
+<a id="starting-your-first-session"></a>
 
 ## Starting Your First Session
 
@@ -58,6 +85,8 @@ When you stop, you can save or discard the session.
 Saved sessions appear in Garmin Connect after syncing.
 
 ---
+
+<a id="a-simple-way-to-meditate"></a>
 
 ## A Simple Way to Meditate
 
@@ -180,6 +209,8 @@ And you’re allowed to do that gently - with warmth, humor, and a little self-r
 
 ---
 
+<a id="choosing-a-session"></a>
+
 ## Choosing a Session
 
 From the session picker you can scroll through available sessions and see:
@@ -197,6 +228,8 @@ From the session picker you can scroll through available sessions and see:
   For reliable HRV data, minimize wrist movement.
 
 ---
+
+<a id="breathwork-sessions"></a>
 
 ## Breathwork Sessions
 
@@ -230,6 +263,8 @@ Commonly used before sleep.
 
 ---
 
+<a id="understanding-your-session-data"></a>
+
 ## Understanding Your Session Data
 
 ### HRV (Heart Rate Variability)
@@ -257,9 +292,13 @@ Respiration data comes from Garmin sensors and is best used for trends, not prec
 
 ---
 
+<a id="advanced-guide"></a>
+
 # Advanced Guide
 
 _(For customization, deeper insight, and power users)_
+
+<a id="session-customization"></a>
 
 ## Session Customization
 
@@ -292,6 +331,8 @@ Priority order: final alert → last one-off → last repeating alert.
 
 ---
 
+<a id="custom-breathwork-patterns"></a>
+
 ## Custom Breathwork Patterns
 
 Breathwork patterns are created using **parallel interval alerts** with offsets.
@@ -311,6 +352,8 @@ Recommended vibration patterns:
 
 ---
 
+<a id="advanced-hrv-metrics"></a>
+
 ## Advanced HRV Metrics
 
 When HRV Tracking is set to **On Detailed**, the app records:
@@ -328,6 +371,8 @@ When HRV Tracking is set to **On Detailed**, the app records:
 These values are for **exploration and learning**, not evaluation.
 
 ---
+
+<a id="global-settings-defaults-for-all-sessions"></a>
 
 ## Global Settings (Defaults for All Sessions)
 
@@ -390,6 +435,8 @@ Access via:
 - Useful when HRV gets stuck
 
 ---
+
+<a id="faqs-troubleshooting"></a>
 
 ## FAQs & Troubleshooting
 
@@ -589,6 +636,8 @@ Most issues are easy to resolve, and nothing here means you’re doing anything 
 </details>
 
 ---
+
+<a id="privacy"></a>
 
 ## Privacy
 
