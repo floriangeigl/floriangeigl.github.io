@@ -23,7 +23,7 @@ Start with the **Beginner Guide**, and come back to the **Advanced Guide** whene
   - [Advanced HRV Metrics](#advanced-hrv-metrics)
   - [Global Settings (Defaults for All Sessions)](#global-settings-defaults-for-all-sessions)
 - [FAQs & Troubleshooting](#faqs-troubleshooting)
-  - [Privacy](#privacy)
+- [Data Privacy](#privacy)
 
 ---
 
@@ -631,7 +631,7 @@ Most issues are easy to resolve, and nothing here means you’re doing anything 
 
 <a id="privacy"></a>
 
-## Privacy
+# Data Privacy
 
 Your data stays yours.
 
