@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Meditation & Breathwork
-subtitle: User Guide
+subtitle: Garmin App User Guide
 ---
 <a id="meditation-breathwork"></a>
 
