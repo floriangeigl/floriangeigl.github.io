@@ -3,7 +3,7 @@ layout: page
 title: Meditation & Breathwork
 subtitle: User Guide
 ---
-This guide is meant to support you — not overwhelm you.
+This guide is meant to support you - not overwhelm you.
 
 You don’t need to understand everything to begin.  
 Start with the **Beginner Guide**, and come back to the **Advanced Guide** whenever you’re curious.
@@ -57,7 +57,7 @@ The goal is **awareness, not performance**.
 1. Open the app.
 2. Select a session from the list.
 3. Press **Start** (or tap the screen on touch devices).
-4. Try to keep your wrist still for the first moments — this helps sensors settle.
+4. Try to keep your wrist still for the first moments - this helps sensors settle.
 
 During the session you’ll see:
 
@@ -266,7 +266,7 @@ HRV reflects how much the time between heartbeats varies.
 - Higher HRV → calmer, more regulated states
 - Lower HRV → activation or stress
 
-Variability is **healthy** — it’s not something to fix.
+Variability is **healthy** - it’s not something to fix.
 
 ### Stress
 
