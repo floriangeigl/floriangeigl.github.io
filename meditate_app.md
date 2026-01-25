@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Meditation & Breathwork
-subtitle: A Mindful Companion - Right on Your Garmin Watch
+subtitle: Breathe in. Let go.
 ---
 ![meditate and breathwork app hero image](assets/img/hero_meditate.png)
 
@@ -26,9 +26,9 @@ What matters is discovering what supports **your** nervous system.
 
 ## A Practice Shaped Around You
 
-- Create sessions that fit your rhythm and attention  
-- Observe heart rate, HRV, stress, and breathing in real time  
-- Save sessions to Garmin Connect to gently support consistency and awareness over time  
+- Create sessions that fit your rhythm and attention
+- Observe heart rate, HRV, stress, and breathing in real time
+- Save sessions to Garmin Connect to gently support consistency and awareness over time
 
 Seeing your sessions over time is not about discipline or performance.  
 It simply helps you notice patterns, build familiarity, and stay mindful of a practice you chose for yourself.
@@ -44,7 +44,7 @@ A calm session is valuable because it allows your nervous system to spend more t
 At the same time, moving toward calm can bring up restlessness or sudden urges to get up and do something. This is often the mind trying to guide you back to what feels familiar - stress, activity, motion - because familiarity feels safe.
 
 You can meet these moments lightly:  
-*“Oh, I see you. You miss the chaos. Sneaky little mind.”*
+_“Oh, I see you. You miss the chaos. Sneaky little mind.”_
 
 A stressful session is valuable too. When stress remains high, it often means you stayed present with discomfort instead of reacting to it. You observed what was happening and allowed the body to settle in its own time. This builds the ability to stay grounded when life is challenging.
 
