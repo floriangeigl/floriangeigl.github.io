@@ -1,11 +1,8 @@
 ---
 layout: page
 title: Meditation & Breathwork
-subtitle: Breathe in. Let go.
+subtitle: A Mindful Companion - Right on Your Garmin Watch
 ---
-# Meditation & Breathwork  
-## A Mindful Companion - Right on Your Garmin Watch
-
 ![meditate and breathwork app hero image](assets/img/hero_meditate.png)
 
 If you have ever felt calm and uneasy at the same time, you are not broken. You are human.
