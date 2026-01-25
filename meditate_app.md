@@ -4,7 +4,7 @@ title: Meditation & Breathwork
 subtitle: A Mindful Companion - Right on Your Garmin Watch
 ---
 
-![meditate and breathwork app hero image](userGuideScreenshots/hero_meditate.png)
+![meditate and breathwork app hero image](meditate_app_user_guide/userGuideScreenshots/hero_meditate.png)
 
 If you have ever felt calm and uneasy at the same time, you are not broken. You are human.
 
@@ -74,5 +74,4 @@ Smile when the mind gets clever.
 
 [Download Meditation & Breathwork](https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b) and discover what truly supports your meditation and breathwork practice - one session at a time.
 
-For more details on features, frequently asked questions, and support, see the full user guide:  
-[https://geigl.online/meditate_app_user_guide/](https://geigl.online/meditate_app_user_guide/)
+For more details on features, frequently asked questions, and support, see the [full user guide](https://geigl.online/meditate_app_user_guide/).
