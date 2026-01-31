@@ -127,18 +127,62 @@
   <meta property="og:image" content="{{ img | absolute_url }}">
   {% endif %}
 
+  {%- capture canonical_url -%}
+    {%- if page.canonical_url -%}
+      {{ page.canonical_url | strip }}
+    {%- elsif page.url -%}
+      {%- if page.id -%}
+        {{ page.url | absolute_url }}
+      {%- else -%}
+        {{ page.url | absolute_url | strip_index }}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endcapture -%}
+
   {% if page.id %}
   <meta property="og:type" content="article">
   {% if author != "" %}
   <meta property="og:article:author" content="{{ author }}">
   {% endif %}
   <meta property="og:article:published_time" content="{{ page.date | date_to_xmlschema }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
   {% else %}
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url | strip_index }}">
-  <link rel="canonical" href="{{ page.url | absolute_url | strip_index }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% endif %}
+
+  {% if page.schema_type == 'Person' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ page.schema_name | default: author | jsonify }},
+    "url": {{ canonical_url | strip | jsonify }},
+    "image": {{ site.avatar | absolute_url | jsonify }}
+    {%- if page.schema_job_title -%}
+    ,"jobTitle": {{ page.schema_job_title | jsonify }}
+    {%- endif -%}
+    {%- if page.schema_address_locality or page.schema_address_country -%}
+    ,"address": {
+      "@type": "PostalAddress"
+      {%- if page.schema_address_locality -%}
+      ,"addressLocality": {{ page.schema_address_locality | jsonify }}
+      {%- endif -%}
+      {%- if page.schema_address_country -%}
+      ,"addressCountry": {{ page.schema_address_country | jsonify }}
+      {%- endif -%}
+    }
+    {%- endif -%}
+    {%- if page.schema_knows_about -%}
+    ,"knowsAbout": {{ page.schema_knows_about | jsonify }}
+    {%- endif -%}
+    {%- if page.schema_same_as -%}
+    ,"sameAs": {{ page.schema_same_as | jsonify }}
+    {%- endif -%}
+  }
+  </script>
   {% endif %}
 
   {% if img != "" and img != site.avatar %}

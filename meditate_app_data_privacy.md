@@ -2,9 +2,10 @@
 layout: page
 title: Data Privacy Policy
 subtitle: Effective Date: 2nd Aug 2025
+permalink: /meditate_app_data_privacy/
 ---
 
-At geigl.online, your privacy is important to me. This Privacy Policy explains how I collect, use, and protect your personal information when you use my [Meditation app](/meditate_app) on your Garmin device.
+At geigl.online, your privacy is important to me. This Privacy Policy explains how I collect, use, and protect your personal information when you use my [Meditation app](/meditate_app/) on your Garmin device.
 
 **1. Information I Collect**
 

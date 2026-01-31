@@ -2,6 +2,7 @@
 layout: page
 title: 🛩️ In The Air ✈️
 subtitle: Some Impressions
+permalink: /pilot/pilot/
 ---
 
 ![IMG_5312.JPG](img/IMG_5312.webp)

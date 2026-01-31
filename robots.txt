@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geigl.online/sitemap.xml

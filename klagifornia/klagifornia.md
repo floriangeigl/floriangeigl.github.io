@@ -2,6 +2,7 @@
 layout: page
 title: ☀️ Klagifornia ♥️
 subtitle: Some Impressions
+permalink: /klagifornia/klagifornia/
 ---
 ![paddle with duck](img/lake_mountains.webp)
 
