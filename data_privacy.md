@@ -3,6 +3,8 @@ layout: page
 title: Data Privacy Policy
 subtitle: Effective Date: 2nd Aug 2025
 permalink: /data_privacy/
+share-title: Website Data Privacy Policy | geigl.online
+share-description: Data privacy policy for geigl.online.
 ---
 
 At geigl.online, your privacy is important to me. This Privacy Policy explains how I collect, use, and protect your personal information when you visit my website.

@@ -3,6 +3,8 @@ layout: page
 title: 🛩️ In The Air ✈️
 subtitle: Some Impressions
 permalink: /pilot/pilot/
+share-title: In The Air | Private Pilot Photos | Florian Geigl
+share-description: Flight impressions and photos from Florian Geigl — private pilot based in Klagenfurt, Austria.
 ---
 
 ![IMG_5312.JPG](img/IMG_5312.webp)

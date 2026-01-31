@@ -3,6 +3,8 @@ layout: page
 title: ☀️ Klagifornia ♥️
 subtitle: Some Impressions
 permalink: /klagifornia/klagifornia/
+share-title: Klagifornia | Klagenfurt Photos | Florian Geigl
+share-description: Impressions from Klagenfurt ("Klagifornia") and around Wörthersee — photos by Florian Geigl.
 ---
 ![paddle with duck](img/lake_mountains.webp)
 

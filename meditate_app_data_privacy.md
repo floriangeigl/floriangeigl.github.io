@@ -3,6 +3,8 @@ layout: page
 title: Data Privacy Policy
 subtitle: Effective Date: 2nd Aug 2025
 permalink: /meditate_app_data_privacy/
+share-title: App Data Privacy Policy | Meditation & Breathwork (Garmin)
+share-description: Privacy policy for the Meditation & Breathwork Garmin watch app (data collected, usage, retention, and your rights).
 ---
 
 At geigl.online, your privacy is important to me. This Privacy Policy explains how I collect, use, and protect your personal information when you use my [Meditation app](/meditate_app/) on your Garmin device.
