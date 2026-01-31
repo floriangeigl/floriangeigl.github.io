@@ -15,6 +15,11 @@ title: geigl.online
 # Your name to show in the footer
 author: Dr. Florian Geigl
 
+# Used by Jekyll's `absolute_url` filter and plugins like `jekyll-sitemap`
+# to generate correct canonical URLs.
+url: "https://geigl.online"
+baseurl: ""
+
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
