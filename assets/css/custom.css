@@ -1,0 +1,28 @@
+/* Site-specific overrides (loaded after theme CSS)
+   Goal: reduce excessive vertical whitespace in jumbotrons across the site.
+*/
+
+.jumbotron {
+  /* Bootstrap's defaults are quite tall; tighten up globally */
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* The theme's global paragraph margins are large; keep jumbotrons compact */
+.jumbotron p {
+  margin: 0.75rem 0;
+}
+
+/* Avoid extra whitespace at the end of a jumbotron */
+.jumbotron > :last-child {
+  margin-bottom: 0;
+}
