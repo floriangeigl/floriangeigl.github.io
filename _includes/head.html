@@ -46,6 +46,8 @@
 
   <meta name="description" content="{{ description }}">
 
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
   {% if site.mobile-theme-col %}
   <meta name="theme-color" content="{{ site.mobile-theme-col }}">
   {% endif %}
@@ -125,6 +127,7 @@
 
   {% if img != "" %}
   <meta property="og:image" content="{{ img | absolute_url }}">
+  <meta property="og:image:alt" content="{{ page.share-img-alt | default: title | strip_html | xml_escape }}">
   {% endif %}
 
   {%- capture canonical_url -%}
@@ -157,35 +160,41 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": {{ page.schema_name | default: author | jsonify }},
+    "@type": "ProfilePage",
     "url": {{ canonical_url | strip | jsonify }},
-    "image": {{ site.avatar | absolute_url | jsonify }}
-    {%- if page.schema_job_title -%}
-    ,"jobTitle": {{ page.schema_job_title | jsonify }}
-    {%- endif -%}
-    {%- if page.schema_address_locality or page.schema_address_country -%}
-    ,"address": {
-      "@type": "PostalAddress"
-      {%- if page.schema_address_locality -%}
-      ,"addressLocality": {{ page.schema_address_locality | jsonify }}
+    "primaryImageOfPage": {{ site.avatar | absolute_url | jsonify }},
+    "mainEntity": {
+      "@type": "Person",
+      "@id": {{ canonical_url | append: '#person' | jsonify }},
+      "name": {{ page.schema_name | default: author | jsonify }},
+      "url": {{ canonical_url | strip | jsonify }},
+      "image": {{ site.avatar | absolute_url | jsonify }}
+      {%- if page.schema_job_title -%}
+      ,"jobTitle": {{ page.schema_job_title | jsonify }}
       {%- endif -%}
-      {%- if page.schema_address_country -%}
-      ,"addressCountry": {{ page.schema_address_country | jsonify }}
+      {%- if page.schema_address_locality or page.schema_address_country -%}
+      ,"address": {
+        "@type": "PostalAddress"
+        {%- if page.schema_address_locality -%}
+        ,"addressLocality": {{ page.schema_address_locality | jsonify }}
+        {%- endif -%}
+        {%- if page.schema_address_country -%}
+        ,"addressCountry": {{ page.schema_address_country | jsonify }}
+        {%- endif -%}
+      }
+      {%- endif -%}
+      {%- if page.schema_knows_about -%}
+      ,"knowsAbout": {{ page.schema_knows_about | jsonify }}
+      {%- endif -%}
+      {%- if page.schema_same_as -%}
+      ,"sameAs": {{ page.schema_same_as | jsonify }}
       {%- endif -%}
     }
-    {%- endif -%}
-    {%- if page.schema_knows_about -%}
-    ,"knowsAbout": {{ page.schema_knows_about | jsonify }}
-    {%- endif -%}
-    {%- if page.schema_same_as -%}
-    ,"sameAs": {{ page.schema_same_as | jsonify }}
-    {%- endif -%}
   }
   </script>
   {% endif %}
 
-  {% if img != "" and img != site.avatar %}
+  {% if img != "" %}
   <meta name="twitter:card" content="summary_large_image">
   {% else %}
   <meta name="twitter:card" content="summary">
@@ -198,6 +207,7 @@
 
   {% if img != "" %}
   <meta name="twitter:image" content="{{ img | absolute_url }}">
+  <meta name="twitter:image:alt" content="{{ page.share-img-alt | default: title | strip_html | xml_escape }}">
   {% endif %}
 
   {% include matomo.html %}
