@@ -7,7 +7,7 @@ share-title: Meditation & Breathwork User Guide (Garmin) | Florian Geigl
 share-description: Setup, features, FAQs, troubleshooting, and support for the Meditation & Breathwork Garmin watch app.
 ---
 
-This guide is meant to support you - not overwhelm you.
+This guide is meant to support you - not overwhelm you :)
 
 You don’t need to understand everything to begin.  
 Start with the **Beginner Guide**, and come back to the **Advanced Guide** whenever you’re curious.
@@ -52,6 +52,8 @@ It allows you to:
 - save sessions to Garmin Connect to notice patterns over time
 
 The goal is **awareness, not performance**.
+
+If you’d like a short, motivating reflection on why slowing down matters (and why it’s so hard in a fast-paced culture), **[Cory Muscara's The Practicing Human podcast - “Why You Need to Slow Down”](https://practicinghuman.buzzsprout.com/597910/episodes/18537284-why-you-need-to-slow-down)** explores how speed can erode relationships, happiness, and clear decision-making.
 
 ---
 
