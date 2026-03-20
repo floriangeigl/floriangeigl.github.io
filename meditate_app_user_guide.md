@@ -7,6 +7,9 @@ share-title: Meditation & Breathwork User Guide (Garmin) | Florian Geigl
 share-description: Setup, features, FAQs, troubleshooting, and support for the Meditation & Breathwork Garmin watch app.
 ---
 
+🌐 **English** | [Deutsch](/meditate_app_user_guide-de/) | [Español](/meditate_app_user_guide-es/) | [한국어](/meditate_app_user_guide-ko/) | [Português](/meditate_app_user_guide-pt/)
+
+
 This guide is meant to support you - not overwhelm you :)
 
 You don’t need to understand everything to begin.  
