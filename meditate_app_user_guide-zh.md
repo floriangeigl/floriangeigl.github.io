@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 冥想与呼吸练习
+title: Meditation & Breathwork
 subtitle: Garmin 应用用户指南
 permalink: /meditate_app_user_guide-zh/
-share-title: 冥想与呼吸练习用户指南 (Garmin) | Florian Geigl
-share-description: 冥想与呼吸练习 Garmin 手表应用的设置、功能、常见问题、故障排查与支持。
+share-title: Meditation & Breathwork用户指南 (Garmin) | Florian Geigl
+share-description: Meditation & Breathwork Garmin 手表应用的设置、功能、常见问题、故障排查与支持。
 ---
 
 <div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <b>中文</b></small></div>
@@ -45,7 +45,7 @@ _(快速开始所需的一切)_
 
 ## 这个应用是做什么的
 
-冥想与呼吸练习可以帮助你在练习时保持在场，并温和地观察身体如何反应。
+Meditation & Breathwork可以帮助你在练习时保持在场，并温和地观察身体如何反应。
 
 你可以：
 

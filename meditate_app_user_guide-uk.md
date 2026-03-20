@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Медитація та дихальні практики
+title: Meditation & Breathwork
 subtitle: Посібник користувача Garmin-застосунку
 permalink: /meditate_app_user_guide-uk/
-share-title: Посібник користувача Медитація та дихальні практики (Garmin) | Florian Geigl
-share-description: Налаштування, функції, FAQ, усунення проблем і підтримка для Garmin-застосунку Медитація та дихальні практики.
+share-title: Посібник користувача Meditation & Breathwork (Garmin) | Florian Geigl
+share-description: Налаштування, функції, FAQ, усунення проблем і підтримка для Garmin-застосунку Meditation & Breathwork.
 ---
 
 <div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <b>Українська</b> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
@@ -45,7 +45,7 @@ _(Усе, що потрібно для старту)_
 
 ## Про що цей застосунок
 
-Медитація та дихальні практики допомагають залишатися присутніми й м’яко спостерігати, як тіло реагує під час медитації та дихання.
+Meditation & Breathwork допомагають залишатися присутніми й м’яко спостерігати, як тіло реагує під час медитації та дихання.
 
 Ви можете:
 
