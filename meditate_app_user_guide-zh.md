@@ -7,7 +7,7 @@ share-title: 冥想与呼吸练习用户指南 (Garmin) | Florian Geigl
 share-description: 冥想与呼吸练习 Garmin 手表应用的设置、功能、常见问题、故障排查与支持。
 ---
 
-🌐 [English](/meditate_app_user_guide/) | [Deutsch](/meditate_app_user_guide-de/) | [Español](/meditate_app_user_guide-es/) | [Français](/meditate_app_user_guide-fr/) | [日本語](/meditate_app_user_guide-ja/) | [한국어](/meditate_app_user_guide-ko/) | [Português](/meditate_app_user_guide-pt/) | [Українська](/meditate_app_user_guide-uk/) | **中文**
+<div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <b>中文</b></small></div>
 
 
 这份指南是为了支持你，而不是让你有压力 :)

@@ -7,7 +7,7 @@ share-title: Guide utilisateur Méditation et Respiration (Garmin) | Florian Gei
 share-description: Installation, fonctionnalités, FAQ, dépannage et support pour l’app Garmin Méditation et Respiration.
 ---
 
-🌐 [English](/meditate_app_user_guide/) | [Deutsch](/meditate_app_user_guide-de/) | [Español](/meditate_app_user_guide-es/) | **Français** | [日本語](/meditate_app_user_guide-ja/) | [한국어](/meditate_app_user_guide-ko/) | [Português](/meditate_app_user_guide-pt/) | [Українська](/meditate_app_user_guide-uk/) | [中文](/meditate_app_user_guide-zh/)
+<div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <b>Français</b> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
 
 
 Ce guide est là pour vous aider - pas pour vous submerger :)

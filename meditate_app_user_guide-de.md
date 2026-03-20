@@ -7,7 +7,7 @@ share-title: Meditation & Atemarbeit Benutzerhandbuch (Garmin) | Florian Geigl
 share-description: Einrichtung, Funktionen, FAQs, Fehlerbehebung und Support für die Garmin-Uhren-App Meditation & Atemarbeit.
 ---
 
-🌐 [English](/meditate_app_user_guide/) | **Deutsch** | [Español](/meditate_app_user_guide-es/) | [Français](/meditate_app_user_guide-fr/) | [日本語](/meditate_app_user_guide-ja/) | [한국어](/meditate_app_user_guide-ko/) | [Português](/meditate_app_user_guide-pt/) | [Українська](/meditate_app_user_guide-uk/) | [中文](/meditate_app_user_guide-zh/)
+<div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <b>Deutsch</b> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
 
 
 Dieser Leitfaden soll dich unterstützen - nicht überfordern :)

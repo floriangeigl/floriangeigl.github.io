@@ -7,7 +7,7 @@ share-title: Meditation & Breathwork ユーザーガイド (Garmin) | Florian Ge
 share-description: Meditation & Breathwork Garminウォッチアプリの設定、機能、FAQ、トラブルシューティング、サポート。
 ---
 
-🌐 [English](/meditate_app_user_guide/) | [Deutsch](/meditate_app_user_guide-de/) | [Español](/meditate_app_user_guide-es/) | [Français](/meditate_app_user_guide-fr/) | **日本語** | [한국어](/meditate_app_user_guide-ko/) | [Português](/meditate_app_user_guide-pt/) | [Українська](/meditate_app_user_guide-uk/) | [中文](/meditate_app_user_guide-zh/)
+<div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <b>日本語</b> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
 
 
 このガイドは、あなたを助けるためのものです。情報を詰め込みすぎないように作っています :)
