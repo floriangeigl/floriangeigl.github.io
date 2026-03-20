@@ -1,4 +1,10 @@
-{% if include.css.sri %}
+{% if include.css.critical %}
+  {% if include.css.sri %}
+    <link rel="stylesheet" href="{{ include.css.href }}" integrity="{{ include.css.sri }}" crossorigin="anonymous">
+  {% else %}
+    <link rel="stylesheet" href="{{ include.css.href }}">
+  {% endif %}
+{% elsif include.css.sri %}
   <link rel="preload" href="{{ include.css.href }}" as="style" onload="this.onload=null;this.rel='stylesheet'"  integrity="{{ include.css.sri }}" crossorigin="anonymous">
   <noscript><link rel="stylesheet" href="{{ include.css.href }}" integrity="{{ include.css.sri }}" crossorigin="anonymous"></noscript>
 {% elsif include.css.href %}
