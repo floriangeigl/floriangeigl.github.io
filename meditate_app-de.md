@@ -10,7 +10,7 @@ share-description: Meditation und Atemarbeit auf deiner Garmin Uhr – Achtsamke
 <div><small>🌐 <a href="/meditate_app/">English</a> | <b>Deutsch</b> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <a href="/meditate_app-ja/">日本語</a> | <a href="/meditate_app-ko/">한국어</a> | <a href="/meditate_app-pt/">Português</a> | <a href="/meditate_app-uk/">Українська</a> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![Hero-Bild der App für Meditation und Atemarbeit](meditate_app_user_guide/userGuideScreenshots/hero_meditate.png)
+![Hero-Bild der App für Meditation und Atemarbeit](meditate_app_user_guide/userGuideScreenshots/hero_meditate-de.png)
 
 Wenn du dich schon einmal gleichzeitig ruhig und unruhig gefühlt hast, bist du nicht kaputt. Du bist menschlich.
 

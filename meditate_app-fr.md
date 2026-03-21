@@ -10,7 +10,7 @@ share-description: Méditation et respiration sur ta montre Garmin — pleine co
 <div><small>🌐 <a href="/meditate_app/">English</a> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <b>Français</b> | <a href="/meditate_app-ja/">日本語</a> | <a href="/meditate_app-ko/">한국어</a> | <a href="/meditate_app-pt/">Português</a> | <a href="/meditate_app-uk/">Українська</a> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![image principale de l’app Méditation & Respiration](meditate_app_user_guide/userGuideScreenshots/hero_meditate.png)
+![image principale de l’app Méditation & Respiration](meditate_app_user_guide/userGuideScreenshots/hero_meditate-fr.png)
 
 Si tu t’es déjà senti calme et mal à l’aise en même temps, tu n’as rien de cassé. Tu es humain.
 

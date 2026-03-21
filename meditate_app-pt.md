@@ -10,7 +10,7 @@ share-description: Meditação e respiração no seu relógio Garmin — mindful
 <div><small>🌐 <a href="/meditate_app/">English</a> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <a href="/meditate_app-ja/">日本語</a> | <a href="/meditate_app-ko/">한국어</a> | <b>Português</b> | <a href="/meditate_app-uk/">Українська</a> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![imagem principal do app Meditação & Respiração](meditate_app_user_guide/userGuideScreenshots/hero_meditate.png)
+![imagem principal do app Meditação & Respiração](meditate_app_user_guide/userGuideScreenshots/hero_meditate-pt.png)
 
 Se você já se sentiu calmo e inquieto ao mesmo tempo, não tem nada de errado com você. Você é humano.
 
