@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Meditation & Breathwork
+title: 명상 & 호흡 훈련
 subtitle: Garmin 앱 사용자 가이드
 permalink: /meditate_app_user_guide-ko/
-share-title: Meditation & Breathwork 사용자 가이드 (Garmin) | Florian Geigl
-share-description: Garmin 시계 앱 Meditation & Breathwork의 설정, 기능, FAQ, 문제 해결, 지원 안내.
+share-title: 명상 & 호흡 훈련 사용자 가이드 (Garmin) | Florian Geigl
+share-description: Garmin 시계 앱 명상 & 호흡 훈련의 설정, 기능, FAQ, 문제 해결, 지원 안내.
 ---
 
 <div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <b>한국어</b> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
@@ -45,7 +45,7 @@ _(시작하는 데 필요한 내용을 담았어요)_
 
 ## 이 앱은 무엇을 위한 앱인가요
 
-Meditation & Breathwork는 명상과 호흡 훈련을 하는 동안, 몸이 어떻게 반응하는지 부드럽게 살피면서 현재에 머물 수 있도록 도와줘요.
+명상 & 호흡 훈련는 명상과 호흡 훈련을 하는 동안, 몸이 어떻게 반응하는지 부드럽게 살피면서 현재에 머물 수 있도록 도와줘요.
 
 이 앱으로 할 수 있는 것:
 

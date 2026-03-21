@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Meditation & Breathwork
+title: Méditation & Respiration
 subtitle: Guide utilisateur de l’app Garmin
 permalink: /meditate_app_user_guide-fr/
-share-title: Guide utilisateur Meditation & Breathwork (Garmin) | Florian Geigl
-share-description: Installation, fonctionnalités, FAQ, dépannage et support pour l’app Garmin Meditation & Breathwork.
+share-title: Guide utilisateur Méditation & Respiration (Garmin) | Florian Geigl
+share-description: Installation, fonctionnalités, FAQ, dépannage et support pour l’app Garmin Méditation & Respiration.
 ---
 
 <div><small>🌐 <a href="/meditate_app_user_guide/">English</a> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <b>Français</b> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
@@ -19,7 +19,7 @@ Commence par le **Guide débutant**, puis reviens au **Guide avancé** quand tu 
 
 - [Guide débutant](#beginner-guide)
   - [À quoi sert cette app](#what-this-app-is-about)
-  - [Démarrer votre première session](#starting-your-first-session)
+  - [Démarrer ta première session](#starting-your-first-session)
   - [Une façon simple de méditer](#a-simple-way-to-meditate)
   - [Choisir une session](#choosing-a-session)
   - [Sessions de respiration](#breathwork-sessions)
@@ -45,14 +45,14 @@ _(Tout ce qu’il faut pour bien commencer)_
 
 ## À quoi sert cette app
 
-Meditation & Breathwork t’aide à rester présent tout en observant en douceur comment ton corps réagit pendant la méditation et la respiration.
+Méditation & Respiration t’aide à rester présent tout en observant en douceur comment ton corps réagit pendant la méditation et la respiration.
 
 Elle te permet de :
 
 - lancer des sessions simples ou structurées
 - recevoir des signaux vibrants au lieu de distractions visuelles
 - observer fréquence cardiaque, VFC, stress et respiration
-- enregistrer vos sessions dans Garmin Connect pour repérer des schémas dans le temps
+- enregistrer tes sessions dans Garmin Connect pour repérer des schémas au fil du temps
 
 L’objectif est **la conscience, pas la performance**.
 
@@ -62,7 +62,7 @@ Si tu veux une réflexion courte et motivante sur l’importance de ralentir (et
 
 <a id="starting-your-first-session"></a>
 
-## Démarrer votre première session
+## Démarrer ta première session
 
 1. Ouvre l’app.
 2. Sélectionne une session dans la liste.
