@@ -360,7 +360,7 @@ Padrões de vibração recomendados:
 
 ## Métricas avançadas de HRV
 
-Quando o HRV Tracking está em **On Detailed**, o app registra:
+Quando o monitoramento de HRV está em **On Detailed**, o app registra:
 
 - RMSSD
 - Diferenças sucessivas entre batimentos
@@ -385,13 +385,13 @@ Acesse via:
 - Seletor de sessões → segurar menu → Global Settings
 - Segure menu novamente para editar
 
-### HRV Tracking (padrão)
+### Monitoramento de HRV (padrão)
 
 - Off
 - On
 - On Detailed (padrão)
 
-### Confirm Save
+### Confirmar salvamento
 
 - Ask
 - Auto Yes
@@ -432,7 +432,7 @@ Acesse via:
 - Suporta placeholder `[time]`
 - Nome da atividade limitado a 21 caracteres
 
-### Reinício de sensor
+### Reinício dos sensores
 
 - Reinicia todos os sensores de FC
 - Fecha o app

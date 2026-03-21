@@ -360,7 +360,7 @@ Schémas de vibration recommandés :
 
 ## Métriques VFC avancées
 
-Quand HRV Tracking est réglé sur **On Detailed**, l’app enregistre :
+Quand le suivi VFC est réglé sur **On Detailed**, l’app enregistre :
 
 - RMSSD
 - Différences successives entre battements
@@ -385,13 +385,13 @@ Accès :
 - Sélecteur de sessions → maintenir menu → Global Settings
 - Maintenir menu à nouveau pour modifier
 
-### HRV Tracking (par défaut)
+### Suivi VFC (par défaut)
 
 - Off
 - On
 - On Detailed (par défaut)
 
-### Confirm Save
+### Confirmer l’enregistrement
 
 - Ask
 - Auto Yes
