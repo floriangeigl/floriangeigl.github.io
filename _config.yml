@@ -25,12 +25,13 @@ baseurl: ""
 ###############################################
 
 navbar-links:
-  ℹ️ About Me:
+  ℹ️ About Me: "/"
+  📸 Gallery:
   - 🛩️ In the Air: "/pilot/pilot/"
-  - ℹ️ About Me: "/"
-  🙏 Tip Me: "/tipme/"
+  - 🏔️ Klagifornia: "/klagifornia/klagifornia/"
   🌟 Projects:
   - 🧘 Meditation & Breathwork Garmin App: "/meditate_app/"
+  - 🙏 Tip Me: "/tipme/"
 
 ################
 # --- Logo --- #
