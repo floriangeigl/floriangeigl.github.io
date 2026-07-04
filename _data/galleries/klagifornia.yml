@@ -1,20 +1,72 @@
-# Seed manifest — captions migrated from klagifornia/klagifornia.md alt text (§4).
-# The generator will fill in thumb/width/height/date on first run and preserve these captions.
-- file: lake_mountains.webp
-  caption: "paddle with duck"
-- file: paddle_01.webp
-  caption: "paddle"
-- file: klagifornia_venice.webp
-  caption: "klagifornia-venice"
 - file: paddle_duck.webp
-  caption: "paddle with duck"
-- file: IMG_5727-EDIT.webp
-  caption: "Seespitz"
-- file: 0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
-  caption: "Stift Viktring"
-- file: IMG_5944.webp
-  caption: "Stift Viktring"
+  thumb: thumbs/paddle_duck.webp
+  width: 840
+  height: 1120
+  thumb_width: 450
+  thumb_height: 600
+  date: '2026-01-01T11:48:49'
+  caption: paddle with duck
+- file: paddle_01.webp
+  thumb: thumbs/paddle_01.webp
+  width: 840
+  height: 1120
+  thumb_width: 450
+  thumb_height: 600
+  date: '2026-01-01T11:48:49'
+  caption: paddle
+- file: lake_mountains.webp
+  thumb: thumbs/lake_mountains.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: paddle with duck
+- file: klagifornia_venice.webp
+  thumb: thumbs/klagifornia_venice.webp
+  width: 840
+  height: 1120
+  thumb_width: 450
+  thumb_height: 600
+  date: '2026-01-01T11:48:49'
+  caption: klagifornia-venice
 - file: IMG_6148.webp
-  caption: ""
+  thumb: thumbs/IMG_6148.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: ''
 - file: IMG_6143-EFFECTS.webp
-  caption: ""
+  thumb: thumbs/IMG_6143-EFFECTS.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: ''
+- file: IMG_5944.webp
+  thumb: thumbs/IMG_5944.webp
+  width: 840
+  height: 630
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-01-01T11:48:49'
+  caption: Stift Viktring
+- file: IMG_5727-EDIT.webp
+  thumb: thumbs/IMG_5727-EDIT.webp
+  width: 840
+  height: 630
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-01-01T11:48:49'
+  caption: Seespitz
+- file: 0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
+  thumb: thumbs/0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: Stift Viktring
