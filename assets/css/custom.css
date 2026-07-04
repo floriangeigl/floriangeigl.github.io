@@ -116,28 +116,40 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
   color: #fff;
-  padding: 4px 8px;
-  font-size: 0.8rem;
+  padding: 32px 12px 10px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   line-height: 1.4;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .masonry-item:hover .masonry-caption {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* PhotoSwipe lightbox custom caption */
 .pswp__custom-caption {
-  background: rgba(0, 0, 0, 0.55);
-  font-size: 0.85rem;
+  background: rgba(20, 20, 20, 0.45);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: #fff;
   width: calc(100% - 32px);
   max-width: 400px;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 8px 14px;
+  border-radius: 6px;
   position: absolute;
   left: 50%;
   bottom: 16px;
@@ -163,4 +175,211 @@
   .masonry-item {
     width: 100%;
   }
+}
+
+/* ============================================================
+   Gallery Edit Mode
+   ============================================================ */
+
+/* Ghost pencil icon — fixed bottom-right, nearly invisible until hovered */
+#gallery-edit-ghost {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9000;
+  background: none;
+  border: none;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 0.4rem;
+  cursor: pointer;
+  opacity: 0.07;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  color: inherit;
+  border-radius: 4px;
+}
+
+#gallery-edit-ghost:hover {
+  opacity: 0.45;
+}
+
+#gallery-edit-ghost.active {
+  opacity: 1;
+  color: #f0a500;
+}
+
+/* Floating action bar at top of viewport */
+#gallery-edit-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9001;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  background: rgba(18, 18, 18, 0.94);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  font-size: 0.82rem;
+  color: #fff;
+}
+
+.gal-edit-bar-label {
+  font-weight: 600;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.gal-copy-btn {
+  background: #f0a500;
+  color: #000;
+  border: none;
+  padding: 0.28rem 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.gal-copy-btn:hover {
+  background: #ffc107;
+}
+
+.gal-copy-btn.copied {
+  background: #28a745;
+  color: #fff;
+}
+
+.gal-edit-close-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.28rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.gal-edit-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Push page content down to clear the edit bar */
+body.gallery-edit-active {
+  padding-top: 44px;
+}
+
+/* Gallery grid in edit mode */
+.gallery-edit-mode {
+  cursor: default;
+}
+
+.gallery-edit-mode .masonry-item {
+  cursor: grab;
+  outline: 2px dashed rgba(240, 165, 0, 0.55);
+  outline-offset: -2px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery-edit-mode .masonry-item:active {
+  cursor: grabbing;
+}
+
+/* SortableJS drag states */
+.gal-edit-sortable-ghost {
+  opacity: 0.3;
+}
+
+.gal-edit-sortable-chosen {
+  outline: 2px solid #f0a500 !important;
+  outline-offset: -2px;
+}
+
+/* Hide original caption span while the input overlay is active */
+.masonry-caption.hidden-for-edit {
+  display: none !important;
+}
+
+/* Inline caption input overlay */
+.gal-caption-input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  outline: none;
+  z-index: 10;
+  /* Always visible in edit mode — no hover required */
+  opacity: 1;
+}
+
+.gal-caption-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.gal-caption-input:focus {
+  background: rgba(0, 0, 0, 0.9);
+  border-top-color: #f0a500;
+}
+
+/* Rotation controls overlay (top of each image item in edit mode) */
+.gal-rotation-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 3px 6px;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.gal-rotate-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 1rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.gal-rotate-btn:hover {
+  background: rgba(240, 165, 0, 0.7);
+  border-color: #f0a500;
+}
+
+.gal-rotation-label {
+  color: #fff;
+  font-size: 0.72rem;
+  min-width: 2.2em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth image rotation preview in edit mode */
+.gallery-edit-mode .masonry-item img {
+  transition: transform 0.25s ease;
 }
