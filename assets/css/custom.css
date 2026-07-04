@@ -63,6 +63,53 @@
   display: block;
 }
 
+/* Video items: poster <img> underneath, hover-autoplay <video> on top */
+.masonry-video-el {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.masonry-video:hover .masonry-video-el {
+  opacity: 1;
+}
+
+/* Play-icon badge on video thumbnails */
+.masonry-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.masonry-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent #fff;
+}
+
+/* Hide the play badge while the video is previewing on hover */
+.masonry-video:hover .masonry-play {
+  opacity: 0;
+}
+
 /* Hover caption overlay */
 .masonry-caption {
   position: absolute;

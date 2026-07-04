@@ -19,6 +19,7 @@ const __dirname = dirname(__filename);
 const repoRoot = join(__dirname, '..', '..');
 
 const IMAGE_EXTS = new Set(['.webp', '.jpg', '.jpeg', '.png']);
+const VIDEO_EXTS = new Set(['.mp4', '.webm', '.mov']);
 
 function loadConfig() {
   return JSON.parse(readFileSync(join(__dirname, 'galleries.json'), 'utf-8'));
@@ -77,6 +78,42 @@ function formatDate(date) {
   return date.toISOString().replace(/\.\d{3}Z$/, '');
 }
 
+/** Read the display dimensions of a video via ffprobe. */
+function getVideoDimensions(srcPath) {
+  const out = execSync(
+    `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of json "${srcPath}"`,
+    { encoding: 'utf-8' }
+  );
+  const info = JSON.parse(out);
+  const stream = info.streams && info.streams[0];
+  return { width: stream.width, height: stream.height };
+}
+
+/** Extract a single poster frame (~1s in) from a video as a PNG buffer. */
+function extractPosterBuffer(srcPath) {
+  return execSync(
+    `ffmpeg -v error -ss 1 -i "${srcPath}" -frames:v 1 -f image2pipe -vcodec png pipe:1`,
+    { maxBuffer: 1024 * 1024 * 128 }
+  );
+}
+
+/** Video creation date from container metadata, if present. */
+function getVideoDate(srcPath) {
+  try {
+    const out = execSync(
+      `ffprobe -v error -show_entries format_tags=creation_time -of default=noprint_wrappers=1:nokey=1 "${srcPath}"`,
+      { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }
+    ).trim();
+    if (out) {
+      const d = new Date(out);
+      if (!isNaN(d.getTime())) return d;
+    }
+  } catch {
+    // ignore
+  }
+  return null;
+}
+
 async function processGallery(config) {
   const { key, imageDir, manifest: manifestRelPath } = config;
   const imageDirAbs = join(repoRoot, imageDir);
@@ -90,9 +127,12 @@ async function processGallery(config) {
 
   mkdirSync(thumbDirAbs, { recursive: true });
 
-  // List source images at top level (exclude thumbs/ subdir). Sort for determinism.
+  // List source media at top level (exclude thumbs/ subdir). Sort for determinism.
   const sourceFiles = readdirSync(imageDirAbs)
-    .filter(f => IMAGE_EXTS.has(extname(f).toLowerCase()))
+    .filter(f => {
+      const e = extname(f).toLowerCase();
+      return IMAGE_EXTS.has(e) || VIDEO_EXTS.has(e);
+    })
     .sort();
 
   // Load existing manifest to preserve captions
@@ -104,22 +144,13 @@ async function processGallery(config) {
 
   for (const file of sourceFiles) {
     const srcPath = join(imageDirAbs, file);
-    const thumbBasename = basename(file, extname(file)) + '.webp';
+    const ext = extname(file).toLowerCase();
+    const isVideo = VIDEO_EXTS.has(ext);
+    const thumbBasename = basename(file, ext) + '.webp';
     const thumbPath = join(thumbDirAbs, thumbBasename);
     const thumbRelative = `thumbs/${thumbBasename}`;
 
-    // Always (re)read original dimensions for manifest accuracy
-    const srcMeta = await sharp(srcPath).metadata();
-
-    // Account for EXIF orientation: for orientations 5-8 the image is rotated
-    // 90°, so its displayed dimensions are swapped relative to the stored pixels.
-    let origWidth = srcMeta.width;
-    let origHeight = srcMeta.height;
-    if (srcMeta.orientation && srcMeta.orientation >= 5) {
-      [origWidth, origHeight] = [origHeight, origWidth];
-    }
-
-    // Decide whether to (re)generate the thumbnail
+    // Decide whether to (re)generate the thumbnail/poster
     let needsRegen = true;
     if (existsSync(thumbPath)) {
       const srcMtime = statSync(srcPath).mtimeMs;
@@ -127,28 +158,65 @@ async function processGallery(config) {
       if (thumbMtime >= srcMtime) needsRegen = false;
     }
 
-    let thumb_width, thumb_height;
-    if (needsRegen) {
-      const info = await sharp(srcPath)
-        .rotate() // auto-orient from EXIF so thumbnails are never sideways
-        .resize({ width: 600, height: 600, fit: 'inside', withoutEnlargement: true })
-        .webp({ quality: 72, effort: 4 })
-        .toFile(thumbPath);
-      thumb_width = info.width;
-      thumb_height = info.height;
-      thumbsGenerated++;
+    let origWidth, origHeight, thumb_width, thumb_height;
+
+    if (isVideo) {
+      // Original (display) dimensions from ffprobe
+      const dims = getVideoDimensions(srcPath);
+      origWidth = dims.width;
+      origHeight = dims.height;
+
+      // Poster thumbnail from a single extracted frame
+      if (needsRegen) {
+        const posterBuffer = extractPosterBuffer(srcPath);
+        const info = await sharp(posterBuffer)
+          .rotate()
+          .resize({ width: 600, height: 600, fit: 'inside', withoutEnlargement: true })
+          .webp({ quality: 72, effort: 4 })
+          .toFile(thumbPath);
+        thumb_width = info.width;
+        thumb_height = info.height;
+        thumbsGenerated++;
+      } else {
+        const thumbMeta = await sharp(thumbPath).metadata();
+        thumb_width = thumbMeta.width;
+        thumb_height = thumbMeta.height;
+        thumbsCached++;
+      }
     } else {
-      const thumbMeta = await sharp(thumbPath).metadata();
-      thumb_width = thumbMeta.width;
-      thumb_height = thumbMeta.height;
-      thumbsCached++;
+      // Always (re)read original dimensions for manifest accuracy
+      const srcMeta = await sharp(srcPath).metadata();
+
+      // Account for EXIF orientation: for orientations 5-8 the image is rotated
+      // 90°, so its displayed dimensions are swapped relative to the stored pixels.
+      origWidth = srcMeta.width;
+      origHeight = srcMeta.height;
+      if (srcMeta.orientation && srcMeta.orientation >= 5) {
+        [origWidth, origHeight] = [origHeight, origWidth];
+      }
+
+      if (needsRegen) {
+        const info = await sharp(srcPath)
+          .rotate() // auto-orient from EXIF so thumbnails are never sideways
+          .resize({ width: 600, height: 600, fit: 'inside', withoutEnlargement: true })
+          .webp({ quality: 72, effort: 4 })
+          .toFile(thumbPath);
+        thumb_width = info.width;
+        thumb_height = info.height;
+        thumbsGenerated++;
+      } else {
+        const thumbMeta = await sharp(thumbPath).metadata();
+        thumb_width = thumbMeta.width;
+        thumb_height = thumbMeta.height;
+        thumbsCached++;
+      }
     }
 
-    // Date: EXIF DateTimeOriginal → git commit date → build time
-    const exifDate = await getExifDate(srcPath);
+    // Date: EXIF/container date → git commit date → build time
+    const mediaDate = isVideo ? getVideoDate(srcPath) : await getExifDate(srcPath);
     let date;
-    if (exifDate) {
-      date = formatDate(exifDate);
+    if (mediaDate) {
+      date = formatDate(mediaDate);
     } else {
       const gitDate = getGitCommitDate(`${imageDir}/${file}`);
       date = gitDate ? formatDate(gitDate) : formatDate(new Date());
@@ -160,10 +228,10 @@ async function processGallery(config) {
     if (existingEntry && existingEntry.caption) {
       caption = existingEntry.caption;
     } else {
-      caption = await getExifCaption(srcPath);
+      caption = isVideo ? '' : await getExifCaption(srcPath);
     }
 
-    entries.push({
+    const entry = {
       file,
       thumb: thumbRelative,
       width: origWidth,
@@ -172,7 +240,9 @@ async function processGallery(config) {
       thumb_height,
       date,
       caption,
-    });
+    };
+    if (isVideo) entry.type = 'video';
+    entries.push(entry);
   }
 
   // Orphan cleanup: remove thumb files whose source image no longer exists

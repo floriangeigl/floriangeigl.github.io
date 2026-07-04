@@ -10,12 +10,35 @@
   <div class="masonry-sizer"></div>
   {% for item in _gal_items %}
   {% if item.thumb %}
-  <a class="masonry-item"
-     href="{{ _gal_base | append: '/' | append: item.file | relative_url }}"
+  {% assign _src = _gal_base | append: '/' | append: item.file | relative_url %}
+  {% assign _thumb = _gal_base | append: '/' | append: item.thumb | relative_url %}
+  {% if item.type == 'video' %}
+  <a class="masonry-item masonry-video"
+     href="{{ _src }}"
+     data-pswp-type="video"
+     data-pswp-video-src="{{ _src }}"
      data-pswp-width="{{ item.width }}"
      data-pswp-height="{{ item.height }}"
      target="_blank" rel="noopener">
-    <img src="{{ _gal_base | append: '/' | append: item.thumb | relative_url }}"
+    <img src="{{ _thumb }}"
+         width="{{ item.thumb_width }}" height="{{ item.thumb_height }}"
+         loading="lazy" decoding="async"
+         alt="{{ item.caption | default: item.file }}">
+    <video class="masonry-video-el" src="{{ _src }}"
+           muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+    <span class="masonry-play" aria-hidden="true"></span>
+    {% if item.caption and item.caption != "" %}
+    <span class="masonry-caption">{{ item.caption }}</span>
+    <span class="pswp-caption-content" hidden>{{ item.caption }}</span>
+    {% endif %}
+  </a>
+  {% else %}
+  <a class="masonry-item"
+     href="{{ _src }}"
+     data-pswp-width="{{ item.width }}"
+     data-pswp-height="{{ item.height }}"
+     target="_blank" rel="noopener">
+    <img src="{{ _thumb }}"
          width="{{ item.thumb_width }}" height="{{ item.thumb_height }}"
          loading="lazy" decoding="async"
          alt="{{ item.caption | default: item.file }}">
@@ -24,6 +47,7 @@
     <span class="pswp-caption-content" hidden>{{ item.caption }}</span>
     {% endif %}
   </a>
+  {% endif %}
   {% endif %}
   {% endfor %}
 </div>
