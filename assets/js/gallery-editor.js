@@ -20,6 +20,7 @@ let sortableInstances = [];
 let editBar = null;
 let ghostIcon = null;
 let Sortable = null;
+let thumbPreviewEl = null;
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 
@@ -141,6 +142,8 @@ function exitEditMode() {
   sortableInstances = [];
   editBar?.remove();
   editBar = null;
+  thumbPreviewEl?.remove();
+  thumbPreviewEl = null;
 }
 
 // ── Panel builder ─────────────────────────────────────────────────────────────
@@ -169,6 +172,8 @@ function buildEditPanel(galleryKey, originalData, basePath) {
     thumb.src = `${basePath}/${item.thumb}`;
     thumb.alt = '';
     thumb.draggable = false;
+    thumb.addEventListener('mouseenter', () => showThumbPreview(thumb));
+    thumb.addEventListener('mouseleave', hideThumbPreview);
 
     // ── Filename ──
     const filename = document.createElement('span');
@@ -232,6 +237,38 @@ function applyRowRotation(row, thumb, label, delta) {
   label.textContent = next === 0 ? '0°' : `${next}°`;
   const scale = next % 180 === 0 ? 1 : 0.72;
   thumb.style.transform = next === 0 ? '' : `rotate(${next}deg) scale(${scale})`;
+}
+
+// ── Thumbnail hover preview ───────────────────────────────────────────────────
+
+function showThumbPreview(thumb) {
+  if (!thumbPreviewEl) {
+    thumbPreviewEl = document.createElement('div');
+    thumbPreviewEl.className = 'gal-thumb-preview';
+    const img = document.createElement('img');
+    thumbPreviewEl.appendChild(img);
+    document.body.appendChild(thumbPreviewEl);
+  }
+  thumbPreviewEl.querySelector('img').src = thumb.src;
+
+  const rect = thumb.getBoundingClientRect();
+  const gap  = 12;
+  const pw   = 292; // max preview width + border
+  const ph   = 292;
+
+  let left = rect.right + gap;
+  let top  = rect.top + rect.height / 2 - ph / 2;
+
+  if (left + pw > window.innerWidth  - gap) left = rect.left - pw - gap;
+  top = Math.max(gap, Math.min(top, window.innerHeight - ph - gap));
+
+  thumbPreviewEl.style.left = `${Math.round(left)}px`;
+  thumbPreviewEl.style.top  = `${Math.round(top)}px`;
+  requestAnimationFrame(() => thumbPreviewEl?.classList.add('visible'));
+}
+
+function hideThumbPreview() {
+  thumbPreviewEl?.classList.remove('visible');
 }
 
 // ── Edit bar ──────────────────────────────────────────────────────────────────
