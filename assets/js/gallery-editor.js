@@ -128,11 +128,13 @@ function exitEditMode() {
     panel.remove();
     gallery.classList.remove('gallery-edit-hidden');
 
-    // Re-trigger Masonry layout after the grid becomes visible again
+    // Defer Masonry re-layout until after the browser re-renders the now-visible grid
     const msnry = gallery._masonry;
     if (msnry) {
-      msnry.reloadItems();
-      msnry.layout();
+      requestAnimationFrame(() => {
+        msnry.reloadItems();
+        msnry.layout();
+      });
     }
   });
 
