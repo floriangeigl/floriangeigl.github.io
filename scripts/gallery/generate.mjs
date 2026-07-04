@@ -187,16 +187,26 @@ async function processGallery(config) {
     }
   }
 
-  // Sort newest first; tie-break by filename descending (deterministic)
-  entries.sort((a, b) => {
-    const dc = b.date.localeCompare(a.date);
-    return dc !== 0 ? dc : b.file.localeCompare(a.file);
-  });
+  // Ordering: the manifest is the source of truth for display order.
+  // Existing images keep their current manifest order (so manual reordering
+  // sticks across runs); newly-discovered images are prepended at the top
+  // (newest-first), sorted among themselves by date descending.
+  const orderIndex = new Map([...existingManifest.keys()].map((f, i) => [f, i]));
+  const newEntries = entries
+    .filter(e => !orderIndex.has(e.file))
+    .sort((a, b) => {
+      const dc = b.date.localeCompare(a.date);
+      return dc !== 0 ? dc : b.file.localeCompare(a.file);
+    });
+  const existingEntries = entries
+    .filter(e => orderIndex.has(e.file))
+    .sort((a, b) => orderIndex.get(a.file) - orderIndex.get(b.file));
+  const ordered = [...newEntries, ...existingEntries];
 
   // Write manifest YAML (stable key order per schema, no key sorting)
   const manifestDir = dirname(manifestAbs);
   mkdirSync(manifestDir, { recursive: true });
-  writeFileSync(manifestAbs, yaml.dump(entries, { lineWidth: -1, sortKeys: false }), 'utf-8');
+  writeFileSync(manifestAbs, yaml.dump(ordered, { lineWidth: -1, sortKeys: false }), 'utf-8');
 
   console.log(
     `[${key}] thumbs_generated=${thumbsGenerated} thumbs_cached=${thumbsCached} orphans_removed=${orphansRemoved}`

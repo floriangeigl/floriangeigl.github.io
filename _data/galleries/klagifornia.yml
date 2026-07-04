@@ -1,9 +1,9 @@
-- file: paddle_duck.webp
-  thumb: thumbs/paddle_duck.webp
+- file: lake_mountains.webp
+  thumb: thumbs/lake_mountains.webp
   width: 840
-  height: 1120
-  thumb_width: 450
-  thumb_height: 600
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
   date: '2026-01-01T11:48:49'
   caption: paddle with duck
 - file: paddle_01.webp
@@ -14,14 +14,6 @@
   thumb_height: 600
   date: '2026-01-01T11:48:49'
   caption: paddle
-- file: lake_mountains.webp
-  thumb: thumbs/lake_mountains.webp
-  width: 840
-  height: 473
-  thumb_width: 600
-  thumb_height: 338
-  date: '2026-01-01T11:48:49'
-  caption: paddle with duck
 - file: klagifornia_venice.webp
   thumb: thumbs/klagifornia_venice.webp
   width: 840
@@ -30,30 +22,14 @@
   thumb_height: 600
   date: '2026-01-01T11:48:49'
   caption: klagifornia-venice
-- file: IMG_6148.webp
-  thumb: thumbs/IMG_6148.webp
+- file: paddle_duck.webp
+  thumb: thumbs/paddle_duck.webp
   width: 840
-  height: 473
-  thumb_width: 600
-  thumb_height: 338
+  height: 1120
+  thumb_width: 450
+  thumb_height: 600
   date: '2026-01-01T11:48:49'
-  caption: ''
-- file: IMG_6143-EFFECTS.webp
-  thumb: thumbs/IMG_6143-EFFECTS.webp
-  width: 840
-  height: 473
-  thumb_width: 600
-  thumb_height: 338
-  date: '2026-01-01T11:48:49'
-  caption: ''
-- file: IMG_5944.webp
-  thumb: thumbs/IMG_5944.webp
-  width: 840
-  height: 630
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-01-01T11:48:49'
-  caption: Stift Viktring
+  caption: paddle with duck
 - file: IMG_5727-EDIT.webp
   thumb: thumbs/IMG_5727-EDIT.webp
   width: 840
@@ -70,3 +46,27 @@
   thumb_height: 338
   date: '2026-01-01T11:48:49'
   caption: Stift Viktring
+- file: IMG_5944.webp
+  thumb: thumbs/IMG_5944.webp
+  width: 840
+  height: 630
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-01-01T11:48:49'
+  caption: Stift Viktring
+- file: IMG_6148.webp
+  thumb: thumbs/IMG_6148.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: ''
+- file: IMG_6143-EFFECTS.webp
+  thumb: thumbs/IMG_6143-EFFECTS.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: ''
