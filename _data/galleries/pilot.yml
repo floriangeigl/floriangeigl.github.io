@@ -17,13 +17,12 @@
   caption: Departure Mali Lošinj
 - file: IMG_7244.webp
   thumb: thumbs/IMG_7244.webp
-  width: 3464
-  height: 4618
-  thumb_width: 450
-  thumb_height: 600
-  date: '2026-07-04T08:39:28'
+  width: 4618
+  height: 3464
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-07-04T10:06:31'
   caption: Approach Mali Lošinj
-  rotation: 90
 - file: IMG_7220.webp
   thumb: thumbs/IMG_7220.webp
   width: 2076
