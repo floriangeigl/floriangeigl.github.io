@@ -15,6 +15,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   thumbnails:
@@ -68,13 +69,24 @@ jobs:
         run: node scripts/gallery/generate.mjs
 
       - name: Commit generated thumbnails & manifests
+        id: commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A -- scripts/gallery/package-lock.json pilot/img klagifornia/img _data/galleries
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No gallery changes to commit."
           else
             git commit -m "chore(gallery): regenerate thumbnails & manifests"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # A commit pushed with GITHUB_TOKEN does not trigger other workflows,
+      # so explicitly dispatch the deploy workflow for the new bot commit.
+      - name: Trigger Pages deploy for the regenerated content
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref master
