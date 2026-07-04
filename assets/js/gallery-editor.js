@@ -101,6 +101,10 @@ async function enterEditMode() {
 
     const sortable = new Sortable(gallery, {
       animation: 150,
+      scroll: true,
+      scrollSensitivity: 80,  // px from viewport edge where scrolling kicks in
+      scrollSpeed: 14,
+      bubbleScroll: true,     // scroll the window, not just the gallery container
       filter: '.masonry-sizer',
       draggable: '.masonry-item',
       ghostClass: 'gal-edit-sortable-ghost',
