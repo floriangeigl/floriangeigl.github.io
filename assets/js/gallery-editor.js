@@ -106,11 +106,8 @@ async function enterEditMode() {
       ghostClass: 'gal-edit-sortable-ghost',
       chosenClass: 'gal-edit-sortable-chosen',
       onEnd() {
-        const msnry = gallery._masonry;
-        if (msnry) {
-          msnry.reloadItems();
-          msnry.layout();
-        }
+        // Masonry is re-laid out when edit mode exits; no layout call needed mid-session
+        // (items use flexbox flow during edit mode, not absolute positioning).
       },
     });
 

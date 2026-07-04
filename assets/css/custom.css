@@ -279,12 +279,25 @@ body.gallery-edit-active {
      the temporary edit-mode overlay. */
 }
 
-/* Gallery grid in edit mode */
+/* Gallery grid in edit mode — switch to flexbox so SortableJS can resolve drop positions.
+   Masonry sets position:absolute + left/top as inline styles; !important overrides those. */
 .gallery-edit-mode {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  height: auto !important;
   cursor: default;
 }
 
+/* Hide the Masonry column-width sizer in edit mode */
+.gallery-edit-mode .masonry-sizer {
+  display: none;
+}
+
 .gallery-edit-mode .masonry-item {
+  position: relative !important; /* override Masonry's inline position: absolute */
+  left: auto !important;          /* override Masonry's inline left: Xpx           */
+  top: auto !important;           /* override Masonry's inline top: Ypx            */
   cursor: grab;
   outline: 2px dashed rgba(240, 165, 0, 0.55);
   outline-offset: -2px;
