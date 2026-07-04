@@ -8,6 +8,7 @@ on:
       - 'klagifornia/img/**'
       - '!**/img/thumbs/**'
       - 'scripts/gallery/**'
+      - '_data/galleries/**'
 
 concurrency:
   group: gallery-thumbnails

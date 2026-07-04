@@ -200,8 +200,27 @@ Each entry in the manifest looks like:
 ```
 
 - **New images are prepended** (newest-first) automatically; existing order is preserved across re-runs.
-- To reorder images, manually rearrange entries in the YAML file.
-- To add a caption, fill in the `caption` field in the YAML file (IPTC/XMP captions in the source file are read automatically on first import).
+- IPTC/XMP captions in source files are read automatically on first import.
+
+### Gallery Edit Mode (browser-based reordering, captions & rotation)
+
+Use the built-in browser editor — no local tools or file editing required:
+
+1. Open the gallery page (local dev server or live site).
+2. Press **Alt+E** (or click the faint ✏ icon, bottom-right) to enter edit mode. The masonry grid is replaced by a compact sortable list.
+3. In the list:
+   - **Drag** the `⠿` handle to reorder images.
+   - **Edit** captions inline in the text field.
+   - **Rotate** images with ↺ / ↻ — this sets a `rotation:` field in the YAML that CI processes automatically on next push.
+4. Click **Copy YAML** — the updated manifest is copied to the clipboard.
+5. Paste it into the corresponding `_data/galleries/<key>.yml` file and `git push`.
+
+Pushing `_data/galleries/*.yml` (or new images) triggers the **`Generate Gallery Thumbnails`** workflow, which automatically:
+- Reads any `rotation:` field, **physically rotates the source image** in-place (sharp, q92 WebP), and **removes** the `rotation:` field from the manifest.
+- Regenerates affected thumbnails.
+- Commits all changes back to the repo and triggers the Pages deploy.
+
+> No `node generate.mjs` needs to be run locally.
 
 ### Adding a new gallery
 

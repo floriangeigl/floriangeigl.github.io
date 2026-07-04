@@ -279,100 +279,113 @@ body.gallery-edit-active {
      the temporary edit-mode overlay. */
 }
 
-/* Gallery grid in edit mode — switch to flexbox so SortableJS can resolve drop positions.
-   Masonry sets position:absolute + left/top as inline styles; !important overrides those. */
-.gallery-edit-mode {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: flex-start !important;
-  height: auto !important;
+/* Gallery hidden while edit panel is active */
+.gallery-edit-hidden {
+  display: none !important;
+}
+
+/* ── Edit panel (compact list view) ─────────────────────────────────────────── */
+.gal-edit-panel {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gal-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
   cursor: default;
-}
-
-/* Hide the Masonry column-width sizer in edit mode */
-.gallery-edit-mode .masonry-sizer {
-  display: none;
-}
-
-.gallery-edit-mode .masonry-item {
-  position: relative !important; /* override Masonry's inline position: absolute */
-  left: auto !important;          /* override Masonry's inline left: Xpx           */
-  top: auto !important;           /* override Masonry's inline top: Ypx            */
-  cursor: grab;
-  outline: 2px dashed rgba(240, 165, 0, 0.55);
-  outline-offset: -2px;
+  transition: background 0.12s ease;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.gallery-edit-mode .masonry-item:active {
-  cursor: grabbing;
+.gal-edit-row:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* SortableJS drag states */
-.gal-edit-sortable-ghost {
-  opacity: 0.3;
+.gal-row-handle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: grab;
+  flex-shrink: 0;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s ease;
 }
 
-.gal-edit-sortable-chosen {
-  outline: 2px solid #f0a500 !important;
-  outline-offset: -2px;
+.gal-row-handle:hover {
+  color: rgba(255, 255, 255, 0.65);
 }
 
-/* Hide original caption span while the input overlay is active */
-.masonry-caption.hidden-for-edit {
-  display: none !important;
+.gal-row-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease;
 }
 
-/* Inline caption input overlay */
-.gal-caption-input {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.72);
+.gal-row-filename {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  width: 11rem;
+}
+
+.gal-row-caption {
+  flex: 1;
+  min-width: 0;
+  background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+  padding: 3px 8px;
   font-size: 0.8rem;
-  line-height: 1.4;
   outline: none;
-  z-index: 10;
-  /* Always visible in edit mode — no hover required */
-  opacity: 1;
 }
 
-.gal-caption-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+.gal-row-caption::placeholder {
+  color: rgba(255, 255, 255, 0.28);
 }
 
-.gal-caption-input:focus {
-  background: rgba(0, 0, 0, 0.9);
-  border-top-color: #f0a500;
+.gal-row-caption:focus {
+  border-color: #f0a500;
+  background: rgba(0, 0, 0, 0.55);
 }
 
-/* Rotation controls overlay (top of each image item in edit mode) */
-.gal-rotation-controls {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 11;
+.gal-row-rot {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  padding: 3px 6px;
-  background: rgba(0, 0, 0, 0.65);
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.gal-row-rot-label {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  min-width: 2.4em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .gal-rotate-btn {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 3px;
   padding: 1px 6px;
   font-size: 1rem;
@@ -382,19 +395,26 @@ body.gallery-edit-active {
 }
 
 .gal-rotate-btn:hover {
-  background: rgba(240, 165, 0, 0.7);
+  background: rgba(240, 165, 0, 0.65);
   border-color: #f0a500;
 }
 
-.gal-rotation-label {
-  color: #fff;
-  font-size: 0.72rem;
-  min-width: 2.2em;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
+/* SortableJS drag states */
+.gal-row-ghost {
+  opacity: 0 !important;            /* hide dragged-out content; border shows the slot */
+  border: 2px dashed #f0a500 !important;
+  background: rgba(240, 165, 0, 0.07) !important;
+  border-radius: 5px;
 }
 
-/* Smooth image rotation preview in edit mode */
-.gallery-edit-mode .masonry-item img {
-  transition: transform 0.25s ease;
+.gal-row-chosen {
+  background: rgba(240, 165, 0, 0.1) !important;
+  border-color: rgba(240, 165, 0, 0.5) !important;
+}
+
+.gal-row-drag {
+  opacity: 0.93;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+  border-color: #f0a500 !important;
+  background: rgba(18, 18, 18, 0.97) !important;
 }

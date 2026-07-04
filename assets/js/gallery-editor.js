@@ -4,10 +4,12 @@
  * Toggle with Alt+E or the ghost pencil icon (bottom-right corner).
  *
  * In edit mode:
- *   - Drag thumbnails to reorder them.
- *   - Edit captions inline (click the caption area at the bottom of each item).
- *   - Click "Copy YAML" to copy the resulting .yml content to your clipboard,
- *     then paste it into the corresponding _data/galleries/*.yml file.
+ *   - The masonry grid is replaced by a compact sortable list.
+ *   - Drag the ⠿ handle to reorder images.
+ *   - Edit captions inline.
+ *   - Click ↺ / ↻ to mark an image for rotation (CI applies it on push).
+ *   - Click "Copy YAML" to copy the updated .yml to your clipboard, then paste
+ *     it into _data/galleries/<key>.yml and push — CI handles the rest.
  */
 
 const SORTABLE_ESM = 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/+esm';
@@ -49,7 +51,7 @@ function createGhostIcon() {
 // ── Toggle ────────────────────────────────────────────────────────────────────
 
 async function toggleEditMode() {
-  if (editModeTransitioning) return; // ignore rapid clicks while async loading
+  if (editModeTransitioning) return;
   editModeTransitioning = true;
   editModeActive = !editModeActive;
   if (editModeActive) {
@@ -85,37 +87,33 @@ async function enterEditMode() {
   document.body.appendChild(editBar);
 
   document.querySelectorAll('.pswp-gallery.masonry-grid').forEach((gallery) => {
-    gallery.classList.add('gallery-edit-mode');
+    const galleryKey = gallery.id.replace(/^gallery-/, '');
 
-    gallery.querySelectorAll('.masonry-item').forEach((item) => {
-      // Disable lightbox by removing href temporarily
-      item.dataset.origHref = item.getAttribute('href') || '';
-      item.setAttribute('href', 'javascript:void(0)');
-      item.addEventListener('click', absorbClick, true);
+    // Derive base image path from the first rendered anchor href
+    const firstAnchor = gallery.querySelector('.masonry-item[data-file]');
+    const basePath = firstAnchor
+      ? firstAnchor.getAttribute('href').replace(/\/[^\/]+$/, '')
+      : `/${galleryKey}/img`;
 
-      addCaptionInput(item);
-      if (!item.classList.contains('masonry-video')) {
-        addRotationControls(item);
-      }
+    // Load the JSON data embedded by gallery.html
+    const dataEl = document.getElementById(`gallery-data-${galleryKey}`);
+    const originalData = dataEl ? JSON.parse(dataEl.textContent) : [];
+
+    // Hide masonry, inject compact list panel
+    gallery.classList.add('gallery-edit-hidden');
+    const panel = buildEditPanel(galleryKey, originalData, basePath);
+    gallery.insertAdjacentElement('afterend', panel);
+
+    const sortable = new Sortable(panel, {
+      animation: 180,
+      handle: '.gal-row-handle',
+      draggable: '.gal-edit-row',
+      ghostClass: 'gal-row-ghost',
+      chosenClass: 'gal-row-chosen',
+      dragClass: 'gal-row-drag',
     });
 
-    const sortable = new Sortable(gallery, {
-      animation: 150,
-      scroll: true,
-      scrollSensitivity: 80,  // px from viewport edge where scrolling kicks in
-      scrollSpeed: 14,
-      bubbleScroll: true,     // scroll the window, not just the gallery container
-      filter: '.masonry-sizer',
-      draggable: '.masonry-item',
-      ghostClass: 'gal-edit-sortable-ghost',
-      chosenClass: 'gal-edit-sortable-chosen',
-      onEnd() {
-        // Masonry is re-laid out when edit mode exits; no layout call needed mid-session
-        // (items use flexbox flow during edit mode, not absolute positioning).
-      },
-    });
-
-    sortableInstances.push({ gallery, sortable });
+    sortableInstances.push({ gallery, panel, sortable });
   });
 }
 
@@ -125,26 +123,12 @@ function exitEditMode() {
   ghostIcon.classList.remove('active');
   document.body.classList.remove('gallery-edit-active');
 
-  sortableInstances.forEach(({ gallery, sortable }) => {
+  sortableInstances.forEach(({ gallery, panel, sortable }) => {
     sortable.destroy();
-    gallery.classList.remove('gallery-edit-mode');
+    panel.remove();
+    gallery.classList.remove('gallery-edit-hidden');
 
-    gallery.querySelectorAll('.masonry-item').forEach((item) => {
-      item.removeEventListener('click', absorbClick, true);
-
-      if (item.dataset.origHref !== undefined) {
-        item.setAttribute('href', item.dataset.origHref);
-        delete item.dataset.origHref;
-      }
-
-      item.querySelector('.gal-caption-input')?.remove();
-      item.querySelector('.masonry-caption')?.classList.remove('hidden-for-edit');
-      item.querySelector('.gal-rotation-controls')?.remove();
-      const img = item.querySelector('img');
-      if (img) { img.style.transform = ''; img.style.transformOrigin = ''; }
-      delete item.dataset.rotation;
-    });
-
+    // Re-trigger Masonry layout after the grid becomes visible again
     const msnry = gallery._masonry;
     if (msnry) {
       msnry.reloadItems();
@@ -153,96 +137,99 @@ function exitEditMode() {
   });
 
   sortableInstances = [];
-
   editBar?.remove();
   editBar = null;
 }
 
-function absorbClick(e) {
-  // Allow caption inputs and rotation buttons to receive events normally
-  if (e.target.classList.contains('gal-caption-input')) return;
-  if (e.target.closest('.gal-rotation-controls')) return;
-  e.preventDefault();
-  e.stopImmediatePropagation();
-}
+// ── Panel builder ─────────────────────────────────────────────────────────────
 
-// ── Caption input ─────────────────────────────────────────────────────────────
+function buildEditPanel(galleryKey, originalData, basePath) {
+  const panel = document.createElement('div');
+  panel.className = 'gal-edit-panel';
+  panel.id = `gal-edit-panel-${galleryKey}`;
 
-function addCaptionInput(item) {
-  const captionSpan = item.querySelector('.masonry-caption');
-  const currentCaption = captionSpan ? captionSpan.textContent.trim() : '';
+  for (const item of originalData) {
+    const isVideo = item.type === 'video';
+    const row = document.createElement('div');
+    row.className = 'gal-edit-row';
+    row.dataset.file = item.file;
+    row.dataset.rotation = '0';
 
-  captionSpan?.classList.add('hidden-for-edit');
+    // ── Drag handle ──
+    const handle = document.createElement('span');
+    handle.className = 'gal-row-handle';
+    handle.textContent = '⣿';
+    handle.setAttribute('aria-hidden', 'true');
 
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.className = 'gal-caption-input';
-  input.placeholder = 'Caption…';
-  input.value = currentCaption;
+    // ── Thumbnail ──
+    const thumb = document.createElement('img');
+    thumb.className = 'gal-row-thumb';
+    thumb.src = `${basePath}/${item.thumb}`;
+    thumb.alt = '';
+    thumb.draggable = false;
 
-  // Prevent drag when interacting with the input
-  input.addEventListener('mousedown', (e) => e.stopPropagation());
-  input.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
-  input.addEventListener('pointerdown', (e) => e.stopPropagation());
+    // ── Filename ──
+    const filename = document.createElement('span');
+    filename.className = 'gal-row-filename';
+    filename.textContent = item.file;
 
-  item.appendChild(input);
-}
+    // ── Caption input ──
+    const captionInput = document.createElement('input');
+    captionInput.type = 'text';
+    captionInput.className = 'gal-row-caption';
+    captionInput.placeholder = 'Caption…';
+    captionInput.value = item.caption || '';
+    stopDragOn(captionInput);
 
-// ── Rotation controls ─────────────────────────────────────────────────────────
+    row.append(handle, thumb, filename, captionInput);
 
-function addRotationControls(item) {
-  item.dataset.rotation = '0';
+    // ── Rotation controls (images only) ──
+    if (!isVideo) {
+      const rotControls = document.createElement('div');
+      rotControls.className = 'gal-row-rot';
 
-  const controls = document.createElement('div');
-  controls.className = 'gal-rotation-controls';
+      const ccwBtn = document.createElement('button');
+      ccwBtn.className = 'gal-rotate-btn';
+      ccwBtn.title = 'Rotate 90° counter-clockwise';
+      ccwBtn.textContent = '↺';
 
-  const ccwBtn = document.createElement('button');
-  ccwBtn.className = 'gal-rotate-btn gal-rotate-ccw';
-  ccwBtn.title = 'Rotate 90° counter-clockwise';
-  ccwBtn.textContent = '↺';
+      const rotLabel = document.createElement('span');
+      rotLabel.className = 'gal-row-rot-label';
+      rotLabel.textContent = '0°';
 
-  const label = document.createElement('span');
-  label.className = 'gal-rotation-label';
-  label.textContent = '0°';
+      const cwBtn = document.createElement('button');
+      cwBtn.className = 'gal-rotate-btn';
+      cwBtn.title = 'Rotate 90° clockwise';
+      cwBtn.textContent = '↻';
 
-  const cwBtn = document.createElement('button');
-  cwBtn.className = 'gal-rotate-btn gal-rotate-cw';
-  cwBtn.title = 'Rotate 90° clockwise';
-  cwBtn.textContent = '↻';
+      ccwBtn.addEventListener('click', () => applyRowRotation(row, thumb, rotLabel, -90));
+      cwBtn.addEventListener('click',  () => applyRowRotation(row, thumb, rotLabel, +90));
 
-  controls.append(ccwBtn, label, cwBtn);
-  item.appendChild(controls);
-
-  ccwBtn.addEventListener('click', () => applyRotationDelta(item, -90));
-  cwBtn.addEventListener('click',  () => applyRotationDelta(item, +90));
-
-  // Prevent drag and lightbox from triggering when interacting with controls
-  controls.addEventListener('click',      (e) => e.stopPropagation());
-  controls.addEventListener('mousedown',  (e) => e.stopPropagation());
-  controls.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
-  controls.addEventListener('pointerdown',(e) => e.stopPropagation());
-}
-
-function applyRotationDelta(item, delta) {
-  const current = parseInt(item.dataset.rotation ?? '0', 10);
-  const next = ((current + delta) % 360 + 360) % 360;
-  item.dataset.rotation = String(next);
-
-  const label = item.querySelector('.gal-rotation-label');
-  if (label) label.textContent = next === 0 ? '0°' : `${next}°`;
-
-  // Visual preview: rotate + shrink slightly for 90°/270° so it stays in frame
-  const img = item.querySelector('img');
-  if (img) {
-    img.style.transformOrigin = 'center center';
-    if (next === 0) {
-      img.style.transform = '';
-    } else if (next === 180) {
-      img.style.transform = 'rotate(180deg)';
-    } else {
-      img.style.transform = `rotate(${next}deg) scale(0.68)`;
+      rotControls.append(ccwBtn, rotLabel, cwBtn);
+      stopDragOn(rotControls);
+      row.appendChild(rotControls);
     }
+
+    panel.appendChild(row);
   }
+
+  return panel;
+}
+
+/** Prevent SortableJS drag from starting on interactive sub-elements. */
+function stopDragOn(el) {
+  el.addEventListener('mousedown',  (e) => e.stopPropagation());
+  el.addEventListener('pointerdown',(e) => e.stopPropagation());
+  el.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+}
+
+function applyRowRotation(row, thumb, label, delta) {
+  const current = parseInt(row.dataset.rotation ?? '0', 10);
+  const next = ((current + delta) % 360 + 360) % 360;
+  row.dataset.rotation = String(next);
+  label.textContent = next === 0 ? '0°' : `${next}°`;
+  const scale = next % 180 === 0 ? 1 : 0.72;
+  thumb.style.transform = next === 0 ? '' : `rotate(${next}deg) scale(${scale})`;
 }
 
 // ── Edit bar ──────────────────────────────────────────────────────────────────
@@ -265,7 +252,7 @@ function createEditBar() {
     btn.className = 'gal-copy-btn';
     btn.dataset.galleryKey = galleryKey;
     btn.textContent = multiGallery ? `Copy YAML – ${galleryKey}` : 'Copy YAML';
-    btn.addEventListener('click', () => copyYaml(gallery, galleryKey, btn));
+    btn.addEventListener('click', () => copyYaml(galleryKey, btn));
     bar.appendChild(btn);
   });
 
@@ -280,10 +267,11 @@ function createEditBar() {
 
 // ── YAML generation ───────────────────────────────────────────────────────────
 
-function copyYaml(gallery, galleryKey, triggerBtn) {
+function copyYaml(galleryKey, triggerBtn) {
   const dataEl = document.getElementById(`gallery-data-${galleryKey}`);
-  if (!dataEl) {
-    alert(`[gallery-editor] No embedded data found for gallery: ${galleryKey}`);
+  const panel  = document.getElementById(`gal-edit-panel-${galleryKey}`);
+  if (!dataEl || !panel) {
+    alert(`[gallery-editor] No data found for gallery: ${galleryKey}`);
     return;
   }
 
@@ -292,33 +280,27 @@ function copyYaml(gallery, galleryKey, triggerBtn) {
   const renderedFiles = new Set();
   const lines = [];
 
-  gallery.querySelectorAll('.masonry-item[data-file]').forEach((domItem) => {
-    const file = domItem.dataset.file;
+  panel.querySelectorAll('.gal-edit-row[data-file]').forEach((row) => {
+    const file = row.dataset.file;
     const original = dataMap.get(file);
     if (!original) return;
     renderedFiles.add(file);
 
-    const captionInput = domItem.querySelector('.gal-caption-input');
-    const caption = captionInput ? captionInput.value.trim() : (original.caption ?? '');
-    const rotation = parseInt(domItem.dataset.rotation ?? '0', 10);
+    const caption = row.querySelector('.gal-row-caption')?.value.trim() ?? (original.caption ?? '');
+    const rotation = parseInt(row.dataset.rotation ?? '0', 10);
     lines.push(itemToYaml({ ...original, caption, rotation }));
   });
 
-  // Preserve any items not rendered in the DOM (e.g. missing thumb)
+  // Preserve any items absent from the panel (safety net)
   originalData.forEach((item) => {
-    if (!renderedFiles.has(item.file)) {
-      lines.push(itemToYaml(item));
-    }
+    if (!renderedFiles.has(item.file)) lines.push(itemToYaml(item));
   });
 
   const yaml = lines.join('\n') + '\n';
 
   navigator.clipboard.writeText(yaml)
     .then(() => showCopiedFeedback(triggerBtn))
-    .catch(() => {
-      // Fallback for browsers/contexts that block clipboard access
-      prompt('Copy the YAML below (Ctrl+A, Ctrl+C):', yaml);
-    });
+    .catch(() => prompt('Copy the YAML below (Ctrl+A, Ctrl+C):', yaml));
 }
 
 // ── YAML serialisation ────────────────────────────────────────────────────────
