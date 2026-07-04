@@ -5,7 +5,7 @@
   thumb_width: 600
   thumb_height: 338
   date: '2026-01-01T11:48:49'
-  caption: paddle with duck
+  caption: 
 - file: paddle_01.webp
   thumb: thumbs/paddle_01.webp
   width: 840
@@ -13,7 +13,7 @@
   thumb_width: 450
   thumb_height: 600
   date: '2026-01-01T11:48:49'
-  caption: paddle
+  caption: Wörthersee SUP
 - file: klagifornia_venice.webp
   thumb: thumbs/klagifornia_venice.webp
   width: 840
@@ -21,7 +21,7 @@
   thumb_width: 450
   thumb_height: 600
   date: '2026-01-01T11:48:49'
-  caption: klagifornia-venice
+  caption: Venice Klagifornia
 - file: paddle_duck.webp
   thumb: thumbs/paddle_duck.webp
   width: 840
@@ -29,7 +29,7 @@
   thumb_width: 450
   thumb_height: 600
   date: '2026-01-01T11:48:49'
-  caption: paddle with duck
+  caption: Wörthersee with duck
 - file: IMG_5727-EDIT.webp
   thumb: thumbs/IMG_5727-EDIT.webp
   width: 840
