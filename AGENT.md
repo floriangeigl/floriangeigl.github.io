@@ -156,6 +156,66 @@ Every content page has an explicit `permalink:` in its front matter ending with 
 - **"Duplikat – Google hat eine andere Seite als kanonische Seite bestimmt":** Same root cause — Google saw the http/www variant, got a 301, and chose the HTTPS non-www target as canonical. Expected behaviour.
 - After any redirect/canonical changes, re-submit `https://geigl.online/sitemap.xml` and use URL Inspection → "Request indexing" on the canonical URLs.
 
+## Adding Images to a Gallery
+
+Galleries are defined in `scripts/gallery/galleries.json` and sourced from per-gallery `img/` folders (e.g. `pilot/img/`, `klagifornia/img/`).
+
+### Workflow (recommended — no local tooling required)
+
+1. Copy the raw photo files (`.heic`, `.HEIC`, `.jpg`, `.JPG`, or `.webp`) into the gallery's `img/` folder.
+2. `git add` and `git commit` the raw files.
+3. `git push` to `master`.
+
+The **`Generate Gallery Thumbnails`** GitHub Actions workflow then automatically:
+- Converts HEIC → WebP and JPG → WebP (removes the originals).
+- Generates WebP thumbnails in `img/thumbs/`.
+- Updates the gallery manifest in `_data/galleries/<key>.yml` (dimensions, EXIF date, caption).
+- Commits all generated/converted files back to the repo.
+
+No local tools (Node, sharp, ffmpeg) are required.
+
+### Local generation (optional)
+
+```sh
+cd scripts/gallery
+npm install
+node generate.mjs   # from the repo root context it's: node scripts/gallery/generate.mjs
+```
+
+This reads `scripts/gallery/galleries.json`, processes each configured gallery, and writes thumbnails + manifests. HEIC/JPG → WebP conversion is **not** performed locally; convert to WebP first (e.g. with `cwebp` or Preview on macOS) if running locally.
+
+### Gallery manifest (`_data/galleries/<key>.yml`)
+
+Each entry in the manifest looks like:
+
+```yaml
+- file: my-photo.webp
+  thumb: thumbs/my-photo.webp
+  width: 1200
+  height: 900
+  thumb_width: 600
+  thumb_height: 450
+  date: '2025-06-15T10:30:00'
+  caption: 'Optional caption shown in the lightbox'
+```
+
+- **New images are prepended** (newest-first) automatically; existing order is preserved across re-runs.
+- To reorder images, manually rearrange entries in the YAML file.
+- To add a caption, fill in the `caption` field in the YAML file (IPTC/XMP captions in the source file are read automatically on first import).
+
+### Adding a new gallery
+
+1. Create the image folder, e.g. `mygallery/img/`.
+2. Add an entry to `scripts/gallery/galleries.json`:
+   ```json
+   { "key": "mygallery", "imageDir": "mygallery/img", "manifest": "_data/galleries/mygallery.yml" }
+   ```
+3. Add the trigger path to `.github/workflows/gallery_thumbnails.yml` under `on.push.paths`:
+   ```yaml
+   - 'mygallery/img/**'
+   ```
+4. Include the gallery in a page with `{% include gallery.html gallery="mygallery" %}`.
+
 ## Coding Conventions
 
 - Use Markdown for content pages; HTML only in layouts/includes.

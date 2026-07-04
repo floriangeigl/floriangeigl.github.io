@@ -274,7 +274,9 @@
 
 /* Push page content down to clear the edit bar */
 body.gallery-edit-active {
-  padding-top: 44px;
+  /* No extra padding needed: the edit bar is position:fixed (zero flow impact).
+     It sits above the navbar (z-index 9001 > 1030) which is intentional for
+     the temporary edit-mode overlay. */
 }
 
 /* Gallery grid in edit mode */

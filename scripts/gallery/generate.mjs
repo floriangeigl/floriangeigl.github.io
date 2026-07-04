@@ -155,6 +155,9 @@ async function processGallery(config) {
     const thumbPath = join(thumbDirAbs, thumbBasename);
     const thumbRelative = `thumbs/${thumbBasename}`;
 
+    // Fetch existing manifest entry once — used for caption, ordering, and rotation
+    const existingEntry = existingManifest.get(file);
+
     // Decide whether to (re)generate the thumbnail/poster
     let needsRegen = true;
     if (existsSync(thumbPath)) {
@@ -166,10 +169,8 @@ async function processGallery(config) {
     let origWidth, origHeight, thumb_width, thumb_height;
 
     if (isVideo) {
-      const existing = existingManifest.get(file);
-      // Regenerate the poster (and re-measure) unless we have a cached thumb
-      // AND remembered dimensions from a previous run.
-      if (needsRegen || !existing || !existing.width || !existing.height) {
+      // Reuse the hoisted existingEntry for video dimension caching
+      if (needsRegen || !existingEntry || !existingEntry.width || !existingEntry.height) {
         const posterBuffer = extractPosterBuffer(srcPath);
         // The extracted frame is already display-oriented, so its dimensions
         // are the true display dimensions (correct for rotated phone videos).
@@ -184,14 +185,31 @@ async function processGallery(config) {
         thumb_height = info.height;
         thumbsGenerated++;
       } else {
-        origWidth = existing.width;
-        origHeight = existing.height;
+        origWidth = existingEntry.width;
+        origHeight = existingEntry.height;
         const thumbMeta = await sharp(thumbPath).metadata();
         thumb_width = thumbMeta.width;
         thumb_height = thumbMeta.height;
         thumbsCached++;
       }
     } else {
+      // Apply any pending rotation from the manifest before measuring or thumbnailing.
+      // rotation: 90 / 180 / 270 → clockwise degrees. The source file is overwritten
+      // (lossy re-encode at q92) and the thumbnail is regenerated. The field is not
+      // written back to the manifest (effectively reset to 0).
+      const pendingRotation = existingEntry?.rotation
+        ? ((Number(existingEntry.rotation) % 360) + 360) % 360
+        : 0;
+      if (pendingRotation !== 0) {
+        console.log(`[${key}] Rotating ${file} by ${pendingRotation}°`);
+        const rotatedBuffer = await sharp(srcPath)
+          .rotate(pendingRotation)
+          .webp({ quality: 92, effort: 4 })
+          .toBuffer();
+        writeFileSync(srcPath, rotatedBuffer);
+        needsRegen = true; // thumbnail must be regenerated from the rotated source
+      }
+
       // Always (re)read original dimensions for manifest accuracy
       const srcMeta = await sharp(srcPath).metadata();
 
@@ -231,7 +249,6 @@ async function processGallery(config) {
     }
 
     // Caption: non-empty existing manifest value wins; fallback to IPTC/XMP; else ""
-    const existingEntry = existingManifest.get(file);
     let caption;
     if (existingEntry && existingEntry.caption) {
       caption = existingEntry.caption;

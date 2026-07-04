@@ -23,6 +23,8 @@ document.querySelectorAll('.pswp-gallery.masonry-grid').forEach(gallery => {
     percentPosition: true,
     gutter: 8,
   });
+  // Expose instance so gallery-editor.js can trigger re-layout after reordering
+  gallery._masonry = msnry;
 
   // Re-layout as thumbnails load to fix placeholder gaps
   imagesLoaded(gallery)

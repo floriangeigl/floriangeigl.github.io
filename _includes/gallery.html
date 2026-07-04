@@ -15,6 +15,7 @@
   {% if item.type == 'video' %}
   <a class="masonry-item masonry-video"
      href="{{ _src }}"
+     data-file="{{ item.file }}"
      data-pswp-type="video"
      data-pswp-video-src="{{ _src }}"
      data-pswp-width="{{ item.width }}"
@@ -35,6 +36,7 @@
   {% else %}
   <a class="masonry-item"
      href="{{ _src }}"
+     data-file="{{ item.file }}"
      data-pswp-width="{{ item.width }}"
      data-pswp-height="{{ item.height }}"
      target="_blank" rel="noopener">
@@ -55,4 +57,6 @@
 {% unless gallery_assets_loaded %}
 {% assign gallery_assets_loaded = true %}
 <script type="module" src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+<script type="module" src="{{ '/assets/js/gallery-editor.js' | relative_url }}"></script>
 {% endunless %}
+<script type="application/json" id="gallery-data-{{ _gal_key }}">{{ _gal_items | jsonify | replace: '</', '<\/' }}</script>
