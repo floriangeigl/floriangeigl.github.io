@@ -215,7 +215,8 @@ function addRotationControls(item) {
   ccwBtn.addEventListener('click', () => applyRotationDelta(item, -90));
   cwBtn.addEventListener('click',  () => applyRotationDelta(item, +90));
 
-  // Prevent drag when pressing rotation buttons
+  // Prevent drag and lightbox from triggering when interacting with controls
+  controls.addEventListener('click',      (e) => e.stopPropagation());
   controls.addEventListener('mousedown',  (e) => e.stopPropagation());
   controls.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
   controls.addEventListener('pointerdown',(e) => e.stopPropagation());
