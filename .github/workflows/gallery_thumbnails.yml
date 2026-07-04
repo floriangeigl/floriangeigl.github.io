@@ -28,12 +28,37 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Ensure ffmpeg is available
+      - name: Install system tools (ffmpeg, heif-convert, cwebp)
         run: |
-          if ! command -v ffmpeg >/dev/null; then
-            sudo apt-get update && sudo apt-get install -y ffmpeg
-          fi
+          sudo apt-get update -q
+          sudo apt-get install -y --no-install-recommends ffmpeg libheif-examples webp
           ffmpeg -version | head -n 1
+
+      - name: Convert raw uploads to WebP
+        run: |
+          for dir in pilot/img klagifornia/img; do
+            [ -d "$dir" ] || continue
+            # HEIC → PNG → WebP
+            find "$dir" -maxdepth 1 \( -iname "*.heic" \) | while read -r f; do
+              base="${f%.*}"
+              heif-convert "$f" "${base}.png" \
+                && cwebp -q 92 "${base}.png" -o "${base}.webp" \
+                && rm -f "$f" "${base}.png" \
+                && echo "Converted HEIC: $f → ${base}.webp" \
+                || echo "WARNING: failed to convert $f"
+            done
+            # JPG / JPEG → WebP (skip if same-stem .webp already exists)
+            find "$dir" -maxdepth 1 \( -iname "*.jpg" -o -iname "*.jpeg" \) | while read -r f; do
+              base="${f%.*}"
+              if [ ! -f "${base}.webp" ]; then
+                cwebp -q 92 "$f" -o "${base}.webp" && rm -f "$f" \
+                  && echo "Converted JPG: $f → ${base}.webp" \
+                  || echo "WARNING: failed to convert $f"
+              else
+                rm -f "$f" && echo "Removed duplicate: $f (webp exists)"
+              fi
+            done
+          done
 
       - name: Install dependencies
         run: npm install
@@ -46,7 +71,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A -- scripts/gallery/package-lock.json '**/img/thumbs/**' _data/galleries
+          git add -A -- scripts/gallery/package-lock.json pilot/img klagifornia/img _data/galleries
           if git diff --cached --quiet; then
             echo "No gallery changes to commit."
           else
