@@ -12,7 +12,7 @@ import {
 } from 'fs';
 import { join, basename, extname, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -34,8 +34,9 @@ function loadManifest(manifestPath) {
 
 function getGitCommitDate(relFilePath) {
   try {
-    const result = execSync(
-      `git log -1 --format=%cI -- "${relFilePath}"`,
+    const result = execFileSync(
+      'git',
+      ['log', '-1', '--format=%cI', '--', relFilePath],
       { cwd: repoRoot, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }
     ).trim();
     if (result) return new Date(result);
@@ -78,30 +79,34 @@ function formatDate(date) {
   return date.toISOString().replace(/\.\d{3}Z$/, '');
 }
 
-/** Read the display dimensions of a video via ffprobe. */
-function getVideoDimensions(srcPath) {
-  const out = execSync(
-    `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of json "${srcPath}"`,
-    { encoding: 'utf-8' }
-  );
-  const info = JSON.parse(out);
-  const stream = info.streams && info.streams[0];
-  return { width: stream.width, height: stream.height };
-}
-
-/** Extract a single poster frame (~1s in) from a video as a PNG buffer. */
+/**
+ * Extract a single poster frame from a video as a PNG buffer.
+ * Seeks ~1s in (nicer than a often-black first frame); falls back to the
+ * very first frame for clips shorter than the seek point. ffmpeg applies the
+ * display rotation matrix, so the frame is already correctly oriented.
+ */
 function extractPosterBuffer(srcPath) {
-  return execSync(
-    `ffmpeg -v error -ss 1 -i "${srcPath}" -frames:v 1 -f image2pipe -vcodec png pipe:1`,
-    { maxBuffer: 1024 * 1024 * 128 }
-  );
+  const run = args =>
+    execFileSync(
+      'ffmpeg',
+      ['-v', 'error', ...args, '-i', srcPath, '-frames:v', '1', '-f', 'image2pipe', '-vcodec', 'png', 'pipe:1'],
+      { maxBuffer: 1024 * 1024 * 128 }
+    );
+  try {
+    const buf = run(['-ss', '1']);
+    if (buf && buf.length) return buf;
+  } catch {
+    // seek past end of a very short clip; fall back below
+  }
+  return run([]);
 }
 
 /** Video creation date from container metadata, if present. */
 function getVideoDate(srcPath) {
   try {
-    const out = execSync(
-      `ffprobe -v error -show_entries format_tags=creation_time -of default=noprint_wrappers=1:nokey=1 "${srcPath}"`,
+    const out = execFileSync(
+      'ffprobe',
+      ['-v', 'error', '-show_entries', 'format_tags=creation_time', '-of', 'default=noprint_wrappers=1:nokey=1', srcPath],
       { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'] }
     ).trim();
     if (out) {
@@ -161,16 +166,17 @@ async function processGallery(config) {
     let origWidth, origHeight, thumb_width, thumb_height;
 
     if (isVideo) {
-      // Original (display) dimensions from ffprobe
-      const dims = getVideoDimensions(srcPath);
-      origWidth = dims.width;
-      origHeight = dims.height;
-
-      // Poster thumbnail from a single extracted frame
-      if (needsRegen) {
+      const existing = existingManifest.get(file);
+      // Regenerate the poster (and re-measure) unless we have a cached thumb
+      // AND remembered dimensions from a previous run.
+      if (needsRegen || !existing || !existing.width || !existing.height) {
         const posterBuffer = extractPosterBuffer(srcPath);
+        // The extracted frame is already display-oriented, so its dimensions
+        // are the true display dimensions (correct for rotated phone videos).
+        const posterMeta = await sharp(posterBuffer).metadata();
+        origWidth = posterMeta.width;
+        origHeight = posterMeta.height;
         const info = await sharp(posterBuffer)
-          .rotate()
           .resize({ width: 600, height: 600, fit: 'inside', withoutEnlargement: true })
           .webp({ quality: 72, effort: 4 })
           .toFile(thumbPath);
@@ -178,6 +184,8 @@ async function processGallery(config) {
         thumb_height = info.height;
         thumbsGenerated++;
       } else {
+        origWidth = existing.width;
+        origHeight = existing.height;
         const thumbMeta = await sharp(thumbPath).metadata();
         thumb_width = thumbMeta.width;
         thumb_height = thumbMeta.height;

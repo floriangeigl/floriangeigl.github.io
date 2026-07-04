@@ -1,7 +1,19 @@
 import Masonry from 'https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/+esm';
 import imagesLoaded from 'https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm';
 import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js';
-import PhotoSwipeVideoPlugin from 'https://cdn.jsdelivr.net/npm/photoswipe-video-plugin@1.0.2/dist/photoswipe-video-plugin.esm.min.js';
+
+// Load the video plugin only when a gallery actually contains a video, so
+// image-only pages never depend on it (nor break if it fails to load).
+let PhotoSwipeVideoPlugin = null;
+if (document.querySelector('.masonry-video')) {
+  try {
+    ({ default: PhotoSwipeVideoPlugin } = await import(
+      'https://cdn.jsdelivr.net/npm/photoswipe-video-plugin@1.0.2/dist/photoswipe-video-plugin.esm.min.js'
+    ));
+  } catch (err) {
+    console.warn('[gallery] video plugin failed to load:', err);
+  }
+}
 
 document.querySelectorAll('.pswp-gallery.masonry-grid').forEach(gallery => {
   // Masonry layout
@@ -25,8 +37,10 @@ document.querySelectorAll('.pswp-gallery.masonry-grid').forEach(gallery => {
       import('https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js'),
   });
 
-  // Enable <video> playback inside the lightbox
-  new PhotoSwipeVideoPlugin(lightbox, { autoplay: true });
+  // Enable <video> playback inside the lightbox (when the plugin loaded)
+  if (PhotoSwipeVideoPlugin) {
+    new PhotoSwipeVideoPlugin(lightbox);
+  }
 
   // Custom caption element in the lightbox
   lightbox.on('uiRegister', function () {
