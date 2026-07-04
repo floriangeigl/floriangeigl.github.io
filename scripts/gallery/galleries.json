@@ -1,0 +1,4 @@
+[
+  { "key": "pilot",       "imageDir": "pilot/img",       "manifest": "_data/galleries/pilot.yml" },
+  { "key": "klagifornia", "imageDir": "klagifornia/img", "manifest": "_data/galleries/klagifornia.yml" }
+]

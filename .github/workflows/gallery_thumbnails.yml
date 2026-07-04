@@ -1,0 +1,48 @@
+name: Generate Gallery Thumbnails
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'pilot/img/**'
+      - 'klagifornia/img/**'
+      - '!**/img/thumbs/**'
+      - 'scripts/gallery/**'
+
+concurrency:
+  group: gallery-thumbnails
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  thumbnails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: scripts/gallery
+
+      - name: Generate thumbnails and manifests
+        run: node scripts/gallery/generate.mjs
+
+      - name: Commit generated thumbnails & manifests
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A -- scripts/gallery/package-lock.json '**/img/thumbs/**' _data/galleries
+          if git diff --cached --quiet; then
+            echo "No gallery changes to commit."
+          else
+            git commit -m "chore(gallery): regenerate thumbnails & manifests [skip ci]"
+            git push
+          fi

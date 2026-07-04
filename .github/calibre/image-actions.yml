@@ -1,0 +1,2 @@
+ignorePaths:
+  - '**/img/thumbs/**'

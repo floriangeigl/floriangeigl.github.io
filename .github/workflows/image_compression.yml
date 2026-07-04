@@ -11,6 +11,7 @@ on:
       - '**.jpeg'
       - '**.png'
       - '**.webp'
+      - '!**/img/thumbs/**'
 jobs:
   build:
     name: calibreapp/image-actions

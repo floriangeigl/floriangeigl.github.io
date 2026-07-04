@@ -1,0 +1,34 @@
+{% assign _gal_key = include.gallery %}
+{% assign _gal_items = site.data.galleries[_gal_key] %}
+{% if include.path %}
+  {% assign _gal_base = include.path %}
+{% else %}
+  {% assign _gal_base = _gal_key | prepend: "/" | append: "/img" %}
+{% endif %}
+
+<div class="pswp-gallery masonry-grid" id="gallery-{{ _gal_key }}">
+  <div class="masonry-sizer"></div>
+  {% for item in _gal_items %}
+  {% if item.thumb %}
+  <a class="masonry-item"
+     href="{{ _gal_base | append: '/' | append: item.file | relative_url }}"
+     data-pswp-width="{{ item.width }}"
+     data-pswp-height="{{ item.height }}"
+     target="_blank" rel="noopener">
+    <img src="{{ _gal_base | append: '/' | append: item.thumb | relative_url }}"
+         width="{{ item.thumb_width }}" height="{{ item.thumb_height }}"
+         loading="lazy" decoding="async"
+         alt="{{ item.caption | default: item.file }}">
+    {% if item.caption and item.caption != "" %}
+    <span class="masonry-caption">{{ item.caption }}</span>
+    <span class="pswp-caption-content" hidden>{{ item.caption }}</span>
+    {% endif %}
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% unless gallery_assets_loaded %}
+{% assign gallery_assets_loaded = true %}
+<script type="module" src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+{% endunless %}

@@ -26,3 +26,94 @@
 .jumbotron > :last-child {
   margin-bottom: 0;
 }
+
+/* ============================================================
+   Gallery — masonry grid + hover captions + PhotoSwipe
+   ============================================================ */
+
+/* Cap gallery width so thumbnails don't over-scale on 4K screens */
+.masonry-grid {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid sizer and items share the same width so Masonry can
+   compute column width from the sizer element.
+   Formula: (100% - (N-1)*gutter) / N  → (100% - 2*8px) / 3 */
+.masonry-sizer,
+.masonry-item {
+  width: calc((100% - 16px) / 3);
+}
+
+.masonry-item {
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  /* Suppress Beautiful Jekyll's a:hover colour bleeding onto caption text */
+  color: inherit;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hover caption overlay */
+.masonry-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.masonry-item:hover .masonry-caption {
+  opacity: 1;
+}
+
+/* PhotoSwipe lightbox custom caption */
+.pswp__custom-caption {
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 0.85rem;
+  color: #fff;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.pswp__custom-caption:empty {
+  display: none;
+}
+
+/* Responsive: 2 columns on tablets */
+@media (max-width: 767px) {
+  .masonry-sizer,
+  .masonry-item {
+    width: calc(50% - 4px);
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 480px) {
+  .masonry-sizer,
+  .masonry-item {
+    width: 100%;
+  }
+}
