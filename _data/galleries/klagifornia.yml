@@ -1,62 +1,3 @@
-- file: IMG_7135.webp
-  thumb: thumbs/IMG_7135.webp
-  width: 4618
-  height: 3464
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-07-04T08:44:45'
-  caption: ''
-  rotation: 90
-- file: IMG_7131.webp
-  thumb: thumbs/IMG_7131.webp
-  width: 4032
-  height: 3024
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-07-04T08:44:45'
-  caption: ''
-  rotation: 90
-- file: IMG_6991.webp
-  thumb: thumbs/IMG_6991.webp
-  width: 4618
-  height: 3464
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-07-04T08:44:45'
-  caption: ''
-  rotation: 90
-- file: IMG_7133.webp
-  thumb: thumbs/IMG_7133.webp
-  width: 4032
-  height: 3024
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-07-04T08:44:45'
-  caption: ''
-- file: IMG_6926.webp
-  thumb: thumbs/IMG_6926.webp
-  width: 4032
-  height: 3024
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-07-04T08:44:45'
-  caption: ''
-- file: lake_mountains.webp
-  thumb: thumbs/lake_mountains.webp
-  width: 840
-  height: 473
-  thumb_width: 600
-  thumb_height: 338
-  date: '2026-01-01T11:48:49'
-  caption: ''
-- file: paddle_duck.webp
-  thumb: thumbs/paddle_duck.webp
-  width: 840
-  height: 1120
-  thumb_width: 450
-  thumb_height: 600
-  date: '2026-01-01T11:48:49'
-  caption: Wörthersee with duck
 - file: paddle_01.webp
   thumb: thumbs/paddle_01.webp
   width: 840
@@ -81,22 +22,41 @@
   thumb_height: 450
   date: '2026-01-01T11:48:49'
   caption: Seespitz
-- file: 0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
-  thumb: thumbs/0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
-  width: 840
-  height: 473
-  thumb_width: 600
-  thumb_height: 338
-  date: '2026-01-01T11:48:49'
-  caption: Stift Viktring
-- file: IMG_5944.webp
-  thumb: thumbs/IMG_5944.webp
-  width: 840
-  height: 630
+- file: IMG_6991.webp
+  thumb: thumbs/IMG_6991.webp
+  width: 4618
+  height: 3464
   thumb_width: 600
   thumb_height: 450
-  date: '2026-01-01T11:48:49'
-  caption: Stift Viktring
+  date: '2026-07-04T08:44:45'
+  caption: ''
+  rotation: 90
+- file: IMG_7135.webp
+  thumb: thumbs/IMG_7135.webp
+  width: 4618
+  height: 3464
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-07-04T08:44:45'
+  caption: ''
+  rotation: 90
+- file: IMG_7131.webp
+  thumb: thumbs/IMG_7131.webp
+  width: 4032
+  height: 3024
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-07-04T08:44:45'
+  caption: ''
+  rotation: 90
+- file: IMG_7133.webp
+  thumb: thumbs/IMG_7133.webp
+  width: 4032
+  height: 3024
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-07-04T08:44:45'
+  caption: ''
 - file: IMG_6148.webp
   thumb: thumbs/IMG_6148.webp
   width: 840
@@ -105,6 +65,30 @@
   thumb_height: 338
   date: '2026-01-01T11:48:49'
   caption: ''
+- file: lake_mountains.webp
+  thumb: thumbs/lake_mountains.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: ''
+- file: paddle_duck.webp
+  thumb: thumbs/paddle_duck.webp
+  width: 840
+  height: 1120
+  thumb_width: 450
+  thumb_height: 600
+  date: '2026-01-01T11:48:49'
+  caption: Wörthersee with duck
+- file: 0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
+  thumb: thumbs/0002DE62-69F5-4537-AFA1-3E7DDDC375EB.webp
+  width: 840
+  height: 473
+  thumb_width: 600
+  thumb_height: 338
+  date: '2026-01-01T11:48:49'
+  caption: Stift Viktring
 - file: IMG_6143-EFFECTS.webp
   thumb: thumbs/IMG_6143-EFFECTS.webp
   width: 840
@@ -112,4 +96,20 @@
   thumb_width: 600
   thumb_height: 338
   date: '2026-01-01T11:48:49'
+  caption: ''
+- file: IMG_5944.webp
+  thumb: thumbs/IMG_5944.webp
+  width: 840
+  height: 630
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-01-01T11:48:49'
+  caption: Stift Viktring
+- file: IMG_6926.webp
+  thumb: thumbs/IMG_6926.webp
+  width: 4032
+  height: 3024
+  thumb_width: 600
+  thumb_height: 450
+  date: '2026-07-04T08:44:45'
   caption: ''
