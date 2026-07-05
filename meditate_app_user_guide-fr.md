@@ -111,10 +111,10 @@ Et une chose importante : plus tu apportes **d’humour, de douceur et de bienve
 Pas besoin de visualiser quoi que ce soit, ni de respirer d’une façon spéciale.
 
 1. Assieds-toi ou allonge-toi dans une position confortable.
-2. Laissez la respiration se faire naturellement.
+2. Laisse la respiration se faire naturellement.
 3. Porte ton attention sur la sensation de l’air au niveau du nez.
 
-Vous pouvez remarquer :
+Tu peux remarquer :
 
 - de l’air frais à l’inspiration
 - de l’air plus chaud à l’expiration
@@ -155,8 +155,8 @@ Le moment où tu remarques que ton attention est partie n’est pas un échec. C
 
 Quand tu remarques :
 
-- marquez une pause
-- souriez peut-être
+- fais une pause
+- souris peut-être
 - demande-toi avec bienveillance :
   _« Est-ce que je veux revenir au souffle maintenant ? »_
 
@@ -309,9 +309,9 @@ _(Pour la personnalisation, l’exploration et les utilisateurs avancés)_
 Depuis le sélecteur de sessions :
 
 - Maintenez le **bouton menu** (ou appui long sur l’écran)
-- Ouvrez **Add New** ou **Edit**
+- Ouvre **Add New** ou **Edit**
 
-Vous pouvez configurer :
+Tu peux configurer :
 
 ### Bases de la session
 
@@ -454,12 +454,12 @@ La plupart des problèmes se résolvent facilement.
 
   <p>Cela signifie généralement que le capteur n’est pas encore stabilisé ou qu’il y a une interférence.</p>
 
-  <p>Essayez dans cet ordre :</p>
+  <p>Essaie dans cet ordre :</p>
 
   <ol>
-    <li>Fermez puis rouvrez l’app, puis attendez au moins 30 secondes sans bouger le poignet.</li>
+    <li>Ferme puis rouvre l’app, puis attends au moins 30 secondes sans bouger le poignet.</li>
     <li>
-      Ouvrez <strong>Global Settings</strong> et choisissez <strong>Sensor restart</strong>.<br>
+      Ouvre <strong>Global Settings</strong> et choisis <strong>Sensor restart</strong>.<br>
       L’app coupe tous les capteurs cardiaques et quitte, afin que le firmware de la montre les réinitialise proprement.<br>
       Rouvrez l’app, restez immobile ~30 secondes, puis démarrez la session.
     </li>
@@ -467,10 +467,10 @@ La plupart des problèmes se résolvent facilement.
       Si tu n’utilises pas de capteur externe (ceinture thoracique), ouvre les paramètres de connectivité de la montre et vérifie que les capteurs externes sont déconnectés.<br>
       Une ceinture proche peut parfois se reconnecter automatiquement.
     </li>
-    <li>Vérifiez le positionnement de la montre. Après ajustement, restez immobile ~30 secondes.</li>
-    <li>Réinstallez l’app si le problème persiste.</li>
+    <li>Vérifie le positionnement de la montre. Après ajustement, reste immobile ~30 secondes.</li>
+    <li>Réinstalle l’app si le problème persiste.</li>
     <li>
-      Si la VFC reste peu fiable, essayez :
+      Si la VFC reste peu fiable, essaie :
       <ul>
         <li>de porter la montre à l’intérieur du poignet, ou</li>
         <li>d’utiliser un capteur externe qui prend en charge les intervalles entre battements.</li>
@@ -488,9 +488,9 @@ La plupart des problèmes se résolvent facilement.
   <p>Tu peux modifier le nom directement sur la montre :</p>
 
   <ul>
-    <li>Ouvrez <strong>Add New</strong> ou <strong>Edit</strong> pour une session</li>
-    <li>Sélectionnez <strong>Name</strong></li>
-    <li>Saisissez le texte via le sélecteur de texte de la montre</li>
+    <li>Ouvre <strong>Add New</strong> ou <strong>Edit</strong> pour une session</li>
+    <li>Sélectionne <strong>Name</strong></li>
+    <li>Saisis le texte via le sélecteur de texte de la montre</li>
   </ul>
 
   <p>
@@ -499,7 +499,7 @@ La plupart des problèmes se résolvent facilement.
   </p>
 
   <p>
-    Vous pouvez utiliser le placeholder <code>[time]</code> dans le nom.<br>
+    Tu peux utiliser le placeholder <code>[time]</code> dans le nom.<br>
     Exemple : <code>Repos profond [time]</code> → <code>Repos profond 20min</code>
   </p>
 
@@ -510,7 +510,7 @@ La plupart des problèmes se résolvent facilement.
 
   <p>Si l’app s’ouvre mais plante au lancement, ton modèle de montre ne prend probablement pas en charge le type d’activité choisi.</p>
 
-  <p>Modifiez la session et choisissez un autre type :</p>
+  <p>Modifie la session et choisis un autre type :</p>
 
   <ul>
     <li>Méditation</li>
@@ -563,10 +563,10 @@ La plupart des problèmes se résolvent facilement.
   <p>Pour modifier :</p>
 
   <ol>
-    <li>Ouvrez <strong>Watch Settings</strong></li>
-    <li>Allez dans <strong>Focus Modes</strong></li>
-    <li>Sélectionnez <strong>Activity</strong></li>
-    <li>Ajustez <strong>Brightness</strong> dans <strong>Display &amp; Brightness</strong></li>
+    <li>Ouvre <strong>Watch Settings</strong></li>
+    <li>Va dans <strong>Focus Modes</strong></li>
+    <li>Sélectionne <strong>Activity</strong></li>
+    <li>Ajuste <strong>Brightness</strong> dans <strong>Display &amp; Brightness</strong></li>
   </ol>
 
   <p>Cela affecte toutes les activités.</p>
@@ -579,8 +579,8 @@ La plupart des problèmes se résolvent facilement.
   <p>Deux options :</p>
 
   <ul>
-    <li>Créer une session très longue (par ex. 9 h) et l’arrêter manuellement.</li>
-    <li>Désactiver l’auto-stop dans Global Settings.</li>
+    <li>Crée une session très longue (par ex. 9 h) et arrête-la manuellement.</li>
+    <li>Désactive l’auto-stop dans Global Settings.</li>
   </ul>
 
 </details>
@@ -597,7 +597,7 @@ La plupart des problèmes se résolvent facilement.
 
   <ul>
     <li><strong>Raccourci :</strong> beaucoup de modèles permettent d’assigner <em>Music controls</em> dans les réglages.</li>
-    <li><strong>Menu de contrôles :</strong> ouvrez le menu et sélectionnez <em>Music</em>.</li>
+    <li><strong>Menu de contrôles :</strong> ouvre le menu et sélectionne <em>Music</em>.</li>
     <li><strong>Raccourci tactile :</strong> voir doc Garmin (Venu) : <a href="https://www8.garmin.com/manuals/webhelp/venu/EN-US/GUID-5E9D3D0F-D4C9-4A4A-97D6-4F178C27DAD8.html">Setting Up a Shortcut Control</a>.</li>
   </ul>
 
@@ -618,7 +618,7 @@ La plupart des problèmes se résolvent facilement.
   <summary><strong>L’app est installée mais n’apparaît pas (ou installation bloquée)</strong></summary>
 
   <p>
-    Vérifiez d’abord la bonne liste : l’app apparaît dans <strong>Activities</strong> / <strong>Apps</strong>.
+    Vérifie d’abord la bonne liste : l’app apparaît dans <strong>Activities</strong> / <strong>Apps</strong>.
     Selon le modèle, elle peut ne pas apparaître dans les widgets/raccourcis.
   </p>
 
@@ -630,12 +630,12 @@ La plupart des problèmes se résolvent facilement.
   <p>Essais rapides :</p>
 
   <ul>
-    <li>Resynchroniser la montre</li>
+    <li>Resynchronise la montre</li>
     <li><a href="#restart-watch">Redémarrer la montre</a> et le téléphone</li>
     <li>Désinstaller puis réinstaller l’app après redémarrage</li>
   </ul>
 
-  <p>Si ça ne marche toujours pas, contactez Garmin Support :</p>
+  <p>Si ça ne marche toujours pas, contacte Garmin Support :</p>
 
   <ul>
     <li><a href="https://support.garmin.com/en-US/?faq=67C7Y58Nxb6rkxt2Enbrf5">Garmin Support (Connect IQ install)</a></li>
@@ -647,7 +647,7 @@ La plupart des problèmes se résolvent facilement.
 <details>
   <summary><strong>Des éléments de l’app sont dans la mauvaise langue</strong></summary>
 
-  <p>Essayez dans l’ordre : désinstaller l’app, redémarrer la montre, réinstaller et resynchroniser.</p>
+  <p>Essaie dans l’ordre : désinstaller l’app, redémarrer la montre, réinstaller et resynchroniser.</p>
 
   <p>Si le problème continue, utilisez le lien <strong>Contact Developer</strong> dans le Connect IQ Store avec modèle de montre, firmware et langue concernée.</p>
 
@@ -656,7 +656,7 @@ La plupart des problèmes se résolvent facilement.
 <details>
   <summary><strong>L’app ne fonctionne plus / besoin d’aide</strong></summary>
 
-  <p>Consultez la section dédiée : <a href="#get-support--report-problem">Support / Signaler un problème</a>.</p>
+  <p>Consulte la section dédiée : <a href="#get-support--report-problem">Support / Signaler un problème</a>.</p>
 
 </details>
 
@@ -670,7 +670,7 @@ Si quelque chose ne fonctionne pas, ou pour tout retour et demande de fonctionna
 
 # Confidentialité des données
 
-Vos données restent les vôtres.
+Tes données restent les tiennes.
 
 L’app ne stocke pas d’informations personnelles.  
 Voir la [Politique de confidentialité](/meditate_app_data_privacy/).
