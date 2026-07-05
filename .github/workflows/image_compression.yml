@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: cleanup auto-compress-images branch
         run: |
           git push -d origin auto-compress-images || echo "no remote branch to cleanup"
@@ -37,7 +37,7 @@ jobs:
         run: git status && git diff && git branch
       - name: Create New Pull Request If Needed
         if: steps.calibre.outputs.markdown != ''
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           title: Compressed Images
           branch: auto-compress-images
