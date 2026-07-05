@@ -10,7 +10,7 @@ share-description: Garmin 시계에서 하는 명상 & 호흡 훈련 — 실시�
 <div><small>🌐 <a href="/meditate_app/">English</a> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <a href="/meditate_app-ja/">日本語</a> | <b>한국어</b> | <a href="/meditate_app-pt/">Português</a> | <a href="/meditate_app-uk/">Українська</a> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![명상 & 호흡 훈련 앱 대표 이미지](meditate_app_user_guide/userGuideScreenshots/hero_meditate-ko.png)
+![명상 & 호흡 훈련 앱 대표 이미지](/meditate_app_user_guide/userGuideScreenshots/hero_meditate-ko.png)
 
 차분하면서도 동시에 불안했던 적이 있다면, 당신에게 문제가 있는 게 아닙니다. 그저 인간적인 반응입니다.
 

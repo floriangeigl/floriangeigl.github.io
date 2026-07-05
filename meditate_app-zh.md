@@ -10,7 +10,7 @@ share-description: 在 Garmin 手表上进行冥想 & 呼吸练习——结合�
 <div><small>🌐 <a href="/meditate_app/">English</a> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <a href="/meditate_app-ja/">日本語</a> | <a href="/meditate_app-ko/">한국어</a> | <a href="/meditate_app-pt/">Português</a> | <a href="/meditate_app-uk/">Українська</a> | <b>中文</b></small></div>
 
 
-![冥想 & 呼吸练习应用主图](meditate_app_user_guide/userGuideScreenshots/hero_meditate-zh.png)
+![冥想 & 呼吸练习应用主图](/meditate_app_user_guide/userGuideScreenshots/hero_meditate-zh.png)
 
 如果你曾经同时感到平静和不安，那并不说明你哪里坏掉了。你只是很正常。
 

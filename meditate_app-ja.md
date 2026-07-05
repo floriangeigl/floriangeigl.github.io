@@ -10,7 +10,7 @@ share-description: Garminウォッチで行う瞑想 & 呼吸法。リアルタ�
 <div><small>🌐 <a href="/meditate_app/">English</a> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <b>日本語</b> | <a href="/meditate_app-ko/">한국어</a> | <a href="/meditate_app-pt/">Português</a> | <a href="/meditate_app-uk/">Українська</a> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![瞑想 & 呼吸法アプリのメイン画像](meditate_app_user_guide/userGuideScreenshots/hero_meditate-ja.png)
+![瞑想 & 呼吸法アプリのメイン画像](/meditate_app_user_guide/userGuideScreenshots/hero_meditate-ja.png)
 
 落ち着いているのに、どこか不安でもある。そんなふうに感じたことがあっても、おかしくありません。とても人間らしいことです。
 

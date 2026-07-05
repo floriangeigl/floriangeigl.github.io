@@ -10,7 +10,7 @@ share-description: Meditation & breathwork on your Garmin watch — mindfulness 
 <div><small>🌐 <b>English</b> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <a href="/meditate_app-ja/">日本語</a> | <a href="/meditate_app-ko/">한국어</a> | <a href="/meditate_app-pt/">Português</a> | <a href="/meditate_app-uk/">Українська</a> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![meditate and breathwork app hero image](meditate_app_user_guide/userGuideScreenshots/hero_meditate.png)
+![meditate and breathwork app hero image](/meditate_app_user_guide/userGuideScreenshots/hero_meditate.png)
 
 If you have ever felt calm and uneasy at the same time, you are not broken. You are human.
 

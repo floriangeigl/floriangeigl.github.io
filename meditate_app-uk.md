@@ -10,7 +10,7 @@ share-description: Медитація & Дихальні практики на �
 <div><small>🌐 <a href="/meditate_app/">English</a> | <a href="/meditate_app-de/">Deutsch</a> | <a href="/meditate_app-es/">Español</a> | <a href="/meditate_app-fr/">Français</a> | <a href="/meditate_app-ja/">日本語</a> | <a href="/meditate_app-ko/">한국어</a> | <a href="/meditate_app-pt/">Português</a> | <b>Українська</b> | <a href="/meditate_app-zh/">中文</a></small></div>
 
 
-![головне зображення застосунку Медитація & Дихальні практики](meditate_app_user_guide/userGuideScreenshots/hero_meditate-uk.png)
+![головне зображення застосунку Медитація & Дихальні практики](/meditate_app_user_guide/userGuideScreenshots/hero_meditate-uk.png)
 
 Якщо ти колись одночасно відчував спокій і тривогу, з тобою все гаразд. Ти просто людина.
 
