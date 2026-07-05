@@ -1,12 +1,12 @@
 - file: E101EBD3-EFEE-4957-BD9F-E17A2DBC64AF Copy.mov
   thumb: thumbs/E101EBD3-EFEE-4957-BD9F-E17A2DBC64AF Copy.webp
+  type: video
   width: 1080
   height: 1920
   thumb_width: 338
   thumb_height: 600
   date: '2026-07-04T08:42:04'
   caption: Departure Mali Lošinj
-  type: video
 - file: IMG_7267.webp
   thumb: thumbs/IMG_7267.webp
   width: 4618
@@ -23,6 +23,7 @@
   thumb_height: 450
   date: '2026-07-04T10:06:31'
   caption: Approach Mali Lošinj
+  rotation: 270
 - file: IMG_7220.webp
   thumb: thumbs/IMG_7220.webp
   width: 2076
