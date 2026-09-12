@@ -52,8 +52,9 @@ share-description: If you’d like to support my work (including Meditation & Br
 <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const meditate_minutes = urlParams.get('meditate-minutes');
-    if (meditate_minutes != null) {
+    const meditate_minutes_raw = urlParams.get('meditate-minutes');
+    const meditate_minutes = Number.parseInt(meditate_minutes_raw, 10);
+    if (Number.isInteger(meditate_minutes) && meditate_minutes > 0) {
         const headerEl = document.querySelector('header.header-section');
         if (headerEl) {
             headerEl.style.display = 'none';
@@ -229,7 +230,7 @@ share-description: If you’d like to support my work (including Meditation & Br
         const theme = getMonthlyTheme(prev.monthIndex, prev.year);
         const compliment = minutesCompliment(minutes);
         const durationText = formatDurationFromMinutes(minutes);
-        const displayedDuration = durationText || `${meditate_minutes} minutes`;
+        const displayedDuration = durationText || `${minutes} minutes`;
 
         const meditate_block = `
         <div class="main-explain-area jumbotron centered" style="text-align: center">
