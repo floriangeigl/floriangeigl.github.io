@@ -12,6 +12,9 @@ on:
       - '**.png'
       - '**.webp'
       - '!**/img/thumbs/**'
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   build:
     name: calibreapp/image-actions
