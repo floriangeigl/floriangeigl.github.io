@@ -148,6 +148,23 @@ function exitEditMode() {
 
 // ── Panel builder ─────────────────────────────────────────────────────────────
 
+function sanitizeImageUrl(url) {
+  if (typeof url !== 'string' || !url.trim()) return '';
+  try {
+    const parsed = new URL(url, window.location.origin);
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return '';
+    return parsed.href;
+  } catch {
+    return '';
+  }
+}
+
+function buildSafeImageSrc(basePath, fileName) {
+  const safeBase = String(basePath ?? '').replace(/\/+$/, '');
+  const safeFile = String(fileName ?? '').replace(/^\/+/, '');
+  return sanitizeImageUrl(`${safeBase}/${safeFile}`);
+}
+
 function buildEditPanel(galleryKey, originalData, basePath) {
   const panel = document.createElement('div');
   panel.className = 'gal-edit-panel';
@@ -169,7 +186,7 @@ function buildEditPanel(galleryKey, originalData, basePath) {
     // ── Thumbnail ──
     const thumb = document.createElement('img');
     thumb.className = 'gal-row-thumb';
-    thumb.src = `${basePath}/${item.thumb}`;
+    thumb.src = buildSafeImageSrc(basePath, item.thumb);
     thumb.alt = '';
     thumb.draggable = false;
     thumb.addEventListener('mouseenter', () => showThumbPreview(thumb));
@@ -249,7 +266,10 @@ function showThumbPreview(thumb) {
     thumbPreviewEl.appendChild(img);
     document.body.appendChild(thumbPreviewEl);
   }
-  thumbPreviewEl.querySelector('img').src = thumb.src;
+  const previewImg = thumbPreviewEl.querySelector('img');
+  const safePreviewSrc = sanitizeImageUrl(thumb.src);
+  if (!safePreviewSrc) return;
+  previewImg.src = safePreviewSrc;
 
   const rect = thumb.getBoundingClientRect();
   const gap  = 12;
