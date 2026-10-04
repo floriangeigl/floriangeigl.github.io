@@ -15,7 +15,7 @@ The app does not connect to the internet by itself. All network requests are mad
 
 When you use my Meditation app, I may collect certain information automatically. After each saved session, the app sends one analytics event, including:
 * [Garmin's unique identifier](https://developer.garmin.com/connect-iq/api-docs/Toybox/System/DeviceSettings.html#uniqueIdentifier-var) that is unique per app and device
-* Your approximate location (country, region and city), derived from your IP address as described below; left out if the lookup fails
+* Your IP address, anonymised on your watch as described below; Google Analytics derives your approximate location (country, region and city) from it. Left out if the lookup fails
 * Basic session metrics: the session duration and the time the session ended
 * App version, Connect IQ API version, firmware version and system language
 * Device type (Garmin part number), screen resolution and operating system
@@ -23,13 +23,15 @@ When you use my Meditation app, I may collect certain information automatically.
 * Usage patterns within the app
 * If you are a developer, feel free to look at the relevant source code [here](https://github.com/floriangeigl/Meditate/tree/main/Meditate/source/com)
 
-Events are kept on your watch (at most 10, for at most 72 hours) until your phone is reachable, and are then sent. The event does not contain your IP address. It does not contain heart rate, HRV, stress, respiration, activity names, session settings or any other health or activity data.
+Events are kept on your watch (at most 10, for at most 71 hours) until your phone is reachable, and are then sent together. The event does not contain heart rate, HRV, stress, respiration, activity names, session settings or any other health or activity data.
 
 I use Google Analytics to help me understand how users interact with my app. Google sees your phone's IP address at the connection level and may collect additional technical data as described in their [Privacy Policy](https://policies.google.com/privacy).
 
-To determine your approximate location, the app uses ipapi.co. It sends a request to `https://ipapi.co/json/` at most once per send attempt: after each saved session, and when the app starts while unsent events are waiting. ipapi.co sees your phone's full public IP address. The app keeps only the country, region and city from the answer, in memory, and adds them to the analytics event. The IP address itself is not stored and not forwarded. For more information, please see [ipapi.co's Privacy Policy](https://ipapi.co/privacy/).
+To look up your phone's IP address, the app uses GeoJS (since October 2026). It sends a request to `https://get.geojs.io/v1/ip.json` at most once per send attempt: after each saved session, and when the app starts while unsent events are waiting. The answer contains only your phone's public IP address; GeoJS sees this full IP address at the connection level. The app anonymises the IP address on your watch before using it: for IPv4 the last block is set to 0 (e.g. 203.0.113.0), for IPv6 only the first three blocks (/48) are kept. The full IP address is not stored and not forwarded. GeoJS states that it keeps no access logs, only error logs, and that it is subject to Australia's Privacy Act 1988. For more information, please see [GeoJS's Privacy Policy](https://www.geojs.io/privacy/).
 
-At most once a month, after a month with at least 15 minutes of meditation, and only when your phone is connected, the app opens my [tip page](/tipme/) on your phone. The link contains last month's meditation minutes (rounded up) as the parameter `meditate-minutes`, plus `utm_source=meditate_app`, `utm_medium=garmin_watch` and `utm_campaign=tip`. Because the tip page is part of my website, the website's Google Analytics (see below) records the page address including these parameters.
+Before October 2026, the app used ipapi.co instead: ipapi.co saw your phone's full IP address, and the app sent only the country, region and city it returned to Google Analytics, not the IP address. For more information, please see [ipapi.co's Privacy Policy](https://ipapi.co/privacy/).
+
+At most once a month, after a month with at least 15 minutes of meditation, and only when your phone is connected, the app opens my [tip page](/tipme/) on your phone. The link contains last month's meditation minutes (rounded up to a whole number) as the parameter `meditate-minutes`, plus `utm_source=meditate_app`, `utm_medium=garmin_watch` and `utm_campaign=tip`. Because the tip page is part of my website, the website's Google Analytics (see below) records the page address including these parameters.
 
 The app also contains a hidden cloud backup tool that I use for development. It is not part of the regular app menus and can only be reached by long-pressing the About screen. Only when you trigger a backup there yourself, the app uploads its settings, your saved sessions and your monthly meditation minutes to a [Firebase](https://firebase.google.com/support/privacy) Realtime Database (operated by Google), stored under the same Garmin unique identifier as above. Nothing is sent to Firebase automatically. Apart from the tip page and this backup, your monthly meditation minutes stay on your watch.
 
@@ -47,7 +49,7 @@ I collect and use this information to:
 * Enhance your overall user experience
 
 The legal bases under the General Data Protection Regulation (GDPR) are:
-* App analytics, including the location lookup via ipapi.co: my legitimate interest in understanding how the app is used and improving it (Art. 6(1)(f) GDPR). The app has no setting to turn analytics off; you can object at any time by email (see section 5).
+* App analytics, including the IP lookup via GeoJS (before October 2026: the location lookup via ipapi.co): my legitimate interest in understanding how the app is used and improving it (Art. 6(1)(f) GDPR). The app has no setting to turn analytics off; you can object at any time by email (see section 5).
 * Tip page: my legitimate interest in asking for voluntary support of the app (Art. 6(1)(f) GDPR).
 * Website analytics: your consent given via the cookie banner on my website (Art. 6(1)(a) GDPR), which you can withdraw at any time.
 * Cloud backup: your own request when you start a backup (Art. 6(1)(b) GDPR).
@@ -56,11 +58,11 @@ I do not make automated decisions about you that have legal or similarly signifi
 
 **3. Data Sharing**
 
-I do not sell or share your personal information with third parties for marketing purposes. The analytics events described above are sent to Google Analytics, the location lookup is done by ipapi.co, and backups you trigger yourself are stored in Firebase.
+I do not sell or share your personal information with third parties for marketing purposes. The analytics events described above are sent to Google Analytics, the IP lookup is done by GeoJS (before October 2026: ipapi.co), and backups you trigger yourself are stored in Firebase.
 
 **4. Data Retention**
 
-I retain analytics data for no longer than necessary. Google Analytics data retention (app and website) is currently set to 14 months to understand usage trends over the course of a year. ipapi.co keeps request logs for a limited time, as described in [its Privacy Policy](https://ipapi.co/privacy/). Backups in Firebase are not deleted automatically; they are kept until you ask me to delete them.
+I retain analytics data for no longer than necessary. Google Analytics data retention (app and website) is currently set to 14 months to understand usage trends over the course of a year. GeoJS states that it keeps no access logs, only error logs. ipapi.co (used before October 2026) keeps request logs for a limited time, as described in [its Privacy Policy](https://ipapi.co/privacy/). Backups in Firebase are not deleted automatically; they are kept until you ask me to delete them.
 
 **5. Your Rights**
 
@@ -83,9 +85,11 @@ I take appropriate measures to protect your data from unauthorized access, alter
 
 I process your data in accordance with the General Data Protection Regulation (GDPR). Some of the services I use process data in the USA:
 * Google (Google Analytics, Firebase) and Cloudflare are certified under the EU-U.S. Data Privacy Framework.
-* ipapi.co is operated by Kloudend, Inc. (USA). According to its Privacy Policy, these transfers are governed by Standard Contractual Clauses.
+* ipapi.co (used before October 2026) is operated by Kloudend, Inc. (USA). According to its Privacy Policy, these transfers are governed by Standard Contractual Clauses.
 
-The app does not send your IP address to Google Analytics.
+GeoJS is subject to Australia's Privacy Act 1988.
+
+The app anonymises your IP address on your watch before sending it to Google Analytics.
 
 **8. Changes to This Policy**
 
