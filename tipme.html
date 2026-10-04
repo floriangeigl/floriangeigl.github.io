@@ -5,13 +5,14 @@ title: Thank you! 🙏
 permalink: /tipme/
 share-title: Tip Me a Cup of Tea | Florian Geigl
 share-description: If you’d like to support my work (including Meditation & Breathwork), you can tip me here. Thank you!
+ext-css:
+  - href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap"
 ---
 
-<div id="meditate">
-</div>
+<div id="meditate" class="meditate-card" hidden></div>
 
 <div id="paypal" class="main-explain-area jumbotron centered" style="text-align: center">
-    <h3>Paypal</h3>
+    <h3>PayPal</h3>
     <form action="https://www.paypal.com/donate" method="post" target="_top">
     <input type="hidden" name="business" value="NKYCZ67AW43YJ" />
     <input type="hidden" name="no_recurring" value="0" />
@@ -22,7 +23,7 @@ share-description: If you’d like to support my work (including Meditation & Br
     </form>
 </div>
 <div class="main-explain-area jumbotron centered" style="text-align: center">
-    <h3>Buymeacoffe.com</h3>
+    <h3>Buy Me a Coffee</h3>
     <a href="https://www.buymeacoffee.com/floriangeix" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
     <br />
     <br />
@@ -30,255 +31,271 @@ share-description: If you’d like to support my work (including Meditation & Br
 </div>
 
 <style>
-    /* Match the navbar avatar sizing (50px default, 100px on large screens) */
-    .tipme-dynamic-logo {
-        width: 3.125rem;
-        height: 3.125rem;
-        margin: 10px auto 6px;
-        display: block;
-        border-radius: 50%;
-        object-fit: cover;
+    .meditate-card {
+        --calm: #2f7d5b;
+        --calm-soft: #eef6f1;
+        --ink: #3d5a4c;
+        max-width: 36rem;
+        margin: 2.5rem auto 2rem;
+        padding: 2rem 1.5rem 1.5rem;
+        text-align: center;
+        border: 1px solid #dcebe2;
+        border-radius: 1rem;
+        background: linear-gradient(180deg, var(--calm-soft) 0%, #fff 70%);
+    }
+
+    .meditate-card p {
+        margin: 0;
+    }
+
+    .meditate-hand {
+        font-family: 'Caveat', cursive;
+        color: var(--ink);
+        line-height: 1.15;
+    }
+
+    .meditate-eyebrow {
+        font-family: var(--header-font);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--mid-col);
+    }
+
+    .meditate-eyebrow a {
+        color: inherit;
+    }
+
+    .meditate-letter {
+        margin: 1.25rem auto 0;
+        max-width: 28rem;
+        padding: 1.75rem 1.75rem 1.5rem;
+        text-align: left;
+        background: #fffdf7;
+        border: 1px solid #efe6cf;
+        border-radius: 4px;
+        box-shadow: 0 6px 18px rgba(80, 60, 20, 0.08);
+        transform: rotate(-0.6deg);
+    }
+
+    .meditate-letter p {
+        margin: 0 0 0.85rem;
+        line-height: 1.6;
+    }
+
+    .meditate-letter .meditate-hand {
+        font-size: 1.7rem;
+    }
+
+    .meditate-letter .meditate-signoff {
+        margin: 1rem 0 0;
+        text-align: right;
+    }
+
+    .meditate-ps {
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+
+    .meditate-dev {
+        margin-top: 1.75rem !important;
+        font-size: 0.95rem;
+        color: var(--mid-col);
+    }
+
+    .meditate-take {
+        margin: 1.25rem auto 0;
+        max-width: 24rem;
+        padding: 1.25rem 1.25rem 1rem;
+        border: 1px dashed #b9d9c7;
+        border-radius: 0.75rem;
+        background: #fff;
+        box-shadow: 0 4px 14px rgba(47, 125, 91, 0.08);
+    }
+
+    .meditate-take-text {
+        font-size: 1.8rem;
+    }
+
+    .meditate-take-source {
+        margin-top: 0.25rem !important;
+        font-family: var(--header-font);
+        font-size: 0.75rem;
+        color: var(--calm);
+    }
+
+    .meditate-letter-label {
+        margin-top: 1.75rem !important;
+    }
+
+    .meditate-divider {
+        width: 3rem;
+        margin: 1.5rem auto;
+        border-top: 1px solid #cfe3d7;
+    }
+
+    .meditate-cta {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.7rem 1.6rem;
+        border-radius: 999px;
+        background: var(--calm);
+        color: #fff !important;
+        font-family: var(--header-font);
+        font-weight: 600;
+        text-decoration: none !important;
+        transition: background 0.2s ease;
+    }
+
+    .meditate-cta:hover,
+    .meditate-cta:focus {
+        background: #24654a;
+    }
+
+    .meditate-cta-note {
+        margin-top: 0.4rem !important;
+        font-size: 0.85rem;
+        color: var(--mid-col);
+    }
+
+    .meditate-small {
+        margin-top: 1.5rem !important;
+        font-size: 0.8rem;
+        color: var(--mid-col);
+    }
+
+    .meditate-small p + p {
+        margin-top: 0.25rem;
     }
 
     @media (min-width: 1200px) {
-        .tipme-dynamic-logo {
-            width: 6.25rem;
-            height: 6.25rem;
+        .meditate-card {
+            margin-top: 4rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .meditate-card {
+            padding: 1.5rem 1rem 1.25rem;
+        }
+
+        .meditate-letter {
+            padding: 1.25rem 1.25rem 1rem;
         }
     }
 </style>
 
-
 <script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const meditate_minutes_raw = urlParams.get('meditate-minutes');
-    const meditate_minutes = Number.parseInt(meditate_minutes_raw, 10);
-    if (Number.isInteger(meditate_minutes) && meditate_minutes > 0) {
+    (function () {
+        const data = {{ site.data.tipme_meditate | jsonify }};
+        const params = new URLSearchParams(window.location.search);
+        const minutes = Number.parseInt(params.get('meditate-minutes'), 10);
+        if (!Number.isInteger(minutes) || minutes <= 0) return;
+
         const headerEl = document.querySelector('header.header-section');
-        if (headerEl) {
-            headerEl.style.display = 'none';
-        }
+        if (headerEl) headerEl.style.display = 'none';
 
         const navEl = document.querySelector('.navbar');
         const mainEl = document.querySelector('main');
         if (navEl && mainEl) {
-            const navHeight = Math.ceil(navEl.getBoundingClientRect().height);
-            mainEl.style.marginTop = `${navHeight}px`;
+            mainEl.style.marginTop = `${Math.ceil(navEl.getBoundingClientRect().height)}px`;
         }
 
-        const minutes = Number(meditate_minutes);
-
-        const monthNames = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-
-        function getPreviousMonthContext(now = new Date()) {
-            const prev = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-            return {
-                monthIndex: prev.getMonth(),
-                monthName: monthNames[prev.getMonth()],
-                year: prev.getFullYear(),
-            };
-        }
-
-        function formatDurationFromMinutes(mins) {
-            if (!Number.isFinite(mins) || mins < 0) return null;
-            const totalMinutes = Math.floor(mins);
-            const hours = Math.floor(totalMinutes / 60);
-            const minutesLeft = totalMinutes % 60;
-            if (hours <= 0) return `${minutesLeft} minute${minutesLeft === 1 ? '' : 's'}`;
-            if (minutesLeft === 0) return `${hours} hour${hours === 1 ? '' : 's'}`;
-            return `${hours} hour${hours === 1 ? '' : 's'} ${minutesLeft} minute${minutesLeft === 1 ? '' : 's'}`;
-        }
-
-        function minutesCompliment(mins) {
-            if (!Number.isFinite(mins) || mins <= 0) return "I’m really glad you’re here. You don’t have to earn rest.";
-            if (mins < 10) return "Even a few breaths matter. I’m proud of you for showing up gently.";
-            if (mins < 30) return "A little time for you is still real care - you deserve that.";
-            if (mins < 120) return "That’s a tender amount of time you gave yourself. Thank you for being kind to you.";
-            if (mins < 300) return "That’s a lot of calm you offered your mind and body. I hope you felt held by it.";
-            return "That’s a beautiful month of returning to yourself. Truly: well done, softly.";
-        }
-
-        // Lunar New Year varies each year; keep a small lookup table.
-        // Dates are in local time; we only use the month/day.
-        const lunarNewYearDates = {
-            2024: new Date(2024, 1, 10),
-            2025: new Date(2025, 0, 29),
-            2026: new Date(2026, 1, 17),
-            2027: new Date(2027, 1, 6),
-            2028: new Date(2028, 0, 26),
-            2029: new Date(2029, 1, 13),
-            2030: new Date(2030, 1, 3),
-        };
-
-        function isLunarNewYearInMonth(year, monthIndex) {
-            const d = lunarNewYearDates[year];
-            return d && d.getFullYear() === year && d.getMonth() === monthIndex;
-        }
-
-        function getMonthlyTheme(prevMonthIndex, prevYear) {
-            const baseThemes = {
-                0: {
-                    vibe: "A gentle reset",
-                    hook: "New year or not - you don’t have to fix yourself to deserve care.",
-                    ask: "If those January breaths helped you feel a little more held, and you’d like to send some love back, you can.",
-                    quoteText: "May all beings be safe, well, and at ease.",
-                    quoteSource: "Buddhist loving-kindness (mettā) blessing",
-                },
-                1: {
-                    vibe: "Warmth in the quiet season",
-                    hook: "Even a small pause can feel like a little hug from the inside.",
-                    ask: "If your February pauses helped you feel a bit steadier, and you’d like to send some love back, you can.",
-                    quoteText: "Hatred doesn’t end hatred; only love ends it.",
-                    quoteSource: "Dhammapada (paraphrase)",
-                },
-                2: {
-                    vibe: "A soft shift of seasons",
-                    hook: "When everything starts changing, your breath can be something steady.",
-                    ask: "If March felt like a transition and this practice helped you stay grounded, and you’d like to send some love back, you can.",
-                    quoteText: "You don’t have to chase peace - you can return to it, right where you are.",
-                    quoteSource: "Buddhist practice (inspired)",
-                },
-                3: {
-                    vibe: "More light, more ease",
-                    hook: "There’s nothing to prove here - just a moment to breathe and be.",
-                    ask: "If your April breaths brought a little ease, and you’d like to send some love back, you can.",
-                    quoteText: "Peace comes from within; don’t look for it outside.",
-                    quoteSource: "Buddhist saying (traditional)",
-                },
-                4: {
-                    vibe: "Room to breathe",
-                    hook: "You’re allowed to rest, even when life is blooming all around you.",
-                    ask: "If May got lively and this practice helped you stay soft in the middle of it, and you’d like to send some love back, you can.",
-                    quoteText: "Just as a mother protects her only child, let your heart be boundless toward all.",
-                    quoteSource: "Karaṇīya Mettā Sutta (paraphrase)",
-                },
-                5: {
-                    vibe: "A lighter rhythm",
-                    hook: "Sun’s up, shoulders down - you can let yourself exhale.",
-                    ask: "If June was busy and these pauses helped you come back to yourself, and you’d like to send some love back, you can.",
-                    quoteText: "Breathing in, I calm my body. Breathing out, I smile.",
-                    quoteSource: "Thich Nhat Hanh (often taught as a gāthā)",
-                },
-                6: {
-                    vibe: "Cooling down inside",
-                    hook: "Heat outside, soft inside - one calm breath at a time.",
-                    ask: "If July was a whirlwind and this practice helped you find a cool, calm corner inside, and you’d like to send some love back, you can.",
-                    quoteText: "You, too, are worthy of your own kindness.",
-                    quoteSource: "Buddhist practice (self-compassion inspired)",
-                },
-                7: {
-                    vibe: "A gentle mid-year pause",
-                    hook: "A calm minute between adventures is still a real kind of care.",
-                    ask: "If August gave you a moment to reset and this practice helped, and you’d like to send some love back, you can.",
-                    quoteText: "Drop by drop, the water jar is filled.",
-                    quoteSource: "Dhammapada (paraphrase)",
-                },
-                8: {
-                    vibe: "Finding your footing",
-                    hook: "You can meet the day without abandoning yourself.",
-                    ask: "If September got structured and this practice helped you stay gentle with yourself, and you’d like to send some love back, you can.",
-                    quoteText: "In this moment, you can begin again.",
-                    quoteSource: "Buddhist practice (inspired)",
-                },
-                9: {
-                    vibe: "Cozy presence",
-                    hook: "When days get shorter, your breath can feel like a warm light.",
-                    ask: "If October felt intense and these pauses helped you feel more grounded, and you’d like to send some love back, you can.",
-                    quoteText: "With a gentle heart, even a difficult day can soften.",
-                    quoteSource: "Buddhist practice (inspired)",
-                },
-                10: {
-                    vibe: "Soft gratitude",
-                    hook: "Thank you for taking care of yourself - you deserve your own kindness.",
-                    ask: "If these November moments helped you feel supported, and you’d like to send some love back, you can.",
-                    quoteText: "Let go, and be free.",
-                    quoteSource: "Buddhist teaching (inspired)",
-                },
-                11: {
-                    vibe: "A year-end exhale",
-                    hook: "One calm minute in the holiday whirlwind can be a real act of love.",
-                    ask: "If December felt intense and this practice helped you find a softer place inside, and you’d like to send some love back, you can.",
-                    quoteText: "Radiate kindness in all directions, without limit.",
-                    quoteSource: "Buddhist loving-kindness (mettā) teaching (paraphrase)",
-                },
-            };
-
-            const theme = baseThemes[prevMonthIndex] || baseThemes[0];
-            let vibe = theme.vibe;
-            let hook = theme.hook;
-            let ask = theme.ask;
-            let quoteText = theme.quoteText;
-            let quoteSource = theme.quoteSource;
-
-            // If Lunar New Year happened in the previous month, adjust the single hook/ask/quote.
-            if (isLunarNewYearInMonth(prevYear, prevMonthIndex)) {
-                vibe = "A gentle turning of the page";
-                hook = "Lunar New Year can be a fresh start - and you can take it slowly.";
-                ask = "If Lunar New Year brought a lot of feelings (or a lot of people), and these pauses helped, and you’d like to send some love back, you can.";
-                quoteText = "Sabbe sattā bhavantu sukhitattā. (May all beings be well and happy.)";
-                quoteSource = "Traditional mettā phrase";
+        // Only languages with translated letters are offered; the rest fall back to English.
+        function pickLang() {
+            const candidates = [params.get('lang'), ...(navigator.languages || [navigator.language])];
+            for (const c of candidates) {
+                const code = (c || '').toLowerCase().split('-')[0];
+                if (data.lang[code] && data.lang[code].letter) return code;
             }
-
-            return { ...theme, vibe, hook, ask, quoteText, quoteSource };
+            return 'en';
         }
 
-        const prev = getPreviousMonthContext();
-        const theme = getMonthlyTheme(prev.monthIndex, prev.year);
-        const compliment = minutesCompliment(minutes);
-        const durationText = formatDurationFromMinutes(minutes);
-        const displayedDuration = durationText || `${minutes} minutes`;
+        // Optional ?meditate-month=YYYY-MM; otherwise the month before today.
+        function pickMonth() {
+            const m = /^(\d{4})-(\d{2})$/.exec(params.get('meditate-month') || '');
+            if (m && +m[2] >= 1 && +m[2] <= 12) return { year: +m[1], monthIndex: +m[2] - 1 };
+            const now = new Date();
+            const prev = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+            return { year: prev.getFullYear(), monthIndex: prev.getMonth() };
+        }
 
-        const meditate_block = `
-        <div class="main-explain-area jumbotron centered" style="text-align: center">
-            <p>
-                <em>“${theme.quoteText}”</em><br />
-                <small>- ${theme.quoteSource}</small>
-            </p>
-            <p>
-                <b>Thanks for using the <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b" target="_blank" rel="noopener">Garmin Meditation & Breathwork</a> app</b>
-            </p>
-            <p>
-                <b>You gave yourself ${displayedDuration} of calm in ${prev.monthName} ${prev.year} 🧘‍♂️</b><br />
-                ${compliment}
-            </p>
-            <p>
-                <b>${theme.vibe}</b><br />
-                ${theme.hook}
-            </p>
-            <p>
-                ${theme.ask}
-            </p>
-            <p>
-                <img src="{{ '/assets/img/website-logo.png' | relative_url }}" alt="Website logo" class="tipme-dynamic-logo" />
-                <a href="#paypal" style="text-decoration: none;">
-                    <b>Buy the developer a cup of tea. 🍵</b>
-                </a>
-                <br />
-                <small>
-                    (I promise to sip it mindfully)
-                </small>
-            </p>
-            <p>
-                Sending you a virtual hug - and a big thank you. <br />
-                <small>
-                    PS: ♥️ can also look like
-                    writing a <a href="https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2">positive review for the app</a> or
-                    sending a brief "Thank you" to my <a href="mailto:florian.geigl+thankyou@gmail.com?subject=Thank you">mailbox</a>.
-                    <br />
-                    PPS: Need help with the app? Read the <a href="{{ '/meditate_app_user_guide/' | relative_url }}">user guide</a>.
-                </small>
-            </p>
-        </div>
+        function isLunarNewYearMonth(year, monthIndex) {
+            return data.lunar_new_year.some((d) => {
+                const [y, mo] = d.split('-').map(Number);
+                return y === year && mo - 1 === monthIndex;
+            });
+        }
 
+        function formatUnit(lang, value, unit) {
+            return new Intl.NumberFormat(lang, { style: 'unit', unit, unitDisplay: 'long' }).format(value);
+        }
+
+        function formatDuration(lang, mins) {
+            const hours = Math.floor(mins / 60);
+            const rest = mins % 60;
+            const parts = [];
+            if (hours > 0) parts.push(formatUnit(lang, hours, 'hour'));
+            if (rest > 0 || hours === 0) parts.push(formatUnit(lang, rest, 'minute'));
+            // "1 hour and 35 minutes"; CJK reads better without a conjunction.
+            const cjkJoin = { ja: ' ', ko: ' ', zh: '' }[lang];
+            if (cjkJoin !== undefined || !Intl.ListFormat) return parts.join(cjkJoin === undefined ? ' ' : cjkJoin);
+            return new Intl.ListFormat(lang, { type: 'conjunction' }).format(parts);
+        }
+
+        const lang = pickLang();
+        const t = data.lang[lang];
+        const letter = t.letter;
+        const month = pickMonth();
+        const lunar = isLunarNewYearMonth(month.year, month.monthIndex);
+        const quote = data.quotes[lunar ? 12 : month.monthIndex];
+        const marks = { de: ['„', '“'], fr: ['« ', ' »'], ja: ['「', '」'], uk: ['«', '»'] }[lang] || ['“', '”'];
+        const monthLabel = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' })
+            .format(new Date(month.year, month.monthIndex, 1));
+        const duration = formatDuration(lang, minutes);
+        const paragraphs = letter.months[month.monthIndex]
+            .map((p) => `<p>${p.replace('{duration}', duration)}</p>`)
+            .join('');
+        const mailto = `mailto:${data.mail}?subject=${encodeURIComponent(t.mail_subject)}`;
+        const fill = (s) => s
+            .replace('{review}', data.review_url)
+            .replace('{mail}', mailto)
+            .replace('{guide}', t.guide_url);
+
+        const el = document.getElementById('meditate');
+        el.lang = lang;
+        el.innerHTML = `
+            <p class="meditate-eyebrow">
+                <a href="${data.app_url}" target="_blank" rel="noopener">${t.app_name}</a> · ${monthLabel}
+            </p>
+            <div class="meditate-take">
+                <p class="meditate-hand meditate-take-text">${marks[0]}${quote.text[lang]}${marks[1]}</p>
+                <p class="meditate-take-source">— ${quote.source}</p>
+            </div>
+
+            <p class="meditate-eyebrow meditate-letter-label">${letter.eyebrow}</p>
+
+            <div class="meditate-letter">
+                <p class="meditate-hand">${letter.greeting}</p>
+                ${paragraphs}
+                ${lunar ? `<p class="meditate-ps">${letter.lunar_ps}</p>` : ''}
+                <p class="meditate-hand meditate-signoff">${letter.signoff}</p>
+            </div>
+
+            <p class="meditate-dev">${letter.dev_note}</p>
+
+            <div class="meditate-divider"></div>
+
+            <p>${letter.ask}</p>
+            <a class="meditate-cta" href="#paypal">${t.cta} 🍵</a>
+            <p class="meditate-cta-note">${t.cta_note}</p>
+
+            <div class="meditate-small">
+                <p>${fill(t.other_ways)}</p>
+                <p>${fill(t.help)}</p>
+            </div>
         `;
-
-        const meditateEl = document.getElementById("meditate");
-        if (meditateEl) {
-            meditateEl.outerHTML = meditate_block;
-        }
-    }
+        el.hidden = false;
+    })();
 </script>

@@ -1,0 +1,904 @@
+{
+  "_comment": "Strings for the meditation block on /tipme/ (shown when the Garmin app opens ?meditate-minutes=N). lang.<code>.letter.months[i] is the letter for month i (languages without a letter fall back to English). quotes[i] opens the \"Take this with you\" card for month i; quotes[12] replaces it when Lunar New Year fell in that month. Quotes use established published translations where they exist.",
+  "app_url": "https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b",
+  "review_url": "https://apps.garmin.com/apps/e6f3f3d2-3ea6-4ec1-81a5-977c708eb75b?tid=2",
+  "mail": "florian.geigl+thankyou@gmail.com",
+  "lunar_new_year": ["2024-02-10", "2025-01-29", "2026-02-17", "2027-02-06", "2028-01-26", "2029-02-13", "2030-02-03", "2031-01-23", "2032-02-11"],
+  "quotes": [
+    {
+      "source": "Karaṇīya Mettā Sutta",
+      "text": {
+        "en": "May all beings be happy.",
+        "de": "Mögen alle Wesen glücklich sein.",
+        "es": "Que todos los seres sean felices.",
+        "fr": "Que tous les êtres soient heureux.",
+        "ja": "一切の生きとし生けるものは、幸福であれ。",
+        "ko": "모든 존재가 행복하기를.",
+        "pt": "Que todos os seres sejam felizes.",
+        "uk": "Нехай усі істоти будуть щасливі.",
+        "zh": "愿一切众生幸福安乐。"
+      }
+    },
+    {
+      "source": "Dhammapada 5",
+      "text": {
+        "en": "Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased.",
+        "de": "Hass wird durch Hass niemals gestillt. Nur durch Nicht-Hass kommt er zur Ruhe.",
+        "es": "El odio nunca cesa con el odio; el odio cesa con el amor.",
+        "fr": "La haine ne cesse pas par la haine, mais par l’amour.",
+        "ja": "怨みに報いるに怨みを以てしたならば、ついに怨みの息むことがない。怨みをすててこそ息む。",
+        "ko": "원한은 원한으로 결코 풀리지 않는다. 원한을 버릴 때에만 풀린다.",
+        "pt": "O ódio nunca cessa pelo ódio; o ódio cessa pelo amor.",
+        "uk": "Ненависть ніколи не згасає від ненависті — лише від любові.",
+        "zh": "以怨止怨，怨终不息；唯以忍止怨，此古圣常法。"
+      }
+    },
+    {
+      "source": "Jon Kabat-Zinn",
+      "text": {
+        "en": "You can’t stop the waves, but you can learn to surf.",
+        "de": "Du kannst die Wellen nicht stoppen, aber du kannst lernen, sie zu surfen.",
+        "es": "No puedes detener las olas, pero puedes aprender a surfear.",
+        "fr": "On ne peut pas arrêter les vagues, mais on peut apprendre à surfer.",
+        "ja": "波を止めることはできない。でも、波に乗ることは学べる。",
+        "ko": "파도를 멈출 수는 없지만, 파도 타는 법은 배울 수 있다.",
+        "pt": "Você não pode parar as ondas, mas pode aprender a surfar.",
+        "uk": "Ти не можеш зупинити хвилі, але можеш навчитися їх осідлати.",
+        "zh": "你无法阻止海浪，但你可以学会冲浪。"
+      }
+    },
+    {
+      "source": "Thich Nhat Hanh",
+      "text": {
+        "en": "Walk as if you are kissing the Earth with your feet.",
+        "de": "Geh, als würdest du die Erde mit deinen Füßen küssen.",
+        "es": "Camina como si besaras la Tierra con tus pies.",
+        "fr": "Marche comme si tu embrassais la Terre avec tes pieds.",
+        "ja": "足で大地にキスをするように歩きなさい。",
+        "ko": "발로 대지에 입맞추듯 걸어라.",
+        "pt": "Caminhe como se estivesse beijando a Terra com os pés.",
+        "uk": "Іди так, ніби цілуєш Землю своїми стопами.",
+        "zh": "行走时，就像用双脚亲吻大地。"
+      }
+    },
+    {
+      "source": "Jack Kornfield",
+      "text": {
+        "en": "If your compassion does not include yourself, it is incomplete.",
+        "de": "Wenn dein Mitgefühl dich selbst nicht einschließt, ist es unvollständig.",
+        "es": "Si tu compasión no te incluye a ti mismo, está incompleta.",
+        "fr": "Si ta compassion ne t’inclut pas toi-même, elle est incomplète.",
+        "ja": "思いやりに自分自身が含まれていなければ、それはまだ不完全だ。",
+        "ko": "자비가 자기 자신을 품지 않는다면, 그것은 아직 온전하지 않다.",
+        "pt": "Se a sua compaixão não inclui você mesmo, ela é incompleta.",
+        "uk": "Якщо твоє співчуття не охоплює тебе самого, воно неповне.",
+        "zh": "如果你的慈悲不包括你自己，那它就是不完整的。"
+      }
+    },
+    {
+      "source": "Thich Nhat Hanh",
+      "text": {
+        "en": "Breathing in, I calm my body. Breathing out, I smile.",
+        "de": "Einatmend beruhige ich meinen Körper. Ausatmend lächle ich.",
+        "es": "Al inspirar, calmo mi cuerpo. Al espirar, sonrío.",
+        "fr": "J’inspire, je calme mon corps. J’expire, je souris.",
+        "ja": "息を吸って、からだを静める。息を吐いて、ほほえむ。",
+        "ko": "숨을 들이쉬며 나는 내 몸을 고요히 한다. 숨을 내쉬며 나는 미소 짓는다.",
+        "pt": "Inspirando, acalmo meu corpo. Expirando, sorrio.",
+        "uk": "Вдихаючи, я заспокоюю своє тіло. Видихаючи, я усміхаюся.",
+        "zh": "吸气，我平静我的身体；呼气，我微笑。"
+      }
+    },
+    {
+      "source": "Pema Chödrön",
+      "text": {
+        "en": "You are the sky. Everything else is just the weather.",
+        "de": "Du bist der Himmel. Alles andere ist nur das Wetter.",
+        "es": "Tú eres el cielo. Todo lo demás es solo el clima.",
+        "fr": "Tu es le ciel. Tout le reste n’est que la météo.",
+        "ja": "あなたは空。それ以外はすべて、ただの天気にすぎない。",
+        "ko": "당신은 하늘이다. 나머지는 모두 날씨일 뿐이다.",
+        "pt": "Você é o céu. Todo o resto é só o clima.",
+        "uk": "Ти — небо. Усе інше — лише погода.",
+        "zh": "你是天空，其他一切都只是天气。"
+      }
+    },
+    {
+      "source": "Dhammapada 122",
+      "text": {
+        "en": "Drop by drop is the water pot filled.",
+        "de": "Tropfen für Tropfen füllt sich der Krug.",
+        "es": "Gota a gota se llena el cántaro.",
+        "fr": "Goutte à goutte, la jarre se remplit.",
+        "ja": "水が一滴ずつ滴りおちるならば、水瓶でもみたされる。",
+        "ko": "한 방울씩 떨어지는 물이 물항아리를 채운다.",
+        "pt": "Gota a gota, o pote se enche.",
+        "uk": "Крапля за краплею наповнюється глечик.",
+        "zh": "水滴虽微，渐盈大器。"
+      }
+    },
+    {
+      "source": "Jon Kabat-Zinn",
+      "text": {
+        "en": "Wherever you go, there you are.",
+        "de": "Wohin du auch gehst, da bist du.",
+        "es": "Donde vayas, ahí estás.",
+        "fr": "Où tu vas, tu es.",
+        "ja": "どこへ行こうと、そこにあなたがいる。",
+        "ko": "당신이 어디를 가든, 당신은 그곳에 있다.",
+        "pt": "Aonde quer que você vá, é você que está lá.",
+        "uk": "Куди б ти не йшов — ти вже там.",
+        "zh": "不管你去哪里，你就在那里。"
+      }
+    },
+    {
+      "source": "Thich Nhat Hanh",
+      "text": {
+        "en": "Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor.",
+        "de": "Gefühle kommen und gehen wie Wolken am windigen Himmel. Bewusstes Atmen ist mein Anker.",
+        "es": "Los sentimientos vienen y van como nubes en un cielo ventoso. La respiración consciente es mi ancla.",
+        "fr": "Les émotions vont et viennent comme des nuages dans un ciel venteux. La respiration consciente est mon ancre.",
+        "ja": "感情は、風の吹く空の雲のように来ては去っていく。意識的な呼吸が、わたしの錨だ。",
+        "ko": "감정은 바람 부는 하늘의 구름처럼 왔다가 간다. 깨어 있는 호흡이 나의 닻이다.",
+        "pt": "Os sentimentos vêm e vão como nuvens num céu de vento. A respiração consciente é a minha âncora.",
+        "uk": "Почуття приходять і минають, як хмари у вітряному небі. Усвідомлене дихання — мій якір.",
+        "zh": "感受来来去去，如同风中天空的云。觉知的呼吸是我的锚。"
+      }
+    },
+    {
+      "source": "Thich Nhat Hanh",
+      "text": {
+        "en": "Smile, breathe, and go slowly.",
+        "de": "Lächle, atme und geh langsam.",
+        "es": "Sonríe, respira y ve despacio.",
+        "fr": "Souris, respire et va lentement.",
+        "ja": "ほほえんで、呼吸して、ゆっくり歩こう。",
+        "ko": "미소 짓고, 숨 쉬고, 천천히 걸으세요.",
+        "pt": "Sorria, respire e vá devagar.",
+        "uk": "Усміхайся, дихай і не поспішай.",
+        "zh": "微笑，呼吸，慢慢走。"
+      }
+    },
+    {
+      "source": "Karaṇīya Mettā Sutta",
+      "text": {
+        "en": "Just as a mother would protect her only child with her life, so let one cultivate a boundless heart toward all beings.",
+        "de": "So wie eine Mutter ihr einziges Kind mit ihrem Leben beschützt, so entfalte ein grenzenloses Herz für alle Wesen.",
+        "es": "Así como una madre protege con su vida a su único hijo, cultiva un amor sin límites hacia todos los seres.",
+        "fr": "Comme une mère protège au péril de sa vie son enfant unique, cultive un cœur sans limites envers tous les êtres.",
+        "ja": "あたかも母が己が独り子を命を賭けても護るように、一切の生きとし生けるものどもに対しても、無量の慈しみのこころを起すべし。",
+        "ko": "어머니가 목숨을 걸고 외아들을 지키듯, 모든 존재를 향해 한량없는 자애의 마음을 키워라.",
+        "pt": "Assim como uma mãe protege com a própria vida o seu único filho, cultive um amor sem limites por todos os seres.",
+        "uk": "Як мати, не шкодуючи життя, захищає свою єдину дитину, так плекай безмежну любов до всіх істот.",
+        "zh": "犹如母亲不惜生命守护独子，对一切众生，也应培育无量的慈心。"
+      }
+    },
+    {
+      "source": "Karaṇīya Mettā Sutta (Pāli)",
+      "text": {
+        "en": "Sabbe sattā bhavantu sukhitattā. May all beings be well and happy.",
+        "de": "Sabbe sattā bhavantu sukhitattā. Mögen alle Wesen wohlauf und glücklich sein.",
+        "es": "Sabbe sattā bhavantu sukhitattā. Que todos los seres estén bien y sean felices.",
+        "fr": "Sabbe sattā bhavantu sukhitattā. Que tous les êtres soient heureux et en paix.",
+        "ja": "Sabbe sattā bhavantu sukhitattā. 一切の生きとし生けるものは、安穏であれ、安楽であれ。",
+        "ko": "Sabbe sattā bhavantu sukhitattā. 모든 존재가 평안하고 행복하기를.",
+        "pt": "Sabbe sattā bhavantu sukhitattā. Que todos os seres estejam bem e felizes.",
+        "uk": "Sabbe sattā bhavantu sukhitattā. Нехай усі істоти будуть у мирі й щасливі.",
+        "zh": "Sabbe sattā bhavantu sukhitattā. 愿一切众生平安喜乐。"
+      }
+    }
+  ],
+  "lang": {
+    "en": {
+      "app_name": "Meditation & Breathwork",
+      "guide_url": "/meditate_app_user_guide/",
+      "letter": {
+        "eyebrow": "A note from you, to you",
+        "greeting": "Dear me,",
+        "signoff": "With love,<br />me",
+        "months": [
+          [
+            "In January, I gave us {duration} of quiet. No resolutions, no new and improved version of us. Just a few moments to sit with who we already are.",
+            "Some of those minutes felt calm, others restless or heavy. I stayed anyway, and that was enough.",
+            "Whatever this year brings: you don’t have to fix yourself first to deserve care. I’m on your side."
+          ],
+          [
+            "In February, I gave us {duration} of quiet. Small pauses, tucked in between everything else.",
+            "They didn’t have to be perfect. Sometimes my mind wandered off a hundred times, and a hundred times I gently brought it back. That’s not failing. That’s the practice.",
+            "Thank you for being this patient with me. It felt like a warm hug from the inside."
+          ],
+          [
+            "In March, I gave us {duration} of quiet, while so much around us kept shifting.",
+            "I notice how much you hold together, every single day. You don’t always get thanked for it, so let me say it: thank you.",
+            "Whatever changes, we can keep coming back to this breath. It’s always here, waiting for us."
+          ],
+          [
+            "In April, I gave us {duration} of quiet. Nothing to prove, nothing to fix. Just breathing and being.",
+            "Some days that felt easy. Some days sitting still felt like the hardest thing in the world. Both kinds of days counted.",
+            "I like who we are when we slow down. I hope you do too."
+          ],
+          [
+            "In May, I gave us {duration} of quiet, even with so much going on.",
+            "I know it can feel like rest has to be earned first. It doesn’t. Taking these minutes wasn’t selfish. It was kind.",
+            "Thank you for making room for us. Let’s keep a little space to breathe, whatever the days bring."
+          ],
+          [
+            "Halfway through the year. In June, I gave us {duration} of quiet.",
+            "Let’s not tally up everything we did or didn’t get done. Let’s just notice this: again and again, we chose to pause.",
+            "Shoulders down. Jaw soft. We’re allowed to exhale."
+          ],
+          [
+            "In July, I gave us {duration} of quiet. Whatever was going on outside, we found a calm corner inside.",
+            "Some sessions were short. Some ended early. Some were mostly just sitting with tiredness. I’m grateful for every one of them.",
+            "That corner is always there. We can go back whenever we need it."
+          ],
+          [
+            "In August, I gave us {duration} of quiet, a few calm minutes between plans and adventures.",
+            "Rest isn’t a break from life. It’s part of it. We don’t have to be productive to deserve a pause.",
+            "Thank you for remembering us, even when the days were full."
+          ],
+          [
+            "In September, I gave us {duration} of quiet. Not to get better at anything. Just to be here for a while.",
+            "Some of those minutes were calm. Some were restless, distracted, or tired. I stayed anyway, and that was enough.",
+            "Thank you for coming back, again and again. I know how much you carry. I’m glad we made a little room for us."
+          ],
+          [
+            "In October, I gave us {duration} of quiet. When the days got full, our breath stayed a small, warm light.",
+            "Not every day went the way we hoped. That’s okay. We don’t have to be calm to meditate. We just have to show up as we are.",
+            "And we did. Thank you for being so gentle with me."
+          ],
+          [
+            "In November, I gave us {duration} of quiet.",
+            "We give so much kindness to other people. This month, a little of it came back to us. It suits us.",
+            "Thank you for taking care of me. I’m grateful for you, more than I usually say."
+          ],
+          [
+            "In December, I gave us {duration} of quiet, right in the middle of the year-end rush.",
+            "Looking back on this year, I don’t need us to have done it all. I’m just glad we kept coming home to ourselves, one breath at a time.",
+            "Whatever next year holds, I’ll be here. Breathe with me."
+          ]
+        ],
+        "lunar_ps": "P.S. Happy Lunar New Year. We can begin again as slowly as we like.",
+        "dev_note": "And from me, the person who builds this app: thank you for letting it keep you company. 🙏",
+        "ask": "If you’d like to pass some of that kindness on, a cup of tea makes my day:"
+      },
+      "cta": "Buy me a cup of tea",
+      "cta_note": "I promise to sip it mindfully.",
+      "other_ways": "Other ways to say thanks: <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">leave a review</a> or <a href=\"{mail}\">send a quick note</a>.",
+      "help": "Need help with the app? Read the <a href=\"{guide}\">user guide</a>.",
+      "mail_subject": "Thank you"
+    },
+    "de": {
+      "app_name": "Meditation & Atemübungen",
+      "guide_url": "/meditate_app_user_guide-de/",
+      "letter": {
+        "eyebrow": "Ein Brief von dir an dich",
+        "greeting": "Liebes Ich,",
+        "signoff": "In Liebe,<br />ich",
+        "months": [
+          [
+            "Im Januar habe ich uns {duration} Ruhe geschenkt. Keine Vorsätze, keine neue, verbesserte Version von uns. Nur ein paar Momente, um einfach bei uns zu sein, so wie wir sind.",
+            "Manche dieser Minuten waren ruhig, andere unruhig oder schwer. Ich bin trotzdem geblieben, und das war genug.",
+            "Was auch immer dieses Jahr bringt: Du musst nichts an dir reparieren, um Fürsorge zu verdienen. Ich bin auf deiner Seite."
+          ],
+          [
+            "Im Februar habe ich uns {duration} Ruhe geschenkt. Kleine Pausen, versteckt zwischen allem anderen.",
+            "Sie mussten nicht perfekt sein. Manchmal sind meine Gedanken hundertmal abgeschweift, und hundertmal habe ich sie sanft zurückgeholt. Das ist kein Scheitern. Das ist die Übung.",
+            "Danke, dass du so geduldig mit mir bist. Es hat sich angefühlt wie eine warme Umarmung von innen."
+          ],
+          [
+            "Im März habe ich uns {duration} Ruhe geschenkt, während sich um uns herum so vieles verändert hat.",
+            "Ich sehe, wie viel du jeden einzelnen Tag zusammenhältst. Dafür bedankt sich nicht immer jemand, also sage ich es: Danke.",
+            "Was sich auch verändert, wir können immer wieder zu diesem Atemzug zurückkehren. Er ist immer da und wartet auf uns."
+          ],
+          [
+            "Im April habe ich uns {duration} Ruhe geschenkt. Nichts beweisen, nichts reparieren. Einfach atmen und da sein.",
+            "An manchen Tagen fiel das leicht. An anderen fühlte sich Stillsitzen an wie das Schwerste der Welt. Beide Arten von Tagen haben gezählt.",
+            "Ich mag, wer wir sind, wenn wir langsamer werden. Ich hoffe, du auch."
+          ],
+          [
+            "Im Mai habe ich uns {duration} Ruhe geschenkt, obwohl so viel los war.",
+            "Ich weiß, manchmal fühlt es sich so an, als müsste man sich Ruhe erst verdienen. Muss man nicht. Diese Minuten zu nehmen war nicht egoistisch. Es war liebevoll.",
+            "Danke, dass du Platz für uns gemacht hast. Lass uns ein bisschen Raum zum Atmen behalten, was die Tage auch bringen."
+          ],
+          [
+            "Das halbe Jahr ist vorbei. Im Juni habe ich uns {duration} Ruhe geschenkt.",
+            "Lass uns nicht aufrechnen, was wir geschafft haben und was nicht. Lass uns nur das bemerken: Immer wieder haben wir uns für eine Pause entschieden.",
+            "Schultern runter. Kiefer locker. Wir dürfen ausatmen."
+          ],
+          [
+            "Im Juli habe ich uns {duration} Ruhe geschenkt. Egal, was draußen los war, innen haben wir eine ruhige Ecke gefunden.",
+            "Manche Einheiten waren kurz. Manche haben früher aufgehört. Bei manchen saßen wir vor allem mit unserer Müdigkeit da. Ich bin für jede einzelne dankbar.",
+            "Diese Ecke ist immer da. Wir können jederzeit zurück, wenn wir sie brauchen."
+          ],
+          [
+            "Im August habe ich uns {duration} Ruhe geschenkt, ein paar ruhige Minuten zwischen Plänen und Abenteuern.",
+            "Ruhe ist keine Pause vom Leben. Sie gehört dazu. Wir müssen nicht produktiv sein, um eine Pause zu verdienen.",
+            "Danke, dass du an uns gedacht hast, auch wenn die Tage voll waren."
+          ],
+          [
+            "Im September habe ich uns {duration} Ruhe geschenkt. Nicht, um in irgendetwas besser zu werden. Nur, um eine Weile hier zu sein.",
+            "Manche dieser Minuten waren ruhig. Manche unruhig, abgelenkt oder müde. Ich bin trotzdem geblieben, und das war genug.",
+            "Danke, dass du immer wieder zurückkommst. Ich weiß, wie viel du trägst. Ich bin froh, dass wir uns ein bisschen Raum geschaffen haben."
+          ],
+          [
+            "Im Oktober habe ich uns {duration} Ruhe geschenkt. Als die Tage voll wurden, blieb unser Atem ein kleines, warmes Licht.",
+            "Nicht jeder Tag lief so, wie wir es uns gewünscht hätten. Das ist okay. Wir müssen nicht ruhig sein, um zu meditieren. Wir müssen nur so kommen, wie wir sind.",
+            "Und das haben wir. Danke, dass du so sanft mit mir bist."
+          ],
+          [
+            "Im November habe ich uns {duration} Ruhe geschenkt.",
+            "Wir schenken anderen so viel Freundlichkeit. Diesen Monat ist ein kleines bisschen davon zu uns zurückgekommen. Das steht uns gut.",
+            "Danke, dass du dich um mich kümmerst. Ich bin dankbar für dich, mehr als ich es normalerweise sage."
+          ],
+          [
+            "Im Dezember habe ich uns {duration} Ruhe geschenkt, mitten im Trubel zum Jahresende.",
+            "Wenn ich auf dieses Jahr zurückschaue, muss nicht alles geschafft sein. Ich bin einfach froh, dass wir immer wieder zu uns nach Hause gekommen sind, Atemzug für Atemzug.",
+            "Was auch immer das nächste Jahr bringt, ich bin da. Atme mit mir."
+          ]
+        ],
+        "lunar_ps": "P.S. Frohes Mondneujahr. Wir dürfen so langsam neu anfangen, wie wir möchten.",
+        "dev_note": "Und von mir, der Person, die diese App entwickelt: Danke, dass sie dich begleiten darf. 🙏",
+        "ask": "Wenn du ein bisschen von dieser Freundlichkeit weitergeben möchtest, freue ich mich riesig über eine Tasse Tee:"
+      },
+      "cta": "Spendier mir eine Tasse Tee",
+      "cta_note": "Ich verspreche, ihn achtsam zu trinken.",
+      "other_ways": "Andere Wege, Danke zu sagen: <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">eine Bewertung schreiben</a> oder <a href=\"{mail}\">eine kurze Nachricht schicken</a>.",
+      "help": "Brauchst du Hilfe mit der App? Lies die <a href=\"{guide}\">Anleitung</a>.",
+      "mail_subject": "Danke"
+    },
+    "es": {
+      "app_name": "Meditación & Respiración",
+      "guide_url": "/meditate_app_user_guide-es/",
+      "letter": {
+        "eyebrow": "Una carta tuya, para ti",
+        "greeting": "Querido yo:",
+        "signoff": "Con cariño,<br />yo",
+        "months": [
+          [
+            "En enero nos regalé {duration} de calma. Sin propósitos de Año Nuevo, sin una versión nueva y mejorada de nosotros. Solo unos momentos para estar con quienes ya somos.",
+            "Algunos de esos minutos fueron tranquilos; otros, inquietos o pesados. Me quedé de todos modos, y eso fue suficiente.",
+            "Traiga lo que traiga este año: no tienes que cambiar nada de ti para merecer cuidado. Estoy de tu lado."
+          ],
+          [
+            "En febrero nos regalé {duration} de calma. Pequeñas pausas, escondidas entre todo lo demás.",
+            "No tenían que ser perfectas. A veces mi mente se fue cien veces, y cien veces la traje de vuelta con suavidad. Eso no es fallar. Eso es la práctica.",
+            "Gracias por tenerme tanta paciencia. Se sintió como un abrazo cálido desde dentro."
+          ],
+          [
+            "En marzo nos regalé {duration} de calma, mientras tantas cosas a nuestro alrededor seguían cambiando.",
+            "Veo todo lo que sostienes, cada día. No siempre te lo agradecen, así que te lo digo yo: gracias.",
+            "Cambie lo que cambie, siempre podemos volver a esta respiración. Siempre está aquí, esperándonos."
+          ],
+          [
+            "En abril nos regalé {duration} de calma. Nada que demostrar, nada que arreglar. Solo respirar y estar.",
+            "Algunos días fue fácil. Otros, no moverse parecía lo más difícil del mundo. Los dos tipos de días contaron.",
+            "Me gusta quiénes somos cuando bajamos el ritmo. Ojalá a ti también."
+          ],
+          [
+            "En mayo nos regalé {duration} de calma, aunque pasaban tantas cosas.",
+            "Sé que a veces parece que el descanso hay que ganárselo primero. No es así. Tomarnos estos minutos no fue egoísta. Fue un gesto de cariño.",
+            "Gracias por hacernos un hueco. Guardemos un poco de espacio para respirar, pase lo que pase."
+          ],
+          [
+            "Ya pasó medio año. En junio nos regalé {duration} de calma.",
+            "No hagamos cuentas de lo que hicimos o dejamos de hacer. Fijémonos solo en esto: una y otra vez, elegimos hacer una pausa.",
+            "Hombros abajo. Mandíbula suelta. Podemos soltar el aire."
+          ],
+          [
+            "En julio nos regalé {duration} de calma. Pasara lo que pasara fuera, encontramos un rincón tranquilo dentro.",
+            "Algunas sesiones fueron cortas. Algunas terminaron antes. En algunas, sobre todo nos sentamos con el cansancio. Agradezco cada una de ellas.",
+            "Ese rincón siempre está ahí. Podemos volver cuando lo necesitemos."
+          ],
+          [
+            "En agosto nos regalé {duration} de calma, unos minutos tranquilos entre planes y aventuras.",
+            "Descansar no es una pausa de la vida. Es parte de ella. No hace falta producir nada para merecer una pausa.",
+            "Gracias por acordarte de nosotros, incluso cuando los días estaban llenos."
+          ],
+          [
+            "En septiembre nos regalé {duration} de calma. No para mejorar en nada. Solo para estar aquí un rato.",
+            "Algunos de esos minutos fueron tranquilos. Otros, inquietos, distraídos o cansados. Me quedé de todos modos, y eso fue suficiente.",
+            "Gracias por volver, una y otra vez. Sé cuánto cargas. Me alegra que nos hiciéramos un pequeño hueco."
+          ],
+          [
+            "En octubre nos regalé {duration} de calma. Cuando los días se llenaron, nuestra respiración siguió siendo una pequeña luz cálida.",
+            "No todos los días salieron como esperábamos. Está bien. No hace falta estar en calma para meditar. Solo hace falta llegar tal como somos.",
+            "Y llegamos. Gracias por ser tan amable conmigo."
+          ],
+          [
+            "En noviembre nos regalé {duration} de calma.",
+            "Damos tanto cariño a los demás. Este mes, un poquito volvió a nosotros. Nos sienta bien.",
+            "Gracias por cuidarme. Te lo agradezco más de lo que suelo decir."
+          ],
+          [
+            "En diciembre nos regalé {duration} de calma, justo en medio del ajetreo de fin de año.",
+            "Al mirar atrás, no necesito que lo hayamos hecho todo. Solo me alegra que hayamos seguido volviendo a casa, a nosotros, una respiración cada vez.",
+            "Traiga lo que traiga el próximo año, aquí estaré. Respira conmigo."
+          ]
+        ],
+        "lunar_ps": "P. D.: Feliz Año Nuevo Lunar. Podemos volver a empezar tan despacio como queramos.",
+        "dev_note": "Y de mi parte, la persona que crea esta app: gracias por dejar que te acompañe. 🙏",
+        "ask": "Si te apetece compartir un poco de ese cariño, una taza de té me alegra el día:"
+      },
+      "cta": "Invítame a una taza de té",
+      "cta_note": "Prometo tomármelo con atención plena.",
+      "other_ways": "Otras formas de dar las gracias: <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">dejar una reseña</a> o <a href=\"{mail}\">enviar un mensaje breve</a>.",
+      "help": "¿Necesitas ayuda con la app? Lee la <a href=\"{guide}\">guía de usuario</a>.",
+      "mail_subject": "Gracias"
+    },
+    "fr": {
+      "app_name": "Méditation & Respiration",
+      "guide_url": "/meditate_app_user_guide-fr/",
+      "letter": {
+        "eyebrow": "Une lettre de toi, pour toi",
+        "greeting": "Cher moi,",
+        "signoff": "Avec tendresse,<br />moi",
+        "months": [
+          [
+            "En janvier, je nous ai offert {duration} de calme. Pas de bonnes résolutions, pas de nouvelle version améliorée de nous. Juste quelques instants avec ce que nous sommes déjà.",
+            "Certaines de ces minutes étaient calmes, d’autres agitées ou lourdes. J’ai continué malgré tout, et c’était suffisant.",
+            "Quoi que cette année apporte : tu n’as rien à réparer en toi pour mériter qu’on prenne soin de toi. Je suis de ton côté."
+          ],
+          [
+            "En février, je nous ai offert {duration} de calme. De petites pauses, glissées entre tout le reste.",
+            "Elles n’avaient pas besoin d’être parfaites. Parfois, mon esprit s’est égaré cent fois, et cent fois je l’ai ramené doucement. Ce n’est pas un échec. C’est ça, la pratique.",
+            "Merci pour toute cette patience avec moi. C’était comme un câlin chaleureux de l’intérieur."
+          ],
+          [
+            "En mars, je nous ai offert {duration} de calme, pendant que tant de choses autour de nous changeaient.",
+            "Je vois tout ce que tu portes à bout de bras, chaque jour. On ne te remercie pas toujours, alors je te le dis : merci.",
+            "Quoi qu’il change, nous pouvons toujours revenir à ce souffle. Il est toujours là, il nous attend."
+          ],
+          [
+            "En avril, je nous ai offert {duration} de calme. Rien à prouver, rien à réparer. Juste respirer et être là.",
+            "Certains jours, c’était facile. D’autres, rester immobile semblait la chose la plus difficile au monde. Les deux genres de jours ont compté.",
+            "J’aime ce que nous sommes quand nous ralentissons. J’espère que toi aussi."
+          ],
+          [
+            "En mai, je nous ai offert {duration} de calme, même avec tout ce qui se passait.",
+            "Je sais qu’on a parfois l’impression que le repos doit se mériter. Ce n’est pas vrai. Prendre ces minutes n’était pas égoïste. C’était tendre.",
+            "Merci de nous avoir fait de la place. Gardons un peu d’espace pour respirer, quoi que les jours nous réservent."
+          ],
+          [
+            "La moitié de l’année est passée. En juin, je nous ai offert {duration} de calme.",
+            "Ne faisons pas le compte de ce que nous avons fait ou pas. Remarquons juste ceci : encore et encore, nous avons choisi de faire une pause.",
+            "Épaules relâchées. Mâchoire détendue. Nous avons le droit d’expirer."
+          ],
+          [
+            "En juillet, je nous ai offert {duration} de calme. Quoi qu’il se passe dehors, nous avons trouvé un coin calme à l’intérieur.",
+            "Certaines séances étaient courtes. Certaines se sont arrêtées plus tôt. Dans certaines, nous étions surtout là avec notre fatigue. Chacune d’elles m’est précieuse.",
+            "Ce coin est toujours là. Nous pouvons y revenir dès que nous en avons besoin."
+          ],
+          [
+            "En août, je nous ai offert {duration} de calme, quelques minutes tranquilles entre projets et aventures.",
+            "Le repos n’est pas une pause dans la vie. Il en fait partie. Pas besoin de produire quoi que ce soit pour mériter une pause.",
+            "Merci d’avoir pensé à nous, même quand les journées étaient pleines."
+          ],
+          [
+            "En septembre, je nous ai offert {duration} de calme. Pas pour progresser en quoi que ce soit. Juste pour être là un moment.",
+            "Certaines de ces minutes étaient calmes. D’autres agitées, distraites ou fatiguées. J’ai continué malgré tout, et c’était suffisant.",
+            "Merci de revenir, encore et encore. Je sais tout ce que tu portes. Ça me fait du bien que nous nous soyons fait un peu de place."
+          ],
+          [
+            "En octobre, je nous ai offert {duration} de calme. Quand les journées se sont remplies, notre souffle est resté une petite lumière chaude.",
+            "Toutes les journées ne se sont pas passées comme nous l’espérions. Ce n’est pas grave. Pas besoin d’être calme pour méditer. Il suffit de venir comme nous sommes.",
+            "Et c’est ce que nous avons fait. Merci pour ta douceur avec moi."
+          ],
+          [
+            "En novembre, je nous ai offert {duration} de calme.",
+            "Nous donnons tant de bienveillance aux autres. Ce mois-ci, un peu de cette bienveillance nous est revenue. Ça nous va bien.",
+            "Merci de prendre soin de moi. Tu comptes pour moi, plus que je ne le dis d’habitude."
+          ],
+          [
+            "En décembre, je nous ai offert {duration} de calme, en plein tourbillon de fin d’année.",
+            "En repensant à cette année, je n’ai pas besoin que nous ayons tout fait. Ça me fait simplement du bien d’avoir continué à revenir vers nous-mêmes, un souffle à la fois.",
+            "Quoi que l’année prochaine nous réserve, je serai là. Respire avec moi."
+          ]
+        ],
+        "lunar_ps": "P.-S. : Joyeux Nouvel An lunaire. Nous pouvons recommencer aussi doucement que nous le voulons.",
+        "dev_note": "Et de ma part, la personne qui développe cette app : merci de la laisser t’accompagner. 🙏",
+        "ask": "Si tu veux transmettre un peu de cette douceur, une tasse de thé illuminera ma journée :"
+      },
+      "cta": "Offre-moi une tasse de thé",
+      "cta_note": "Promis, je la boirai en pleine conscience.",
+      "other_ways": "D’autres façons de dire merci : <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">laisser un avis</a> ou <a href=\"{mail}\">envoyer un petit mot</a>.",
+      "help": "Besoin d’aide avec l’app ? Lis le <a href=\"{guide}\">guide d’utilisation</a>.",
+      "mail_subject": "Merci"
+    },
+    "ja": {
+      "app_name": "瞑想 & 呼吸法",
+      "guide_url": "/meditate_app_user_guide-ja/",
+      "letter": {
+        "eyebrow": "あなたから、あなたへの手紙",
+        "greeting": "わたしへ",
+        "signoff": "愛をこめて<br />わたしより",
+        "months": [
+          [
+            "1月、わたしたちは{duration}の静かな時間を過ごしました。新年の目標も、生まれ変わった新しい自分もいらない。ただ、今のわたしたちのままでいる時間。",
+            "落ち着いていた時間もあれば、そわそわしたり、重たく感じたりした時間もありました。それでも、そこにいた。それで十分でした。",
+            "今年が何を運んできても、大切にされるために、まず自分を直す必要なんてありません。わたしは、いつもあなたの味方です。"
+          ],
+          [
+            "2月、わたしたちは{duration}の静かな時間を過ごしました。いろいろなことの合間に、そっと置いた小さな休息。",
+            "完璧じゃなくてよかった。心が百回さまよって、百回やさしく連れ戻したこともありました。それは失敗じゃない。それこそが練習です。",
+            "こんなにも辛抱強くいてくれて、ありがとう。内側からぎゅっと抱きしめられているようでした。"
+          ],
+          [
+            "3月、まわりでたくさんのことが変わっていく中で、わたしたちは{duration}の静かな時間を過ごしました。",
+            "あなたが毎日、どれだけのものを支えているか、わたしは知っています。いつも誰かがお礼を言ってくれるわけじゃないから、わたしから言わせて。ありがとう。",
+            "何が変わっても、この呼吸にはいつでも戻ってこられる。呼吸はいつもここで、わたしたちを待っています。"
+          ],
+          [
+            "4月、わたしたちは{duration}の静かな時間を過ごしました。証明することも、直すこともない。ただ呼吸して、ここにいるだけ。",
+            "簡単に感じる日もあれば、じっと座っていることが世界でいちばん難しく思える日もありました。どちらの日も、ちゃんと意味がありました。",
+            "ゆっくりしているときのわたしたちが、わたしは好きです。あなたもそうだといいな。"
+          ],
+          [
+            "5月、いろいろなことがあった中でも、わたしたちは{duration}の静かな時間を過ごしました。",
+            "休むには、まず何かを頑張らなきゃいけない気がすることもあるよね。でも、そんなことはありません。この時間をとったのは、わがままじゃない。やさしさでした。",
+            "わたしたちのために場所をつくってくれて、ありがとう。どんな日が来ても、息ができる余白を少し残しておこうね。"
+          ],
+          [
+            "一年の折り返し。6月、わたしたちは{duration}の静かな時間を過ごしました。",
+            "できたこと、できなかったことを数えるのはやめよう。ただ、これだけに気づいて。何度も何度も、わたしたちは立ち止まることを選んだ。",
+            "肩の力を抜いて。あごをゆるめて。息を吐いていいんだよ。"
+          ],
+          [
+            "7月、わたしたちは{duration}の静かな時間を過ごしました。外で何が起きていても、内側に静かな片隅を見つけました。",
+            "短い日もありました。途中で終わった日もありました。ほとんど疲れと一緒に座っていただけの日も。そのひとつひとつに、感謝しています。",
+            "あの片隅は、いつでもそこにあります。必要なときは、いつでも戻れるよ。"
+          ],
+          [
+            "8月、予定と冒険の合間に、わたしたちは{duration}の静かな時間を過ごしました。",
+            "休むことは、人生からの休憩じゃない。人生の一部です。ひと休みするのに、何かを成し遂げている必要はありません。",
+            "忙しい日々の中でも、わたしたちのことを忘れずにいてくれて、ありがとう。"
+          ],
+          [
+            "9月、わたしたちは{duration}の静かな時間を過ごしました。何かが上手になるためじゃない。ただ、しばらくここにいるために。",
+            "落ち着いていた時間もありました。そわそわしたり、気が散ったり、疲れていたりした時間も。それでも、そこにいた。それで十分でした。",
+            "何度も何度も戻ってきてくれて、ありがとう。あなたがどれだけのものを抱えているか、知っています。わたしたちのために少し場所をつくれて、よかった。"
+          ],
+          [
+            "10月、わたしたちは{duration}の静かな時間を過ごしました。日々が慌ただしくなっても、呼吸は小さくてあたたかな灯りのままでした。",
+            "思いどおりにいかない日もあったね。それでいいんです。瞑想するのに、落ち着いている必要はない。ありのままで来れば、それでいい。",
+            "そして、わたしたちはちゃんと来た。わたしにやさしくしてくれて、ありがとう。"
+          ],
+          [
+            "11月、わたしたちは{duration}の静かな時間を過ごしました。",
+            "わたしたちは、まわりの人にたくさんのやさしさを向けています。今月は、そのほんの少しが自分に返ってきた。よく似合っているよ。",
+            "わたしを大切にしてくれて、ありがとう。ふだん口にする以上に、あなたに感謝しています。"
+          ],
+          [
+            "12月、年末の慌ただしさのまっただ中で、わたしたちは{duration}の静かな時間を過ごしました。",
+            "この一年を振り返って、全部をやり遂げていなくてもいい。ひと呼吸ずつ、何度も自分のもとへ帰ってこられた。それがただ、うれしいです。",
+            "来年が何を運んできても、わたしはここにいます。一緒に呼吸しよう。"
+          ]
+        ],
+        "lunar_ps": "追伸：旧正月おめでとう。好きなだけゆっくり、また始めればいいからね。",
+        "dev_note": "そして、このアプリをつくっているわたしからも。そばに置いてくれて、ありがとうございます。🙏",
+        "ask": "このやさしさを少しおすそわけしてもいいと思ったら、お茶を一杯いただけるととても嬉しいです："
+      },
+      "cta": "お茶を一杯ごちそうする",
+      "cta_note": "心を込めて、ゆっくりいただきます。",
+      "other_ways": "ほかの感謝の伝え方：<a href=\"{review}\" target=\"_blank\" rel=\"noopener\">レビューを書く</a>、または<a href=\"{mail}\">ひとことメッセージを送る</a>。",
+      "help": "アプリについて困ったときは<a href=\"{guide}\">ユーザーガイド</a>をご覧ください。",
+      "mail_subject": "ありがとう"
+    },
+    "ko": {
+      "app_name": "명상 & 호흡 훈련",
+      "guide_url": "/meditate_app_user_guide-ko/",
+      "letter": {
+        "eyebrow": "너에게서 너에게 보내는 편지",
+        "greeting": "사랑하는 나에게,",
+        "signoff": "사랑을 담아,<br />내가",
+        "months": [
+          [
+            "1월에 나는 우리에게 {duration}의 고요를 선물했어. 새해 다짐도, 새롭게 업그레이드된 우리도 필요 없었어. 지금 그대로의 우리와 잠시 함께 있는 시간이었을 뿐.",
+            "그중 어떤 순간은 차분했고, 어떤 순간은 들뜨거나 무거웠어. 그래도 나는 그 자리에 있었고, 그걸로 충분했어.",
+            "올해가 무엇을 가져오든, 돌봄을 받기 위해 먼저 너를 고칠 필요는 없어. 나는 언제나 네 편이야."
+          ],
+          [
+            "2월에 나는 우리에게 {duration}의 고요를 선물했어. 바쁜 일상 틈틈이 끼워 넣은 작은 쉼들.",
+            "완벽할 필요는 없었어. 생각이 백 번 딴 데로 흘러가도, 백 번 다시 부드럽게 데려왔지. 그건 실패가 아니야. 그게 바로 연습이야.",
+            "나에게 이렇게 인내심을 보여 줘서 고마워. 안에서부터 따뜻하게 안기는 느낌이었어."
+          ],
+          [
+            "3월에 나는 우리에게 {duration}의 고요를 선물했어. 주변에서 많은 것들이 계속 변하는 동안에도.",
+            "네가 매일 얼마나 많은 걸 붙들고 있는지 나는 알아. 늘 누군가 고맙다고 말해 주는 건 아니니까, 내가 말할게. 고마워.",
+            "무엇이 변하든, 우리는 언제든 이 호흡으로 돌아올 수 있어. 호흡은 늘 여기서 우리를 기다리고 있어."
+          ],
+          [
+            "4월에 나는 우리에게 {duration}의 고요를 선물했어. 증명할 것도, 고칠 것도 없이. 그저 숨 쉬고 존재하는 시간.",
+            "어떤 날은 쉬웠어. 어떤 날은 가만히 앉아 있는 게 세상에서 제일 어려운 일 같았지. 두 종류의 날 모두 의미가 있었어.",
+            "속도를 늦출 때의 우리가 나는 좋아. 너도 그랬으면 좋겠어."
+          ],
+          [
+            "5월에 나는 우리에게 {duration}의 고요를 선물했어. 정신없이 많은 일이 있었는데도.",
+            "쉬려면 먼저 자격을 얻어야 할 것 같은 기분, 나도 알아. 그런데 그렇지 않아. 이 시간을 가진 건 이기적인 게 아니었어. 다정한 거였어.",
+            "우리를 위해 자리를 내줘서 고마워. 어떤 날이 와도, 숨 쉴 틈은 조금 남겨 두자."
+          ],
+          [
+            "벌써 한 해의 절반이 지났어. 6월에 나는 우리에게 {duration}의 고요를 선물했어.",
+            "한 일과 못 한 일을 따져 보지 말자. 이것만 알아차리자. 몇 번이고, 우리는 잠시 멈추기를 선택했어.",
+            "어깨는 내리고, 턱은 부드럽게. 숨을 내쉬어도 괜찮아."
+          ],
+          [
+            "7월에 나는 우리에게 {duration}의 고요를 선물했어. 바깥에서 무슨 일이 있었든, 우리는 마음속 고요한 자리를 찾았어.",
+            "짧았던 날도 있었고, 일찍 끝난 날도 있었어. 그냥 피곤함과 함께 앉아만 있던 날도 있었지. 그 하루하루가 다 고마워.",
+            "그 자리는 늘 그곳에 있어. 필요할 때면 언제든 돌아갈 수 있어."
+          ],
+          [
+            "8월에 나는 우리에게 {duration}의 고요를 선물했어. 계획과 모험 사이의 조용한 몇 분.",
+            "쉼은 삶에서 벗어나는 게 아니야. 삶의 일부야. 쉬기 위해 생산적일 필요는 없어.",
+            "하루하루가 꽉 찼을 때도 우리를 잊지 않아 줘서 고마워."
+          ],
+          [
+            "9월에 나는 우리에게 {duration}의 고요를 선물했어. 뭔가를 더 잘하기 위해서가 아니라, 그냥 잠시 여기 있기 위해서.",
+            "어떤 순간은 차분했고, 어떤 순간은 들뜨고, 산만하고, 지쳐 있었어. 그래도 나는 그 자리에 있었고, 그걸로 충분했어.",
+            "몇 번이고 다시 돌아와 줘서 고마워. 네가 얼마나 많은 걸 짊어지고 있는지 알아. 우리를 위한 작은 자리를 만들 수 있어서 기뻐."
+          ],
+          [
+            "10월에 나는 우리에게 {duration}의 고요를 선물했어. 하루하루가 바빠질 때도, 우리의 호흡은 작고 따뜻한 불빛으로 남아 있었어.",
+            "모든 날이 바라던 대로 흘러가진 않았지. 괜찮아. 명상하려고 차분할 필요는 없어. 있는 그대로 오기만 하면 돼.",
+            "그리고 우리는 왔어. 나에게 이렇게 다정해 줘서 고마워."
+          ],
+          [
+            "11월에 나는 우리에게 {duration}의 고요를 선물했어.",
+            "우리는 다른 사람들에게 참 많은 다정함을 건네잖아. 이번 달엔 그중 조금이 우리에게 돌아왔어. 참 잘 어울려.",
+            "나를 돌봐 줘서 고마워. 평소에 말하는 것보다 훨씬 더, 네가 고마워."
+          ],
+          [
+            "12월에 나는 우리에게 {duration}의 고요를 선물했어. 연말의 분주함 한가운데에서.",
+            "올해를 돌아보면, 우리가 모든 걸 해냈을 필요는 없어. 한 호흡씩, 계속 우리 자신에게로 돌아왔다는 게 그저 기뻐.",
+            "내년이 무엇을 가져오든, 나는 여기 있을게. 나와 함께 숨 쉬자."
+          ]
+        ],
+        "lunar_ps": "추신: 새해 복 많이 받아. 원하는 만큼 천천히 다시 시작해도 돼.",
+        "dev_note": "그리고 이 앱을 만드는 저도 한마디 전할게요. 곁에 두어 주셔서 고맙습니다. 🙏",
+        "ask": "이 다정함을 조금 나누고 싶다면, 차 한 잔이 제 하루를 환하게 해 줄 거예요:"
+      },
+      "cta": "차 한 잔 사주기",
+      "cta_note": "마음을 다해 천천히 마실게요.",
+      "other_ways": "다른 감사 방법: <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">리뷰 남기기</a> 또는 <a href=\"{mail}\">짧은 메시지 보내기</a>.",
+      "help": "앱 사용에 도움이 필요하신가요? <a href=\"{guide}\">사용자 가이드</a>를 읽어 보세요.",
+      "mail_subject": "감사합니다"
+    },
+    "pt": {
+      "app_name": "Meditação & Respiração",
+      "guide_url": "/meditate_app_user_guide-pt/",
+      "letter": {
+        "eyebrow": "Uma carta sua, para você",
+        "greeting": "Querido eu,",
+        "signoff": "Com carinho,<br />eu",
+        "months": [
+          [
+            "Em janeiro, eu dei pra gente {duration} de calma. Sem metas de Ano-Novo, sem uma versão nova e melhorada da gente. Só alguns momentos para estar com quem a gente já é.",
+            "Alguns desses minutos foram tranquilos; outros, inquietos ou pesados. Continuei mesmo assim, e isso bastou.",
+            "Venha o que vier este ano: você não precisa se consertar antes para merecer cuidado. Estou do seu lado."
+          ],
+          [
+            "Em fevereiro, eu dei pra gente {duration} de calma. Pequenas pausas, encaixadas no meio de tudo.",
+            "Elas não precisavam ser perfeitas. Às vezes minha mente se distraiu cem vezes, e cem vezes eu a trouxe de volta com delicadeza. Isso não é falhar. Isso é a prática.",
+            "Valeu por ter tanta paciência comigo. Pareceu um abraço quentinho por dentro."
+          ],
+          [
+            "Em março, eu dei pra gente {duration} de calma, enquanto tanta coisa ao nosso redor mudava.",
+            "Eu vejo o quanto você segura as pontas, todo santo dia. Nem sempre alguém agradece, então deixa eu dizer: valeu, de coração.",
+            "O que quer que mude, a gente sempre pode voltar para esta respiração. Ela está sempre aqui, esperando pela gente."
+          ],
+          [
+            "Em abril, eu dei pra gente {duration} de calma. Nada a provar, nada a consertar. Só respirar e estar.",
+            "Em alguns dias foi fácil. Em outros, ficar em silêncio pareceu a coisa mais difícil do mundo. Os dois tipos de dia contaram.",
+            "Eu gosto de quem a gente é quando desacelera. Espero que você também."
+          ],
+          [
+            "Em maio, eu dei pra gente {duration} de calma, mesmo com tanta coisa acontecendo.",
+            "Eu sei que às vezes parece que o descanso precisa ser merecido primeiro. Não precisa. Tirar esses minutos não foi egoísmo. Foi carinho.",
+            "Agradeço por abrir espaço pra gente. Vamos guardar um cantinho para respirar, aconteça o que acontecer."
+          ],
+          [
+            "Metade do ano já foi. Em junho, eu dei pra gente {duration} de calma.",
+            "Não vamos fazer as contas do que a gente fez ou deixou de fazer. Vamos só notar isto: de novo e de novo, a gente escolheu parar um pouco.",
+            "Ombros para baixo. Mandíbula solta. A gente pode soltar o ar."
+          ],
+          [
+            "Em julho, eu dei pra gente {duration} de calma. Seja lá o que estava acontecendo lá fora, a gente encontrou um cantinho tranquilo aqui dentro.",
+            "Algumas sessões foram curtas. Algumas terminaram antes. Em algumas, a gente só ficou ali com o cansaço. Cada uma delas valeu.",
+            "Esse cantinho está sempre aí. A gente pode voltar sempre que precisar."
+          ],
+          [
+            "Em agosto, eu dei pra gente {duration} de calma, alguns minutos tranquilos entre planos e aventuras.",
+            "Descanso não é uma pausa da vida. Faz parte dela. A gente não precisa produzir nada para merecer uma pausa.",
+            "Que bom que você lembrou da gente, mesmo com os dias cheios."
+          ],
+          [
+            "Em setembro, eu dei pra gente {duration} de calma. Não para melhorar em nada. Só para estar aqui um pouco.",
+            "Alguns desses minutos foram tranquilos. Outros, inquietos, distraídos ou cansados. Continuei mesmo assim, e isso bastou.",
+            "Agradeço por voltar, de novo e de novo. Eu sei o quanto você carrega. Que bom que a gente abriu um espacinho pra nós."
+          ],
+          [
+            "Em outubro, eu dei pra gente {duration} de calma. Quando os dias ficaram cheios, nossa respiração continuou sendo uma pequena luz quentinha.",
+            "Nem todo dia saiu como a gente esperava. Tudo bem. Não precisa estar em paz para meditar. Só precisa chegar do jeito que a gente está.",
+            "E a gente chegou. Valeu por ser tão gentil comigo."
+          ],
+          [
+            "Em novembro, eu dei pra gente {duration} de calma.",
+            "A gente dá tanto carinho para os outros. Este mês, um pouquinho voltou pra gente. Combina com a gente.",
+            "Agradeço por cuidar de mim. Você é importante para mim, mais do que eu costumo dizer."
+          ],
+          [
+            "Em dezembro, eu dei pra gente {duration} de calma, bem no meio da correria de fim de ano.",
+            "Olhando para este ano, não preciso que a gente tenha feito tudo. Só fico feliz que a gente continuou voltando para dentro, uma respiração de cada vez.",
+            "Venha o que vier no próximo ano, eu vou estar aqui. Respira comigo."
+          ]
+        ],
+        "lunar_ps": "P.S.: Feliz Ano-Novo Lunar. A gente pode recomeçar tão devagar quanto quiser.",
+        "dev_note": "E da minha parte, a pessoa que cria este app: muito obrigado por deixar que ele te faça companhia. 🙏",
+        "ask": "Se quiser passar um pouco desse carinho adiante, uma xícara de chá deixa meu dia melhor:"
+      },
+      "cta": "Me pague uma xícara de chá",
+      "cta_note": "Prometo tomar com atenção plena.",
+      "other_ways": "Outras formas de agradecer: <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">deixar uma avaliação</a> ou <a href=\"{mail}\">mandar uma mensagem curta</a>.",
+      "help": "Precisa de ajuda com o app? Leia o <a href=\"{guide}\">guia do usuário</a>.",
+      "mail_subject": "Obrigado"
+    },
+    "uk": {
+      "app_name": "Медитація & Дихальні практики",
+      "guide_url": "/meditate_app_user_guide-uk/",
+      "letter": {
+        "eyebrow": "Лист від тебе — тобі",
+        "greeting": "Любе моє «я»,",
+        "signoff": "З любов’ю,<br />я",
+        "months": [
+          [
+            "У січні ми подарували собі тишу — {duration}. Без новорічних обіцянок, без нової, покращеної версії себе. Лише кілька хвилин, щоб побути собою такими, як є.",
+            "Деякі з цих хвилин були спокійними, інші — неспокійними чи важкими. Ми все одно лишалися, і цього було досить.",
+            "Хай що принесе цей рік: тобі не треба спершу себе лагодити, щоб заслужити турботу. Я на твоєму боці."
+          ],
+          [
+            "У лютому ми подарували собі тишу — {duration}. Маленькі паузи поміж усім іншим.",
+            "Вони не мусили бути ідеальними. Інколи думки розбігалися сотню разів, і сотню разів ми м’яко їх повертали. Це не поразка. Це і є практика.",
+            "Дякую тобі за таке терпіння до мене. Це було як теплі обійми зсередини."
+          ],
+          [
+            "У березні ми подарували собі тишу — {duration}, поки довкола стільки всього змінювалося.",
+            "Я бачу, скільки ти тримаєш на собі щодня. Тобі не завжди за це дякують, тож скажу я: дякую.",
+            "Хай що змінюється, ми завжди можемо повернутися до цього подиху. Він завжди тут і чекає на нас."
+          ],
+          [
+            "У квітні ми подарували собі тишу — {duration}. Нічого не доводити, нічого не виправляти. Просто дихати й бути.",
+            "Інколи це було легко. Інколи всидіти на місці здавалося найважчою справою у світі. Обидва види днів мали значення.",
+            "Мені подобається, якими ми стаємо, коли сповільнюємося. Сподіваюся, тобі теж."
+          ],
+          [
+            "У травні ми подарували собі тишу — {duration}, хоч навколо стільки всього відбувалося.",
+            "Знаю, інколи здається, що відпочинок треба спершу заслужити. Не треба. Взяти ці хвилини — не егоїзм. Це турбота.",
+            "Дякую, що знайшлося місце для нас. Збережімо трохи простору, щоб дихати, хай що приносять дні."
+          ],
+          [
+            "Пів року позаду. У червні ми подарували собі тишу — {duration}.",
+            "Не рахуймо, що ми встигли, а що ні. Просто помітьмо: знову і знову ми обирали паузу.",
+            "Плечі вниз. Щелепа м’яка. Можна видихнути."
+          ],
+          [
+            "У липні ми подарували собі тишу — {duration}. Хай що відбувалося надворі, усередині ми знайшли тихий куточок.",
+            "Деякі сесії були короткими. Деякі закінчилися раніше. У деяких ми здебільшого просто сиділи з утомою. Кожна з них важлива для мене.",
+            "Цей куточок завжди поруч. Ми можемо повернутися туди будь-коли."
+          ],
+          [
+            "У серпні ми подарували собі тишу — {duration}. Кілька спокійних хвилин між планами й пригодами.",
+            "Відпочинок — не перерва від життя. Він — його частина. Не треба бути продуктивними, щоб заслужити паузу.",
+            "Дякую, що згадуєш про нас, навіть коли дні переповнені."
+          ],
+          [
+            "У вересні ми подарували собі тишу — {duration}. Не для того, щоб у чомусь стати кращими. Просто щоб побути тут.",
+            "Деякі з цих хвилин були спокійними. Деякі — неспокійними, розсіяними чи втомленими. Ми все одно лишалися, і цього було досить.",
+            "Дякую, що повертаєшся знову і знову. Я знаю, скільки ти несеш. Добре, що ми знайшли трохи місця для себе."
+          ],
+          [
+            "У жовтні ми подарували собі тишу — {duration}. Коли дні ставали насиченими, наше дихання лишалося маленьким теплим вогником.",
+            "Не кожен день минав так, як ми сподівалися. І це нормально. Не треба бути спокійними, щоб медитувати. Треба лише приходити такими, як є.",
+            "І ми приходили. Дякую за твою лагідність до мене."
+          ],
+          [
+            "У листопаді ми подарували собі тишу — {duration}.",
+            "Ми даруємо стільки доброти іншим. Цього місяця трохи її повернулося до нас. Нам це личить.",
+            "Дякую, що дбаєш про мене. Ти важиш для мене більше, ніж я зазвичай кажу."
+          ],
+          [
+            "У грудні ми подарували собі тишу — {duration}, просто посеред передсвяткової метушні.",
+            "Коли я озираюся на цей рік, мені не потрібно, щоб ми встигли все. Мені просто радісно, що ми знову і знову поверталися до себе, вдих за вдихом.",
+            "Хай що принесе наступний рік, я буду поруч. Дихай зі мною."
+          ]
+        ],
+        "lunar_ps": "P.S. Щасливого Місячного Нового року. Ми можемо почати знову так повільно, як захочемо.",
+        "dev_note": "А від мене, людини, яка створює цей застосунок: дякую, що дозволяєш йому бути поруч. 🙏",
+        "ask": "Якщо хочеш передати трохи цієї доброти далі, чашка чаю зробить мій день кращим:"
+      },
+      "cta": "Пригости мене чашкою чаю",
+      "cta_note": "Обіцяю пити його усвідомлено.",
+      "other_ways": "Інші способи подякувати: <a href=\"{review}\" target=\"_blank\" rel=\"noopener\">залишити відгук</a> або <a href=\"{mail}\">надіслати коротке повідомлення</a>.",
+      "help": "Потрібна допомога із застосунком? Прочитай <a href=\"{guide}\">посібник користувача</a>.",
+      "mail_subject": "Дякую"
+    },
+    "zh": {
+      "app_name": "冥想 & 呼吸练习",
+      "guide_url": "/meditate_app_user_guide-zh/",
+      "letter": {
+        "eyebrow": "一封你写给自己的信",
+        "greeting": "亲爱的自己：",
+        "signoff": "爱你的，<br />我",
+        "months": [
+          [
+            "一月，我送给我们{duration}的安静时光。没有新年计划，也不需要一个全新升级的我们。只是几个片刻，和本来的自己待在一起。",
+            "有些时候很平静，有些时候烦躁或沉重。我还是留了下来，这就足够了。",
+            "无论今年会带来什么：你不需要先把自己修好，才值得被照顾。我永远站在你这边。"
+          ],
+          [
+            "二月，我送给我们{duration}的安静时光。那是夹在各种事情之间的小小停顿。",
+            "它们不需要完美。有时我的思绪跑开了一百次，我就温柔地把它带回来一百次。这不是失败，这就是练习。",
+            "谢谢你对我这么有耐心。那感觉就像来自内心的一个温暖拥抱。"
+          ],
+          [
+            "三月，当身边的一切不断变化时，我送给我们{duration}的安静时光。",
+            "我看见你每天撑起了多少东西。不是每次都有人向你道谢，所以让我来说：谢谢你。",
+            "无论什么改变，我们都可以一次次回到这一口呼吸。它一直在这里，等着我们。"
+          ],
+          [
+            "四月，我送给我们{duration}的安静时光。不必证明什么，也不必修正什么。只是呼吸，只是存在。",
+            "有些日子很轻松。有些日子，安静坐着仿佛是世上最难的事。这两种日子都算数。",
+            "我喜欢慢下来时的我们。希望你也喜欢。"
+          ],
+          [
+            "五月，即使事情那么多，我还是送给我们{duration}的安静时光。",
+            "我知道，有时会觉得休息得先挣来才行。其实不用。留出这些时间不是自私，而是温柔。",
+            "谢谢你为我们腾出空间。无论日子怎样，我们都留一点呼吸的余地吧。"
+          ],
+          [
+            "一年已经过半。六月，我送给我们{duration}的安静时光。",
+            "我们不去清点做成了什么、没做成什么。只要留意这一点：一次又一次，我们选择了停下来。",
+            "肩膀放松，下巴放松。我们可以好好呼一口气。"
+          ],
+          [
+            "七月，我送给我们{duration}的安静时光。无论外面发生什么，我们都在内心找到了一个安静的角落。",
+            "有些练习很短，有些提前结束了，有些时候我们只是带着疲惫坐在那里。每一次，我都很感激。",
+            "那个角落一直都在。需要的时候，我们随时可以回去。"
+          ],
+          [
+            "八月，我送给我们{duration}的安静时光，在计划与冒险之间，留出几分钟的平静。",
+            "休息不是从生活中抽离，它本身就是生活的一部分。我们不需要有多高效，才配得上一次停顿。",
+            "谢谢你在日子排得满满时，依然记得我们。"
+          ],
+          [
+            "九月，我送给我们{duration}的安静时光。不是为了变得更擅长什么，只是为了在这里待一会儿。",
+            "有些时候很平静，有些时候烦躁、分心或疲惫。我还是留了下来，这就足够了。",
+            "谢谢你一次又一次地回来。我知道你背负着多少。真高兴我们为自己留出了一点空间。"
+          ],
+          [
+            "十月，我送给我们{duration}的安静时光。当日子变得忙碌，我们的呼吸依然是一盏小小的暖灯。",
+            "不是每一天都如我们所愿。没关系。冥想不需要先平静下来，只需要带着本来的样子出现。",
+            "而我们做到了。谢谢你对我这么温柔。"
+          ],
+          [
+            "十一月，我送给我们{duration}的安静时光。",
+            "我们把那么多善意给了别人。这个月，终于有一点回到了我们自己身上。这很适合我们。",
+            "谢谢你照顾我。我对你的感激，比我平时说出口的多得多。"
+          ],
+          [
+            "十二月，在年末的忙乱之中，我送给我们{duration}的安静时光。",
+            "回望这一年，我不需要我们把所有事都做完。我只是很高兴，我们一呼一吸地，一次次回到了自己身边。",
+            "无论明年会带来什么，我都会在这里。和我一起呼吸吧。"
+          ]
+        ],
+        "lunar_ps": "附言：新春快乐。我们可以按自己喜欢的速度，慢慢重新开始。",
+        "dev_note": "还有来自我——这个应用的开发者——的一句话：谢谢你让它陪伴你。🙏",
+        "ask": "如果你想把这份温柔传递出去，一杯茶就能点亮我的一天："
+      },
+      "cta": "请我喝杯茶",
+      "cta_note": "我保证会用心慢慢品。",
+      "other_ways": "其他表达感谢的方式：<a href=\"{review}\" target=\"_blank\" rel=\"noopener\">写一条评价</a>或<a href=\"{mail}\">发一句简短的问候</a>。",
+      "help": "使用应用需要帮助？请阅读<a href=\"{guide}\">用户指南</a>。",
+      "mail_subject": "谢谢"
+    }
+  }
+}
