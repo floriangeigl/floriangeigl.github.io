@@ -19,7 +19,7 @@ When you use my Meditation app, I may collect certain information automatically.
 * Basic session metrics: the session duration and the time the session ended
 * App version, Connect IQ API version, firmware version and system language
 * Device type (Garmin part number), screen resolution and operating system
-* A session identifier derived from the watch's uptime counter
+* A session identifier based on the time the session ended
 * Usage patterns within the app
 * If you are a developer, feel free to look at the relevant source code [here](https://github.com/floriangeigl/Meditate/tree/main/Meditate/source/com)
 
@@ -29,7 +29,7 @@ I use Google Analytics to help me understand how users interact with my app. Goo
 
 To determine your approximate location, the app uses ipapi.co. It sends a request to `https://ipapi.co/json/` at most once per send attempt: after each saved session, and when the app starts while unsent events are waiting. ipapi.co sees your phone's full public IP address. The app keeps only the country, region and city from the answer, in memory, and adds them to the analytics event. The IP address itself is not stored and not forwarded. For more information, please see [ipapi.co's Privacy Policy](https://ipapi.co/privacy/).
 
-At most once a month, after a month with at least 30 minutes of meditation, and only when your phone is connected, the app opens my [tip page](/tipme/) on your phone. The link contains last month's meditation minutes (rounded up) as the parameter `meditate-minutes`, plus `utm_source=meditate_app`, `utm_medium=garmin_watch` and `utm_campaign=tip`. Because the tip page is part of my website, the website's Google Analytics (see below) records the page address including these parameters.
+At most once a month, after a month with at least 15 minutes of meditation, and only when your phone is connected, the app opens my [tip page](/tipme/) on your phone. The link contains last month's meditation minutes (rounded up) as the parameter `meditate-minutes`, plus `utm_source=meditate_app`, `utm_medium=garmin_watch` and `utm_campaign=tip`. Because the tip page is part of my website, the website's Google Analytics (see below) records the page address including these parameters.
 
 The app also contains a hidden cloud backup tool that I use for development. It is not part of the regular app menus and can only be reached by long-pressing the About screen. Only when you trigger a backup there yourself, the app uploads its settings, your saved sessions and your monthly meditation minutes to a [Firebase](https://firebase.google.com/support/privacy) Realtime Database (operated by Google), stored under the same Garmin unique identifier as above. Nothing is sent to Firebase automatically. Apart from the tip page and this backup, your monthly meditation minutes stay on your watch.
 
