@@ -48,6 +48,15 @@ I collect and use this information to:
 * Understand how users interact with the app
 * Enhance your overall user experience
 
+I use your approximate location (country, region and city), together with your system language, to:
+* Decide which translations of the app to keep, maintain or add
+* Adapt the tip page, for example its currencies and payment methods
+* Decide in which countries and app store markets to promote the app
+* Know which privacy laws apply to my users
+* Detect and filter fake analytics traffic, which often comes from unusual countries or clusters around single locations
+* Understand at what local time of day people meditate, which requires their time zone
+* Recognise seasonal usage patterns, for example between the northern and southern hemisphere
+
 The legal bases under the General Data Protection Regulation (GDPR) are:
 * App analytics, including the IP lookup via GeoJS (before October 2026: the location lookup via ipapi.co): my legitimate interest in understanding how the app is used and improving it (Art. 6(1)(f) GDPR). The app has no setting to turn analytics off; you can object at any time by email (see section 5).
 * Tip page: my legitimate interest in asking for voluntary support of the app (Art. 6(1)(f) GDPR).
