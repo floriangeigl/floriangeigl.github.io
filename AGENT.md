@@ -30,7 +30,11 @@ assets/
   data/              # JSON data (searchcorpus.json)
 klagifornia/         # Standalone page with its own images
 pilot/               # Standalone page with its own images
-meditate_app*.md     # Pages for the Meditation & Breathwork Garmin app
+meditate_app/        # Meditation & Breathwork Garmin app; overwritten by host-user-guide.yml in floriangeigl/Meditate, edit there
+  advertisement/     # App landing page, meditate_app.md + meditate_app-<lang>.md
+  user_guide/        # User guide, meditate_app_user_guide.md + -<lang>.md
+  data_privacy/      # Privacy policy, meditate_app_data_privacy.md + -<lang>.md
+  images/            # Screenshots and hero banners, served at /meditate_app/images/
 ```
 
 ## Local Development
