@@ -7,7 +7,7 @@ share-title: Meditation & Breathwork User Guide (Garmin) | Florian Geigl
 share-description: Setup, features, FAQs, troubleshooting, and support for the Meditation & Breathwork Garmin watch app.
 ---
 
-<div><small>🌐 <b>English</b> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
+<div><small>🌐 <b>English</b> | <a href="/meditate_app_user_guide-de/">Deutsch</a> | <a href="/meditate_app_user_guide-es/">Español</a> | <a href="/meditate_app_user_guide-fr/">Français</a> | <a href="/meditate_app_user_guide-it/">Italiano</a> | <a href="/meditate_app_user_guide-ja/">日本語</a> | <a href="/meditate_app_user_guide-ko/">한국어</a> | <a href="/meditate_app_user_guide-pt/">Português</a> | <a href="/meditate_app_user_guide-uk/">Українська</a> | <a href="/meditate_app_user_guide-zh/">中文</a></small></div>
 
 
 This guide is meant to support you - not overwhelm you :)

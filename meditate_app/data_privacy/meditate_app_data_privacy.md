@@ -7,6 +7,9 @@ share-title: App Data Privacy Policy | Meditation & Breathwork (Garmin)
 share-description: Privacy policy for the Meditation & Breathwork Garmin watch app (data collected, usage, retention, and your rights).
 ---
 
+<div><small>🌐 <b>English</b> | <a href="/meditate_app_data_privacy-de/">Deutsch</a> | <a href="/meditate_app_data_privacy-es/">Español</a> | <a href="/meditate_app_data_privacy-fr/">Français</a> | <a href="/meditate_app_data_privacy-it/">Italiano</a> | <a href="/meditate_app_data_privacy-ja/">日本語</a> | <a href="/meditate_app_data_privacy-ko/">한국어</a> | <a href="/meditate_app_data_privacy-pt/">Português</a> | <a href="/meditate_app_data_privacy-uk/">Українська</a> | <a href="/meditate_app_data_privacy-zh/">中文</a></small></div>
+
+
 At geigl.online, your privacy is important to me. This Privacy Policy explains how I collect, use, and protect your personal information when you use my [Meditation app](/meditate_app/) on your Garmin device.
 
 **1. Information I Collect**
