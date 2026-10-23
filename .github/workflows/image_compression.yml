@@ -31,10 +31,16 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v7
-      - name: cleanup auto-compress-images branch
+      # Remove branches left behind by earlier runs (e.g. a failed merge);
+      # deleting a branch also closes its stale PR.
+      - name: Cleanup old auto-compress-images branches
         run: |
-          git push -d origin auto-compress-images || echo "no remote branch to cleanup"
-          git branch -d auto-compress-images || echo "no local branch to cleanup"
+          branches=$(git ls-remote --heads origin 'auto-compress-images*' | sed 's|.*refs/heads/||')
+          if [ -n "$branches" ]; then
+            git push origin --delete $branches
+          else
+            echo "no remote branches to cleanup"
+          fi
       - name: Compress Images
         id: calibre
         uses: calibreapp/image-actions@main
