@@ -15,6 +15,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 # Pushes in quick succession only need one compression run (the latest).
 concurrency:
   group: image-compression
@@ -57,3 +58,19 @@ jobs:
           delete-branch: true
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
+      - name: Merge Pull Request
+        id: merge
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr merge "${{ steps.cpr.outputs.pull-request-number }}" --squash --delete-branch
+          echo "merged=true" >> "$GITHUB_OUTPUT"
+
+      # A merge done with GITHUB_TOKEN does not trigger other workflows,
+      # so explicitly dispatch the deploy workflow for the merged commit.
+      - name: Trigger Pages deploy for the compressed images
+        if: steps.merge.outputs.merged == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref master
