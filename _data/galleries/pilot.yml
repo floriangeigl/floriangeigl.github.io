@@ -63,14 +63,6 @@
   thumb_height: 450
   date: '2026-01-01T11:48:49'
   caption: Pyramidenkogel
-- file: pilot-klu.webp
-  thumb: thumbs/pilot-klu.webp
-  width: 840
-  height: 630
-  thumb_width: 600
-  thumb_height: 450
-  date: '2026-01-01T11:48:49'
-  caption: KLU
 - file: pilot-cloudy.webp
   thumb: thumbs/pilot-cloudy.webp
   width: 840
@@ -111,11 +103,3 @@
   thumb_height: 600
   date: '2026-01-01T11:48:49'
   caption: Murau
-- file: pilot-hanger.webp
-  thumb: thumbs/pilot-hanger.webp
-  width: 840
-  height: 473
-  thumb_width: 600
-  thumb_height: 338
-  date: '2026-01-01T11:48:49'
-  caption: ''
