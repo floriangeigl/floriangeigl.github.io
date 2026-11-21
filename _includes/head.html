@@ -162,18 +162,19 @@
   {% endif %}
 
   {% if page.schema_type == 'Person' %}
+  {%- assign person_img = page.share-img | default: site.avatar -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "url": {{ canonical_url | strip | jsonify }},
-    "primaryImageOfPage": {{ site.avatar | absolute_url | jsonify }},
+    "primaryImageOfPage": {{ person_img | absolute_url | jsonify }},
     "mainEntity": {
       "@type": "Person",
       "@id": {{ canonical_url | append: '#person' | jsonify }},
       "name": {{ page.schema_name | default: author | jsonify }},
       "url": {{ canonical_url | strip | jsonify }},
-      "image": {{ site.avatar | absolute_url | jsonify }}
+      "image": {{ person_img | absolute_url | jsonify }}
       {%- if page.schema_job_title -%}
       ,"jobTitle": {{ page.schema_job_title | jsonify }}
       {%- endif -%}

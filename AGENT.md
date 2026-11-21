@@ -148,6 +148,7 @@ Every content page has an explicit `permalink:` in its front matter ending with 
 
 - `_includes/head.html` emits `<link rel="canonical">` and `<meta property="og:url">` on every page, computed from `site.url` + `page.url`. This always resolves to `https://geigl.online/…`.
 - The homepage includes a `ProfilePage` + `Person` JSON-LD block (driven by `schema_*` front-matter fields in `index.html`), which helps Google associate the site with the person entity and the correct profile image.
+- The profile image used for SEO (`og:image`, `twitter:image`, and the JSON-LD `primaryImageOfPage` / `Person.image`) is the homepage's `share-img` (a full-resolution copy, ≥1200 px wide for large image previews), falling back to `site.avatar`. The navbar `avatar` is a smaller copy of the same photo to keep page weight down. When changing the profile picture, update both files and give them new filenames so browsers and Google don't keep serving the cached old image.
 - All pages have `share-title` and `share-description` front-matter for explicit control over `<title>`, `og:title`, and `meta description`.
 
 ### Robots Meta
